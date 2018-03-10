@@ -2,4 +2,4 @@
 
 
 
-Projet de découverte des écosystèmes Linux par travaux pratiques en `bash` et `C`.
+Let's break window and step to life, the universe and everything ;)
