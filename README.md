@@ -24,7 +24,7 @@ Parce qu'en 1979, il parodie la réponse d'un supercalculateur à une question m
 
 Après 7,5 millions d'années de *computation*... la réponse tombe...
 
-<sub>**42**</sub>
+<sub>**Forty-two**</sub>
 
 (pages 114 à 120 du Tome 1 : The HHGTTG)
 
