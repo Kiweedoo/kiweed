@@ -85,7 +85,7 @@ Unix Systen 5, du V en latin)
 
 Dès lors, la guerre des Unix commença... L'illustration *wikipdédia* est parfaite pour déduire la suite :
 
-![unix](/home/georges/Bureau/KIWEED_git/raw/images/histoire_unix.jpg)
+![unix](histoire_unix.jpg)
 
 Pour plus de détails, lire l'article [*wikipedia* : Unix](https://fr.wikipedia.org/wiki/Unix)
 
