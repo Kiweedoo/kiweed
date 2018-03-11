@@ -6,7 +6,7 @@
 
 >"Good progammer knows how things work. Great programmer knows why things works" (*Unknown* nevertheless *Well known*)
 
-D'après Douglas Adams , l'une dit !
+D'après Douglas Adams...
 
 >There is a theory which states that if ever anyone discovers exactly what the
 Universe is for and why it is here, it will instantly disappear and be replaced
