@@ -9,7 +9,7 @@ fichiers *readme.md* <sub>(ici le nom de fichier est
 pointable car c'est le nom d'un fichier présent dans
 le dossier courant)</sub>
 
-C'est également ce langage de balisage que nous utiliserons avec *apache* pour créer rapidement et simplement les pages d'un sites web perso.
+**C'est également** ce langage de balisage que nous utiliserons avec *apache* pour créer rapidement et simplement les pages d'un sites web perso.
 
 Il ne remplace pas le langage HTML, mais est parfait
 pour éditer rapidement des pages relativement
