@@ -37,14 +37,26 @@ C'est le nom qu'ont choisi Xavier Niel et les anciens d'Épita pour leur [**éco
 
 ### <a name="sommaire">Sommaire</a>
 ##### [(très)Brève histoire d'unix et de linux](#u_histo)
-##### [*vi*, *vim*, ou *gvim*](#vi_vim)
-##### [Installer la correction  d'orthographe dans *vi*](#Installer_correcteur_vi)
+##### [*vi*, *vim*, et *gvim*](#vi_vim)
+##### [Dictionnaires et correction d'orthographe dans *vi*](#Installer_correcteur_vi)
+##### [Installer le previewer markdown pour *vi*](#preview_md)
 
 ---
 
 ##### <a name="u_histo">(très)Brève histoire d'Unix/Linux</a>
 
-Nous sommes dans les 60's... À cette époque, et **c'est toujours vrai**, un processeur (donc simple coeur à l'époque) ne traite 
+###### L'intérêt de l'histoire (très très brève) ?
+
+Comprendre que suivant les distributions les choses changent, et parfois
+fondamentalement... 
+
+Un exemple ? Le hashage md5 ne donne pas les mêmes 32 caractères sous
+un MacOsX et sur une Ubuntu, en autres... Dommage, on ne peut donc pas comparer des empreintes...
+Sans le savoir... ;D
+
+###### Allons-y !
+
+Nous sommes dans les 60's... À cette époque, et **c'est toujours vrai**, un processeur (donc simple cœur à l'époque) ne traite 
 qu'une seule instruction à la fois ; un double coeur deux, etc. Mais ce sont des instructions **d'un même programme** ; ça
 va *juste* plus vite.
 
@@ -87,7 +99,7 @@ Dès lors, la guerre des Unix commença... L'illustration *wikipdédia* est parf
 
 ![unix](histoire_unix.jpg)
 
-Pour plus de détails, lire l'article [*wikipedia* : Unix](https://fr.wikipedia.org/wiki/Unix)
+Pour plus de détails, et une image beaucoup plus complète, lire l'article [*wikipedia* : Unix](https://fr.wikipedia.org/wiki/Unix)
 
 
 
@@ -95,18 +107,36 @@ Pour plus de détails, lire l'article [*wikipedia* : Unix](https://fr.wikipedia.
 
 ---
 
-##### <a name="vi_vim">*vi*, *vim*, ou *gvim*</a>
+##### <a name="vi_vim">*vi*, *vim*, et *gvim*</a>
 
-En cours
+EN COURS : le dossier est créé ; il contiendra à terme un TP qui permettra de connaître,
+quelle que soit la distribution avec laquelle on travaille, le programme réellement
+exécuté lors du lancement de la commande `vi`.
+
+Seuls les fichiers *readme* sont présents car il n'est pas possible sur *github* de
+créer des dossiers vides.
 
 [(**sommaire ^**)](#sommaire)
 
 ---
 
 
-##### <a name="Installer_correcteur_vi">Installer la correction  d'orthographe dans *vi*</a>
+##### <a name="Installer_correcteur_vi">Dictionnaires et correction  d'orthographe dans *vi*</a>
 
-En cours
+EN COURS : idem, dossier créé ; toujours sous forme de TP il permettra de jongler un
+petit peu avec l'installation d'un dictionnaire, et l'activation/désactivation du
+correcteur associé.
+
+[(**sommaire ^**)](#sommaire)
+
+---
+
+
+##### <a name="preview_md">Installer le previewer markdown pour *vi*</a>
+
+EN COURS : idem, dossier créé ; toujours sous forme de TP il permettra de jongler un
+petit peu avec l'installation d'un dictionnaire, et l'activation/désactivation du
+correcteur associé.
 
 [(**sommaire ^**)](#sommaire)
 
