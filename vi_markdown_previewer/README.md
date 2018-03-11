@@ -22,8 +22,8 @@ Guides - Mastering
 Markdown](https://guides.github.com/features/mastering-markdown/)
 
 
-L'installation de ce plugin nous permettra d'éditer notre et d'avoir la visualisation en temps réel sur un onglet:w
-de navigateur :
+L'installation de ce plugin nous permettra d'éditer notre et d'avoir la visualisation en temps réel sur un onglet
+de navigateur&nbsp;:
 
 ![vi_md_preview](vi_md_preview.png)
 
