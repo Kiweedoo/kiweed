@@ -20,7 +20,8 @@ Guides - Mastering
 Markdown](https://guides.github.com/features/mastering-markdown/)
 
 
-L'installation de ce plugin nous permettra d'éditer notre *fichier.md* et d'avoir la visualisation en temps réel sur une fenêtre de navigateur comme sur l'image suivante :
+L'installation de ce plugin nous permettra d'éditer notre et d'avoir la visualisation en temps réel sur un onglet:w
+de navigateur :
 
 ![vi_md_preview](vi_md_preview.png)
 
