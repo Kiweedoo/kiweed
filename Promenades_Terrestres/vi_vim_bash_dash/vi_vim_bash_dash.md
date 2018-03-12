@@ -64,11 +64,11 @@ commande `ls`, j'utilise un alias pour obtenir un champ unique bien distinct de 
 
 En ajoutant à la fin du fichier `.bashrc` du répertoire de connexion la ligne&nbsp;:
 
-<pre>alias ls='ls --time-style=+%F-%H:%M --color=auto'</pre>
+><pre>alias ls='ls --time-style=+%F-%H:%M --color=auto'</pre>
 
 Puis en le rechargeant dans la session en cours, avec la commande `.`&nbsp;:
 
-<pre>
+><pre>
 . ~/.bashrc
 </pre>
 
@@ -77,12 +77,12 @@ Quel que soit l'emplacement d'où on source puisque `~` vaut pour le chemin abso
 On obtient alors&nbsp;:
 
 
-<pre>
+><pre>
 ls -l 
 total 8
 drwxrwxr-x 6 georges georges 4096 2018-03-12-02:22 kiweed
 -rw-rw-r-- 1 georges georges 3548 2018-03-12-10:16 vi_vim_gvim.md
-</pre>
+></pre>
 
 Au lieu de&nbsp;:
 <pre>
