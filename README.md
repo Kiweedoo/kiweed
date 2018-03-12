@@ -1,3 +1,7 @@
+Dernière ajout : 
+
+- [x] Promenades terrestres : *vi* ou *vim*, *bash* ou *dash* ?
+
 # [kiweed](#)
 
 
