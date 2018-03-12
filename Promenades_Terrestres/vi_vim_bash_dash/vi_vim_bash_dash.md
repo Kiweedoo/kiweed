@@ -78,32 +78,32 @@ On obtient alors&nbsp;:
 
 
 ><pre>
-ls -l 
-total 8
-drwxrwxr-x 6 georges georges 4096 2018-03-12-02:22 kiweed
--rw-rw-r-- 1 georges georges 3548 2018-03-12-10:16 vi_vim_gvim.md
+>ls -l 
+>total 8
+>drwxrwxr-x 6 georges georges 4096 2018-03-12-02:22 kiweed
+>-rw-rw-r-- 1 georges georges 3548 2018-03-12-10:16 vi_vim_gvim.md
 ></pre>
 
 Au lieu de&nbsp;:
-<pre>
-ls -l
-total 8
-drwxrwxr-x 6 georges georges 4096 mars  12 02:22 kiweed
--rw-rw-r-- 1 georges georges 3192 mars  12 10:09 vi_vim_gvim.md
-</pre>
+><pre>
+>ls -l
+>total 8
+>drwxrwxr-x 6 georges georges 4096 mars  12 02:22 kiweed
+>-rw-rw-r-- 1 georges georges 3192 mars  12 10:09 vi_vim_gvim.md
+></pre>
 
 L'exemple ci-dessous est plus parlant...
 
 
-<pre>
-lrwxrwxrwx 1 root root 17 déc.  13 19:50 /etc/alternatives/vi -> /usr/bin/vim.gtk3
-</pre>
+><pre>
+>lrwxrwxrwx 1 root root 17 déc.  13 19:50 /etc/alternatives/vi -> /usr/bin/vim.gtk3
+></pre>
 
 Quelle est la taille, 17 ou 13 ?
 
-<pre>
-lrwxrwxrwx 1 root root 17 2017-12-13-19:50 /etc/alternatives/vi -> /usr/bin/vim.gtk3
-</pre>
+><pre>
+>lrwxrwxrwx 1 root root 17 2017-12-13-19:50 /etc/alternatives/vi -> /usr/bin/vim.gtk3
+></pre>
 
 Maintenant c'est plus clair... :+1:
 
@@ -138,49 +138,49 @@ POSIX (*Portable Operating System Interface uniX*).  [POSIX sur l'OpenGroup](htt
 La commande `type` indique quel programme sera chargé et exécuté si son argument était invoqué. Par exemple&nbsp;:
 
 
-<pre>
-type mkdir
-mkdir est /bin/mkdir
-</pre>
-
 ><pre>
-type vi
-vi est haché (/usr/bin/vi)
+>type mkdir
+>mkdir est /bin/mkdir
 ></pre>
 
 ><pre>
-type cd
-cd est une primitive du shell
+>type vi
+>vi est haché (/usr/bin/vi)
 ></pre>
 
 ><pre>
-type pwd
-pwd est une primitive du shell
-</pre>
+>type cd
+>cd est une primitive du shell
+></pre>
 
 ><pre>
-type type
-type est une primitive du shell
-</pre>
+>type pwd
+>pwd est une primitive du shell
+></pre>
 
 ><pre>
-type ls
-ls est un alias vers « ls --time-style=+%F-%H:%M --color=auto »
-</pre>
+>type type
+>type est une primitive du shell
+></pre>
+
+><pre>
+>type ls
+>ls est un alias vers « ls --time-style=+%F-%H:%M --color=auto »
+></pre>
 
 et pour finir
 
 ><pre>
-type kill
-kill est une primitive du shell
-</pre>
+>type kill
+>kill est une primitive du shell
+></pre>
 
 pourtant 
 
 ><pre>
-ls -l /bin/kill
--rwxr-xr-x 1 root root 26704 2016-07-12-08:07 /bin/kill
-</pre>
+>ls -l /bin/kill
+>-rwxr-xr-x 1 root root 26704 2016-07-12-08:07 /bin/kill
+></pre>
 
 
 
@@ -224,22 +224,22 @@ Nous avons **un lien**&nbsp;: le fichier `/usr/bin/vi` pointe sur le fichier
 Continuons l'enquête...
 
 ><pre>
-ls -l /etc/alternatives/vi
-lrwxrwxrwx 1 root root       17 déc. 13 19:50 /etc/alternatives/vi -> /usr/bin/vim.gtk3
+>ls -l /etc/alternatives/vi
+>lrwxrwxrwx 1 root root       17 déc. 13 19:50 /etc/alternatives/vi -> /usr/bin/vim.gtk3
 ></pre>
 
 Un nouveau lien... Pointant sur `vim` cette fois... Continuons&nbsp;:
 
 ><pre>
-ls -l /usr/bin/vim.gtk3
--rwxr-xr-x 1 root root 3005224 juil. 26  2017 /usr/bin/vim.gtk3
+>ls -l /usr/bin/vim.gtk3
+>-rwxr-xr-x 1 root root 3005224 juil. 26  2017 /usr/bin/vim.gtk3
 ></pre>
 
 Pour visualiser que ce sont bien deux fichiers différents, utilisons l'option `-i` de
 `ls` pour afficher le numéro d'*inode* des fichiers (leur **identifiant unique** sur tout
 le système)&nbsp;:
 
-En fa
+En cours FORMAT ELF
 
 /usr/bin/vim.gtk3: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 2.6.32, BuildID[sha1]=e3e651772f506ed784855855e68f851d8fc87927, stripped
 
@@ -255,4 +255,4 @@ Avec la commande `ls -l *resultat_de_type*` détermine si le fichier indiqué pa
 vraiment invoqué ou s'il pointe sur un autre fichier. (on parle alors de lien)
 
 La commande `file nom_fichier` détermine le type du fichier ; elle s'appuie sur le
-fichier texte de description des types : `/etc/filetypes`
+fichiers magic de /etc, /usr/share et la version compilée... EN COURS...
