@@ -1,4 +1,4 @@
-Dernière ajout : 
+Dernier ajout : 
 
 - [x] Promenades terrestres : *vi* ou *vim*, *bash* ou *dash* ?
 
