@@ -41,9 +41,9 @@ C'est le nom qu'ont choisi Xavier Niel et les anciens d'Épita pour leur [**éco
 
 ### <a name="sommaire">Sommaire</a>
 ##### [(très)Brève histoire d'unix et de linux](#u_histo)
-##### [*vi*, *vim*, et *gvim*](#vi_vim)
-##### [Dictionnaires et correction d'orthographe dans *vi*](#Installer_correcteur_vi)
-##### [Installer le previewer markdown pour *vi*](#preview_md)
+##### [Promenades terrestres](#terre)
+##### [Balades interstellaires](#interstellar)
+##### [Guide du Décodeur Intergalactique ](#intergal)
 
 ---
 
@@ -111,36 +111,33 @@ Pour plus de détails, et une image beaucoup plus complète, lire l'article [*wi
 
 ---
 
-##### <a name="vi_vim">*vi*, *vim*, et *gvim*</a>
+##### <a name="terre">Balades Terrestres</a>
 
-EN COURS : le dossier est créé ; il contiendra à terme un TP qui permettra de connaître,
-quelle que soit la distribution avec laquelle on travaille, le programme réellement
-exécuté lors du lancement de la commande `vi`.
 
-Seuls les fichiers *readme* sont présents car il n'est pas possible sur *github* de
-créer des dossiers vides.
+Ce sera le dossier des choses techniques abordées simplement, sans dans trop de détails.
+
+Sans autre précision, tout se passe sous Ubuntu.
+
 
 [(**sommaire ^**)](#sommaire)
 
 ---
 
 
-##### <a name="Installer_correcteur_vi">Dictionnaires et correction  d'orthographe dans *vi*</a>
+##### <a name="interstellar">Balades Interstellaires</a>
 
-EN COURS : idem, dossier créé ; toujours sous forme de TP il permettra de jongler un
-petit peu avec l'installation d'un dictionnaire, et l'activation/désactivation du
-correcteur associé.
+
+Une exploration de la galaxie Debian et ses multiples systèmes solaires : Ubuntu, Slackware, Debian, etc.
+
 
 [(**sommaire ^**)](#sommaire)
 
 ---
 
 
-##### <a name="preview_md">Installer le previewer markdown pour *vi*</a>
+##### <a name="intergal">Guide du Décodeur Intergalactique</a>
 
-EN COURS : idem, dossier créé ; toujours sous forme de TP il permettra de jongler un
-petit peu avec l'installation d'un dictionnaire, et l'activation/désactivation du
-correcteur associé.
+Des galaxies Unix, RedHat, MacOsX, BSD, et toutes les autres... Même très éloignées :alien:
 
 [(**sommaire ^**)](#sommaire)
 
