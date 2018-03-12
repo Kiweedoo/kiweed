@@ -64,11 +64,11 @@ commande `ls`, j'utilise un alias pour obtenir un champ unique bien distinct de 
 
 En ajoutant à la fin du fichier `.bashrc` du répertoire de connexion la ligne&nbsp;:
 
-><pre>alias ls='ls --time-style=+%F-%H:%M --color=auto'</pre>
+<pre>alias ls='ls --time-style=+%F-%H:%M --color=auto'</pre>
 
 Puis en le rechargeant dans la session en cours, avec la commande `.`&nbsp;:
 
-><pre>
+<pre>
 . ~/.bashrc
 </pre>
 
@@ -77,7 +77,7 @@ Quel que soit l'emplacement d'où on source puisque `~` vaut pour le chemin abso
 On obtient alors&nbsp;:
 
 
-><pre>
+<pre>
 ls -l 
 total 8
 drwxrwxr-x 6 georges georges 4096 2018-03-12-02:22 kiweed
@@ -85,7 +85,7 @@ drwxrwxr-x 6 georges georges 4096 2018-03-12-02:22 kiweed
 </pre>
 
 Au lieu de&nbsp;:
-><pre>
+<pre>
 ls -l
 total 8
 drwxrwxr-x 6 georges georges 4096 mars  12 02:22 kiweed
@@ -95,13 +95,13 @@ drwxrwxr-x 6 georges georges 4096 mars  12 02:22 kiweed
 L'exemple ci-dessous est plus parlant...
 
 
-><pre>
+<pre>
 lrwxrwxrwx 1 root root 17 déc.  13 19:50 /etc/alternatives/vi -> /usr/bin/vim.gtk3
 </pre>
 
 Quelle est la taille, 17 ou 13 ?
 
-><pre>
+<pre>
 lrwxrwxrwx 1 root root 17 2017-12-13-19:50 /etc/alternatives/vi -> /usr/bin/vim.gtk3
 </pre>
 
@@ -138,7 +138,7 @@ POSIX (*Portable Operating System Interface uniX*).  [POSIX sur l'OpenGroup](htt
 La commande `type` indique quel programme sera chargé et exécuté si son argument était invoqué. Par exemple&nbsp;:
 
 
-><pre>
+<pre>
 type mkdir
 mkdir est /bin/mkdir
 </pre>
@@ -146,12 +146,12 @@ mkdir est /bin/mkdir
 ><pre>
 type vi
 vi est haché (/usr/bin/vi)
-</pre>
+></pre>
 
 ><pre>
 type cd
 cd est une primitive du shell
-</pre>
+></pre>
 
 ><pre>
 type pwd
