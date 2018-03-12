@@ -41,9 +41,9 @@ C'est le nom qu'ont choisi Xavier Niel et les anciens d'Épita pour leur [**éco
 
 ### <a name="sommaire">Sommaire</a>
 ##### [(très)Brève histoire d'unix et de linux](#u_histo)
-##### [Promenades terrestres](#terre)
-##### [Balades interstellaires](#interstellar)
-##### [Guide du Décodeur Intergalactique ](#intergal)
+##### [Promenades Terrestres](#terre)
+##### [Balades Interstellaires](#interstellar)
+##### [Guide du Codeur Galactique ](#intergal)
 
 ---
 
@@ -135,9 +135,11 @@ Une exploration de la galaxie Debian et ses multiples systèmes solaires : Ubunt
 ---
 
 
-##### <a name="intergal">Guide du Décodeur Intergalactique</a>
+##### <a name="intergal">Guide du Codeur Galactique</a>
 
 Des galaxies Unix, RedHat, MacOsX, BSD, et toutes les autres... Même très éloignées :alien:
+
+Pour coder, décoder, reverser, etc. :smile: :+1:
 
 [(**sommaire ^**)](#sommaire)
 
