@@ -90,12 +90,12 @@ ayant fait leurs études informatiques sur ce système chercheraient à l'obteni
 
 **Mais c'est aussi en 1975** que les Bell Labs devinrent une entité distincte d'ATT... et purent continuer le développement d'Unix.
 
-En **1977**, l'université de Berkeley en Californie package sa premier distribution Unix...
+En **1977**, l'université de Berkeley en Californie propose sa première distribution Unix...
 
-Quand en **1979** Bell Labs publiait sa première version d'Unix, Unix version 7, qui aboutira en 1983, à Unix System V (lire
-Unix Systen 5, du V en latin)
+En **1979** Bell Labs publie à son tour sa première version d'Unix, Unix version 7, 
+qui aboutira en 1983, à Unix System V (lire Unix Systen 5, du V en latin).
 
-Dès lors, la guerre des Unix commença... L'illustration *wikipdédia* est parfaite pour déduire la suite :
+Dès lors, la guerre des Unix commence... L'illustration *wikipdédia* est parfaite pour déduire la suite :
 
 ![unix](histoire_unix.jpg)
 
