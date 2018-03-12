@@ -69,8 +69,8 @@ En ajoutant à la fin du fichier `.bashrc` du répertoire de connexion la ligne&
 Puis en le rechargeant dans la session en cours, avec la commande `.`&nbsp;:
 
 ><pre>
-. ~/.bashrc
-</pre>
+>. ~/.bashrc
+></pre>
 
 Quel que soit l'emplacement d'où on source puisque `~` vaut pour le chemin absolu du répertoire de connexion.
 
