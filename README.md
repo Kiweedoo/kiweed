@@ -139,7 +139,7 @@ Une exploration de la galaxie Debian et ses multiples systèmes solaires : Ubunt
 
 Des galaxies Unix, RedHat, MacOsX, BSD, et toutes les autres... Même très éloignées :alien:
 
-Pour coder, décoder, reverser, etc. :smile: :+1:
+Pour coder, décoder, reverser, etc. :metal::smile::+1:
 
 [(**sommaire ^**)](#sommaire)
 
