@@ -33,6 +33,7 @@ Utiliser les commandes *bash* `type` et `file`, et la commande `ls`
 ##### [Préambule](#preambule)
 ##### [À propos de `vi` et `vim`](#vi)
 ##### [Résumé](#resume)
+##### [La minute HHGTTG : comment remodeler le concept même de l'espace-temps ?](#hhgttg)
 
 
 ---
@@ -214,9 +215,7 @@ Il y a donc également des primitives qui existent en tant que commandes externe
 Si aucun chemin n'est précisé, c'est bien entendu la *builtin* qui est exécutée en priorité.
 
 &nbsp;
-
-
-
+---
 #### Revenons à `vi` et `vim`
 
 &nbsp;
@@ -321,12 +320,15 @@ On pourra faire&nbsp;:
 
 <sub>[(**sommaire ^**)](#sommaire)</sub>
 
+<br>
+
 ---
 
+<br>
+#### <a name="hhgttg">La minute qui remodèle le concept même du temps et de l'espace</a>
+<br>
 
-&nbsp;
-
->“So you see,” 
+>“So you see,” <br>
 >said Slartibartfast, slowly stirring his artificially constructed coffee, and thereby also stirring the whirlpool
 >interfaces between real and unreal numbers, between the interactive perceptions of mind and Universe, and   thus generating the
 >restructured matrices of implicitly enfolded subjectivity which allowed his ship to reshape the very concept of time and space,
@@ -334,6 +336,8 @@ On pourra faire&nbsp;:
 >“how it is.”
 
 <sub>(The HHGTTG, T2, Life, the Universe, and Everything, p.73 )</sub>
+
+<sub>[(**sommaire ^**)](#sommaire)</sub>
 
 
 :metal::alien::+1:
