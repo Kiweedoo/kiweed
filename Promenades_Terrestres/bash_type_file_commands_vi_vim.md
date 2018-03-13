@@ -10,6 +10,10 @@ Déterminer le programme qui sera chargé et exécuté lors de l'invocation d'un
 
 Déterminer le type d'un fichier.
 
+Utiliser les commandes *bash* `type` et `file`, et la commande `ls`
+
+&nbsp;
+
 ##### Ce qu'on y apprend au passage...
 
 - [x] Poser un alias dans `~/.bashrc`
@@ -310,7 +314,7 @@ La commande `ls -l *resultat_de_type*` détermine si le programme fourni en rép
 sera vraiment invoqué ou s'il pointe sur un autre fichier.<sub>(on parle alors de lien)</sub>
 
 La commande `file fichier` détermine le type du fichier ; pour ce faire, elle s'appuie sur le fichier 
-magique /usr/share/misc/magic.mgc <sub>(dans sa version compilée, futur article dédié :metal::alien::+1:)</sub>. 
+magique `/usr/share/misc/magic.mgc` <sub>(dans sa version compilée, futur article dédié :metal::alien::+1:)</sub>. 
 
 On pourra faire&nbsp;:
 
@@ -321,3 +325,20 @@ On pourra faire&nbsp;:
 ></pre>
 
 <sub>[(**sommaire ^**)](#sommaire)</sub>
+
+---
+
+
+&nbsp;
+
+>“So you see,” 
+>said Slartibartfast, slowly stirring his artificially constructed coffee, and thereby also stirring the whirlpool
+>interfaces between real and unreal numbers, between the interactive perceptions of mind and Universe, and   thus generating the
+>restructured matrices of implicitly enfolded subjectivity which allowed his ship to reshape the very concept of time and space,
+><br>
+>“how it is.”
+
+<sub>(The HHGTTG, T2, Life, the Universe, and Everything, p.73 )</sub>
+
+
+:+1::alien::+1:
