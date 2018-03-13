@@ -1,6 +1,7 @@
 Dernier ajout : 
 
-- [x] Promenades terrestres : [bash_type_file_commands_vi_vim.md]()
+- [x] Promenades terrestres :
+  [bash_type_file_commands_vi_vim.md](https://github.com/Kiweedoo/kiweed/blob/master/Promenades_Terrestres/bash_type_file_commands_vi_vim.md)
 
 # [kiweed](#)
 
