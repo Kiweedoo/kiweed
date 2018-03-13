@@ -324,8 +324,8 @@ On pourra faire&nbsp;:
 
 ---
 
-<br>
 #### <a name="hhgttg">La minute qui remodèle le concept même du temps et de l'espace</a>
+
 <br>
 
 >“So you see,” <br>
