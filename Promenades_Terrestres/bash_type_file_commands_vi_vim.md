@@ -335,7 +335,7 @@ On pourra faire&nbsp;:
 ><br>
 >“how it is.”
 
-<sub>(The HHGTTG, T2, Life, the Universe, and Everything, p.73 )</sub>
+<sub>(The HHGTTG, T3, Life, the Universe, and Everything, p.73 )</sub>
 
 <sub>[(**sommaire ^**)](#sommaire)</sub>
 
