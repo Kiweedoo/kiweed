@@ -1,6 +1,6 @@
 Dernier ajout : 
 
-- [x] Promenades terrestres : *vi* ou *vim*, *bash* ou *dash* ?
+- [x] Promenades terrestres : bash_type_file_commands_vi_vim.md
 
 # [kiweed](#)
 
