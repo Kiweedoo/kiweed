@@ -309,7 +309,7 @@ La commande `ls -l *resultat_de_type*` détermine si le programme fourni en rép
 sera vraiment invoqué ou s'il pointe sur un autre fichier.<sub>(on parle alors de lien)</sub>
 
 La commande `file fichier` détermine le type du fichier ; pour ce faire, elle s'appuie sur le fichier 
-magique `/usr/share/misc/magic.mgc` <sub>(dans sa version compilée, futur article dédié :metal::alien::+1:)</sub>. 
+magique `/usr/share/misc/magic.mgc` <sub>(dans sa version compilée, futur article dédié :alien:)</sub>. 
 
 On pourra faire&nbsp;:
 
@@ -336,4 +336,4 @@ On pourra faire&nbsp;:
 <sub>(The HHGTTG, T2, Life, the Universe, and Everything, p.73 )</sub>
 
 
-:+1::alien::+1:
+:metal::alien::+1:
