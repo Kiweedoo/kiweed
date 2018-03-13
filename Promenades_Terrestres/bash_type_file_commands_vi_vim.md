@@ -137,11 +137,6 @@ ou un programme externe.  Il existe également deux contextes différents :
    - *Scripting*, programmation *shell* pour enchaîner des commandes : c'est un peu différent car la seule chose dont nous ayons 
    réellement besoin est le PATH de la commande ; éventuellement pour trouver des informations relativement à ce chemin.
 
-Ainsi nous n'aborderons que `type` en ligne de commande et très aborderons très rapidement `command -v` pour la portabilité
-POSIX (*Portable Operating System Interface uniX*).  [POSIX sur l'OpenGroup](http://pubs.opengroup.org/onlinepubs/9699919799/).
-<sub>(balade intergalactique dédiée...:alien:)</sub>
-
-
 
 La commande `type` indique quel programme sera chargé et exécuté si son argument était invoqué. Par exemple&nbsp;:
 
