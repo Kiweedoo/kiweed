@@ -14,4 +14,3 @@ Elles préludent de promenades plus... atmosphériques, interstellaires, et pour
 - [ ] Les interpréteurs de commandes
 - [ ] Les bases du *bash*
 - [ ] Commandes internes et externes
-
