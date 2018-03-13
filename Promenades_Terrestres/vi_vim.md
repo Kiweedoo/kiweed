@@ -1,7 +1,7 @@
-##### Status : en cours de rédaction...
+##### Status : ok
 
 
-### Balade : `vi` ou `vim`, `bash` ou `dash` ?
+### Balade : `vi` ou `vim` ?
 
 
 #### Objectifs
@@ -28,6 +28,7 @@ Déterminer le type d'un fichier.
 
 ##### [Préambule](#preambule)
 ##### [À propos de `vi` et `vim`](#vi)
+##### [Résumé](#resume)
 
 
 ---
@@ -117,6 +118,9 @@ Maintenant c'est plus clair... :+1:
 
 #### Quelques mots sur les commandes internes et/ou externes
 
+Status : ce paragraphe sera déplacé dans l'article consacré aux commandes internes.
+
+Note : beaucoup de choses à présenter ; ce thème sera l'objet d'un article dédié.
 
 Deux types de commandes sur un système Unix/Linux : les commandes internes, et les commandes externes.
 
@@ -163,9 +167,33 @@ La commande `type` indique quel programme sera chargé et exécuté si son argum
 >type est une primitive du shell
 ></pre>
 
+
+
+
+Pour rester simple, il y des *primitives* (*builtin* si version anglaise), ce sont tout simplement des fonctions 
+appartenant au code source du *shell*. Elles sont exécutées dans le même processus. Elles sont un héritages du `sh` de Steeve
+Bourne : elles permettent de modifier l'environnement du *shell* (ses variables d'environnement par exemple) ; ce qui ne serait
+pas possible ou difficile à faire avec une commande externe (chargée et exécutée dans un processus différent). 
+
+Des commandes externes, indiquées par leur chemin d'accès absolu (c'est-à-dire à partir de la racine)
+
+Des commandes *hashées*... En fait lorsqu'une commande commande appartient à un des répertoire de la variable PATH mais que le
+*bash* a déjà eu à la chercher, il garde sont entrée dans une table de hachage. C'est très bien expliqué dans `man bash`&nbsp;:
+
+>If the name is neither a shell function nor a builtin, and contains no slashes, bash searches each element  of  the  PATH
+>for  a  directory  containing  an executable file by that name.  Bash uses a hash table to remember the full pathnames of
+>executable files (see hash under SHELL BUILTIN COMMANDS below).  A full search of the directories in  PATH  is
+>performed only  if  the  command  is  not found in the hash table.  
+
+
+Les options de `type`, notamment `-P`, permettent de forcer la recherche dans les répertoires de la variable PATH, me s'il
+s'agit d'un alias&nbsp;:
+
 ><pre>
 >type ls
 >ls est un alias vers « ls --time-style=+%F-%H:%M --color=auto »
+>type -P ls
+>/bin/ls
 ></pre>
 
 et pour finir
@@ -182,16 +210,9 @@ pourtant
 >-rwxr-xr-x 1 root root 26704 2016-07-12-08:07 /bin/kill
 ></pre>
 
+Il y a donc également des primitives qui existent en tant que commandes externes. Plus de détails dans l'article dédié. 
 
-
-Pour rester simple, il y des *primitives*, ce sont tout simplement des fonctions appartenant au code source du *shell*. Elles
-sont exécutées dans le même processus.
-
-Des commandes externes, indiquées par leur chemin d'accès absolu (c'est-à-dire à partir de la racine)
-
-Des commandes *hashées*... En fait lorsqu'une commande commande appartient à un des répertoire de la variable PATH mais que le
-*bash* a déjà eu à la chercher, il garde sont entrée dans une table de hachage. C'est très bien expliqué dans `man bash`&nbsp;:
-
+Si aucun chemin n'est précisé, c'est bien entendu la *builtin* qui est exécutée en priorité.
 
 &nbsp;
 
@@ -235,24 +256,68 @@ Un nouveau lien... Pointant sur `vim` cette fois... Continuons&nbsp;:
 >-rwxr-xr-x 1 root root 3005224 juil. 26  2017 /usr/bin/vim.gtk3
 ></pre>
 
-Pour visualiser que ce sont bien deux fichiers différents, utilisons l'option `-i` de
+Pour visualiser que ce sont bien trois fichiers différents, utilisons l'option `-i` de
 `ls` pour afficher le numéro d'*inode* des fichiers (leur **identifiant unique** sur tout
-le système)&nbsp;:
+le système, fichiers, répertoires périphériques, etc. - correspond à un emplacement physique ; l'*inode* est unique mais peut
+néanmoins être pointé par plusieurs **noms de fichier**... *more on this later* :smile:)&nbsp;:
 
-En cours FORMAT ELF
+><pre>
+>ls -il /usr/bin/vi /etc/alternatives/vi /usr/bin/vim.gtk3
+>15729133 lrwxrwxrwx 1 root root      17 2017-12-13-19:50 /etc/alternatives/vi -> /usr/bin/vim.gtk3
+>27657805 lrwxrwxrwx 1 root root      20 2017-12-11-18:07 /usr/bin/vi -> /etc/alternatives/vi
+>27660725 -rwxr-xr-x 1 root root 3005224 2017-07-26-22:13 /usr/bin/vim.gtk3
+></pre>
 
-/usr/bin/vim.gtk3: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 2.6.32, BuildID[sha1]=e3e651772f506ed784855855e68f851d8fc87927, stripped
+Le premier champ est le **numéro d'_inode_**. 
+
+Les trois *inodes* sont différents, ce sont bien **trois fichiers physiquement différents**.
+
+&nbsp;
+
+La commande `file` permet  également d'arriver à la même conclusion ; elle retourne le type du fichier passé en 
+argument (en précisant son chemin, absolu pour faire unique)
+
+><pre>
+>file /usr/bin/vi
+>/usr/bin/vi: symbolic link to /etc/alternatives/vi
+>file /etc/alternatives/vi
+>/etc/alternatives/vi: symbolic link to /usr/bin/vim.gtk3
+>file /usr/bin/vim.gtk3
+>/usr/bin/vim.gtk3: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, interpreter  [...]
+></pre>
 
 
-#### Résumé 
+Nous terminerons simplement en précisant que ELF, aujourd'hui pour *Executable AND Linkable Format* 
+(historiquement *Extensible Linking Format*), est le format des exécutables UNIX/Linux... **UNIX/Linux**... Pas uniquement Linux.
+
+**LSB**, la *Linux Standard Base* gérée par la *Linux Fundation* qui s'appuie sur les travaux POSIX de l'IEEE <sub>(lire
+i3E)</sub> 
+pour la standardisation des Unix.<sub>on lit souvent en anglais *unices* pour *unix* au pluriel)</sub>
+
+<sub>[(**sommaire ^**)](#sommaire)</sub>
+
+---
+
+### <a name="resume">Résumé</a>
 
 Demander l'exécution d'une commande fût-elle historique et apparemment disponible ne
 garantit pas forcément d'exécuter réellement la commande historique.
 
-La commande `type nom_commande` détermine quel fichier se chargé et exécuté.
+La commande `type programme` détermine quel fichier sera chargé et exécuté si `programme` était invoqué directement en ligne
+de commande.
 
-Avec la commande `ls -l *resultat_de_type*` détermine si le fichier indiqué par type sera
-vraiment invoqué ou s'il pointe sur un autre fichier. (on parle alors de lien)
+La commande `ls -l *resultat_de_type*` détermine si le programme fourni en réponse  par `type` 
+sera vraiment invoqué ou s'il pointe sur un autre fichier.<sub>(on parle alors de lien)</sub>
 
-La commande `file nom_fichier` détermine le type du fichier ; elle s'appuie sur le
-fichiers magic de /etc, /usr/share et la version compilée... EN COURS...
+La commande `file fichier` détermine le type du fichier ; pour ce faire, elle s'appuie sur le fichier 
+magique /usr/share/misc/magic.mgc <sub>(dans sa version compilée, futur article dédié :metal::alien::+1:)</sub>. 
+
+On pourra faire&nbsp;:
+
+
+><pre>
+>ls -l /usr/share/misc/magic
+>lrwxrwxrwx 1 root root 13 2017-12-11-18:08 /usr/share/misc/magic -> ../file/magic
+></pre>
+
+<sub>[(**sommaire ^**)](#sommaire)</sub>
