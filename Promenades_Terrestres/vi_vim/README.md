@@ -1,5 +1,5 @@
-[x] Dictionnaires et correction d'orthographe (Status : en cours)
-[ ] *vi* et le plugin *vim-instant-markdown*
+- [x] Dictionnaires et correction d'orthographe (Status : en cours)
+- [ ] *vi* et le plugin *vim-instant-markdown*
 
 ---
 
