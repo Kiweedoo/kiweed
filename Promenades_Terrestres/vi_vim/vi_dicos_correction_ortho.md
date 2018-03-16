@@ -570,24 +570,22 @@ majuscule :
 	précédé et suivi d'un blanc ou d'une tab <sub>(très utile pour la recherche dans
 	`vi` : si tu cherches `/de` tu obtiens `**de**vant`, `**de**vinette`, etc.
 	Si tu cherches <code>**/**&#92;&lt;de&#92;&gt;</code> tu obtiens **le mot** `de`)</sub>
-	- <code>&#92;u</code> : un caractère en Majuscule (*upper*)
-	- <code>&#92;w*</code> : suivi d'un caractère composant un mot (*word*), 0
+	- <code>&#92;u</code> : un caractère en Majuscule (_upper_)
+	- <code>&#92;w&ast;</code> : suivi d'un caractère composant un mot (_word_), 0
 	  ou plusieurs fois, jusqu'à un blanc ou une tabulation
-	  (<code>&#92;&lt;...&#92;&gt;</code>) ; **&ast;** est un
-	  **quantificateur**... S'il y a 0 caractère, c'est une lettre majuscule
-	  seule, comme dans `À toi` ou `A est la première...`.
+	  (<code>&#92;&lt;...&#92;&gt;</code>) ; __&ast;__ est un
+	  __quantificateur__... S'il y a 0 caractère, c'est une lettre majuscule
+	  seule, comme dans <code>À toi` ou `A est la première...`.
 
-- `contains=@nospell` : on *check* partout **sauf** pour le motif qu'on vient de
+- <code>contains=@nospell</code> : on *check* partout **sauf** pour le motif qu'on vient de
   décrire, l'aide interne de `vim` est très claire :
   <br>`:h spell-syntax`
   ><code>
   >Files that use syntax highlighting can specify where spell checking should be
   >done:<br>
   >1 -  everywhere  default<br>
-  >2 -  in specific items  use "contains=@Spell" (par exemple **que dans les
-  >commentaires d'un programme**)<br>
-  >3 -  everywhere **but specific** items  use "contains=@NoSpell" (**sauf**
-  >spécifiques)<br>
+  >2 -  in specific items  use "contains=@Spell" (par exemple **que dans les commentaires d'un programme**)<br>
+  >3 -  everywhere **but specific** items  use "contains=@NoSpell" (**sauf** spécifiques)<br>
   ></code>
 
 
