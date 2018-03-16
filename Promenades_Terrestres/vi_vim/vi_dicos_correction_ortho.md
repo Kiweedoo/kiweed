@@ -63,6 +63,10 @@
 
 - [x] Écrire des macros `vi` en mode *commandes*
 
+- [x] Lire l'aide interne de `vi` avec `:h mot_clé`
+
+- [x] Écrire des macros **touffues** pour stopper l'analyse des noms propres
+
 <sub>[(**sommaire ^**)](#sommaire)</sub>
 
 ---
