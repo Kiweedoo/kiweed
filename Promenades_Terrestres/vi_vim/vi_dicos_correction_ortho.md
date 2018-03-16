@@ -1,4 +1,4 @@
-<sub>Statut : en_cours | Complexité : basique | Temps : 45mn | Mars 2018 | Georges AKA Kiweed | Tested on Debian U</sub>
+<sub>Statut : en_cours | Complexité : basique (au décollage)| Temps : 45mn | Mars 2018 | Georges AKA Kiweed | Tested on Debian U</sub>
 
 ### Balade : langues et correction orthographique dans `vi`
 
@@ -583,8 +583,11 @@ majuscule :
   ><code>
   >Files that use syntax highlighting can specify where spell checking should be
   >done:
-  >1 -  everywhere  default<br>
+  <br>
+  >1 -  everywhere  default
+  <br>
   >2 -  in specific items  use "contains=@Spell" (par exemple **que dans les commentaires d'un programme**)<br>
+  <br>
   >3 -  everywhere **but specific** items  use "contains=@NoSpell" (**sauf** spécifiques)<br>
   ></code>
 
