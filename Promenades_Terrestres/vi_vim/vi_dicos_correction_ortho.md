@@ -1,8 +1,6 @@
-##### Status : en cours...
-
+<sub>Statut : en_cours | Complexité : basique | Temps : 45mn | Mars 2018 | Georges AKA Kiweed | Tested on Debian U</sub>
 
 ### Balade : langues et correction orthographique dans `vi`
-
 
 #### <a name="sommaire">**Sommaire**</a>
 
@@ -12,7 +10,20 @@
 
 <sub> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[`aspell`et les dictionnaires](#aspell)</sub>
 ##### &nbsp;&nbsp;&nbsp;[Installation des dictionnaires](#installdicos)
-##### &nbsp;&nbsp;&nbsp;[Configuration de `vi`](#vimrc)
+##### &nbsp;&nbsp;&nbsp;[Configuration de la langue dans`vi`](#vimrc)
+<sub> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Le démarrage de `vi`](#launch)
+
+<sub> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Création du `~/.vimrc` et déclaration de la langue](#crevimrc)
+
+<sub> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Commandes d'utilisation  et macros](#commandes)
+
+<sub> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Ajout des macros de désactivation/activation](#addmacros)
+
+<sub> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Ajout des macros de correction](#addmacroscorrect)
+##### &nbsp;&nbsp;&nbsp;[Utilisation de la correction](#playspell)
+<sub> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Nommer correctement les fichiers](#namefile)
+
+<sub> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Empêcher la correction sur les noms propres](#propernouns)
 ##### &nbsp;&nbsp;&nbsp;[Résumé](#resume)
 ##### &nbsp;&nbsp;&nbsp;[La minute HHGTTG : comment remodeler le concept même de l'espace-temps ?](#hhgttg)
 
@@ -21,17 +32,17 @@
 
 ### <a name="objectifs">Objectifs</a>
 
-- Approcher raisonnablement de la planète Encodage...
+- [x] Approcher raisonnablement de la planète Encodage...
 
-- Connaître le dépôt des dictionnaires
+- [x] Connaître le dépôt des dictionnaires
 
-- Installer les dictionnaires dont on a besoin
+- [x] Installer un.des dictionnaire.s
 
-- Activer la langue choisie dans  fichier `~/.vimrc`
+- [x] Désactiver/Activer la langue choisie
 
-- Écrire les premières macros `vi` pour désactiver/activer la correction
+- [x] Utiliser les commandes de bases de correction.
 
-- Utiliser les commandes de bases de correction.
+- [x] Correction automatique ?
 
 
 &nbsp;
@@ -46,7 +57,11 @@
 
 - [x] Changer de langue pour, par exemple, rédiger en allemand
 
-- [x] Écrire des macros `vi` en mode *commandes* **et** *insertion*
+- [x] Restreindre la correction aux fichiers `.txt` et `.md`
+
+- [x] Empêcher la correction des noms propres.
+
+- [x] Écrire des macros `vi` en mode *commandes*
 
 <sub>[(**sommaire ^**)](#sommaire)</sub>
 
@@ -66,12 +81,10 @@ l'encodage des caractères (c'est-à-dire la façon dont ils sont représentés 
 Tapotons... Soit `prout.txt` un fichier texte :
 
 ><pre>
-> cat <b>prout.txt</b>
-> cessi est un fichier bouret de fotes
-> sur pluzieurs lignes qu'ile nous faut corrigé
-> Oups... Non, la correction grammaticale est 
-> assurer par Grammalecte, un plugin en python,
-> beaucoup plus lourd... Mais qui fait bien le djob ;)
+> <b>cat prout.txt</b>
+> Ken Thompson, Brian Kernigham et Denis Ritchie
+> sont à l'orrigine du systaime Unix.
+> Richard Stallman est le grad maître de la profétie.
 ></pre>
 
 Le `man aspell` nous dit : `aspell -c fichier` ou `aspell check fichier` :
@@ -102,11 +115,7 @@ En revanche, cette unique *locale* sert de base à de nombreuses autres variable
 
 Nous parlons ici de **LA** Locale, qui représente une valeurs parmi un ensemble de *locales* supportée.
 
-La notion de caractère affichée est une notion humaine. En machine, *on* a besoin de savoir combien d'octets sont nécessaires
-pour dessiner ce caractère... Là encore, ce sera un article dédié... Car non seulement, il y a le nombre d'octets... et l'ordre
-dans lequel ils sont enregistrés :wink:
-
-Les *locales* supportées lors d'une installation sont quant à elles définies dans le fichier de la langue `fr` ou `en`&nbsp;:
+Les *locales* supportées lors d'une installation sont définies dans le fichier de la langue `fr` ou `en`&nbsp;:
 
 
 ><pre>
@@ -127,27 +136,35 @@ La grammaire de *la locale* est toujours : `langue` `pays` `encodage`.
 
 L'encodage est déterminé par le choix du clavier lors de l'installation.
 
-**À retenir absolument** : oublier tous les encodages précédents... **toujours** utiliser UTF-8... 
-<sub>Sauf si demande particulière ; par exemple nous avons vu qu'il restait dans `mysql` de 
+**À retenir absolument** : oublier tous les encodages précédents... **toujours** utiliser **UTF-8 
+sous Linux** <sub>(Sauf si demande particulière ; par exemple nous avons vu qu'il restait dans `mysql` de 
 l'encodage `iso-latin1-8859`, voir `latin-9` lors de l'ajout des caractères `€`,
 `Œ`, le `æ` du *et cætera*, etc.
-</sub>
+)</sub>
+
+Sous Windows 10, l'UTF-16 est de rigueur... 
 
 **Important** Même si la langue est la même, la disposition clavier aussi, le choix de la ville, et donc du pays, 
 n'est pas anodin.
 
-Par exemple, les principales différences entre la Belgique (`fr_BE`), la France (`fr_FR`), et la Suisse (`fr_CH`) relèvent 
-du **symbole monétaire** (CHF pour la Suisse), du **séparateur décimal** (`,` pour la France et la Belgique, `.` pour 
-la Suisse), ou encore du **séparateur de milliers** (` ` pour la France, `.` pour la Belgique, et `'` pour la Suisse), etc.
+Par exemple, les principales différences entre la Belgique (`fr_BE`), la France (`fr_FR`), 
+et la Suisse (`fr_CH`) relèvent du&nbsp;:
+- **symbole monétaire** (CHF pour la Suisse), 
+- **séparateur décimal** (`,` pour la France et la Belgique, `.` pour 
+la Suisse), 
+- **séparateur de milliers** (` ` pour la France, `.` pour la Belgique, et `'` pour la Suisse), etc.
 
 Les spécificités des *locales* nationales sont ici : [liste des locales sur lh.2xlibre.net](https://lh.2xlibre.net/locales/)
-(faire `ctrl-f` + `fr_`)
+(`ctrl-f` + `fr_`)
 
 
-**IMPORTANT**(re) : **une seule _locale_** sur un système, **qui prévaut toujours** pour l'affichage quels que soient les encodages
-applicatifs. 
+**IMPORTANT**(re) : **une seule _locale_** sur un système, **qui prévaut toujours SI**
+une application est bien programmée (pour éviter les affichages exotiques...).
 
-<sub>Par exemple, *Java* représente en UTF-16 en interne, puis traduit dans la *locale* système pour l'affichage... De cela il faut également déduire qu'il n'y aucun moyen, à ma connaissance, du visualiser le mécanisme d'encodage interne et sa traduction...</sub>
+<sub>Par exemple, *Java*, sous Linux, Mac, Windows, représente en UTF-16 en interne, 
+puis traduit dans la *locale* système pour l'affichage... 
+De cela il faut également déduire qu'il n'y aucun moyen, à ma connaissance, du visualiser 
+le mécanisme d'encodage interne et sa traduction...</sub>
 
 Une seule *locale*... Mais qui est la base de bien d'autres...
 
@@ -173,7 +190,11 @@ Deux commandes pour différencier différents type de variables&nbsp;: <sub>(ava
 > LC_ALL=
 ></pre>
 
-Pour faire simple, ce sont les variables destinées aux applications.
+Pour faire simple, `LC_` pour *Locales Categories*, elles sont définies par
+POSIX, et sont destinées aux applications. Par exemple `LC_MESSAGES` pour les
+messages d'information ou d'erreur, etc. Et `LC_COLLATE`, pour *Collation* pris
+ici dans le sens de tri, d'ordre... <sub>(LC_COLLATE... Cette variable à elle
+seule mérite un article dédiée... :blink:)</sub>
 
 Par opposition aux variables d'environnement, destinées aux sous processus du *shell*, affichable avec la commande `env` dont on
 filtre ici le résultat :
@@ -204,7 +225,8 @@ puisqu'installé par défaut sur les *unices*.
 
 En outre, la correction intégrée dans `vi` est simple d'utilisation, ne demande
 aucun plugin, et peut mettre être automatique...  Nous verrons par la suite quelles 
-sont les/des solutions adaptées pour des fichiers `latex`...
+sont les/des solutions adaptées pour des fichiers `latex`. <sub>(ce sont des
+plugins dédiés)</sub>
 
 Reprenons l'exemple avec le fichier `prout.txt`&nbsp;
 
@@ -237,7 +259,8 @@ Les dictionnaires **présents** sont visibles :
 > [...]
 ></pre>
 
-Les fichiers `.spl` sont les *Spell Language*, les `.sug` pour les suggestions.
+Les fichiers `.spl` sont les *SPell Language*, les `.sug` pour les SUGgestions.
+
 Pour un dictionnaire, les deux sont nécessaires.
 
 Les dictionnaires **possibles** sont disponibles sur
@@ -271,11 +294,37 @@ Plus qu'à configurer `vi`.
 
 <sub>[(**sommaire ^**)](#sommaire)</sub>
 
+&nbsp;
+
 ---
 
-### <a name="vimrc">[Configuration de `vi`](#vimrc)</a>
+### <a name="vimrc">[Configuration de la langue dans `vi`](#vimrc)</a>
 
-La configuration de `vi`, de `vim` donc, se passe dans le fichier `~/.vimrc`.
+#### <a name="launch">Le démarrage de `vi`</a>
+
+Lors du lancement de `vi`, un certain nombre de d'actions sont effectuées,
+notamment la lecture des fichiers de configuration par défaut.
+
+Comme `vi` est prévu pour n'importe quelle distribution, il peut tester
+plusieurs répertoires/fichiers avant de trouver celui qu'il recherche.
+
+Sur une Debian par exemple, il prend les informations dans :
+
+- `/usr/lib/locale/locale-archive` (les catégories de locales, compilées,
+  définies dans `/usr/lib/locale/C.UTF-8/`, dont chaque contenu est visible avec la 
+  commande `strings`, et non `cat` <sub>(car elles sont compilées)</sub>)
+- `/usr/share/vim/vimrc` qui est un lien sur `/etc/vim/vimrc`
+- `/usr/share/vim/vim80/debian.vim` (les Debian spécifiques comme
+  pour l'impression des longues lignes en fonction de `/etc/papersize`, pour
+  nous `a4`)
+- `/usr/share/vim/vim80/syntax/syncolor.vim` <sub>(la coloration syntaxique)</sub>
+- `/usr/share/vim/vim80/rgb.txt` <sub>(les couleurs associées)
+- etc. etc.
+- `/home/georges/.vimrc`
+- et bien sûr l'ouverture du fichier passé en argument
+
+
+La configuration personnelle de `vi`, de `vim` donc, se passe finalement dans le fichier `~/.vimrc`.
 
 C'est un fichier dont le nom commence par le caractère `.` : il n'apparaît pas
 avec un simple `ls`, il faut utiliser l'option `-a` pour *all*
@@ -288,34 +337,27 @@ avec un simple `ls`, il faut utiliser l'option `-a` pour *all*
 Bureau
 Documents
 [...]
-Téléchargements
 VirtualBox VMs
 > <b>ls -a</b>
 .
 ..
-.bash_history
-.bash_logout
-.bashrc
+[...]
 Bureau
-.config
-.dbeaver4
-.dbeaver-drivers
 Documents
-.gitconfig
-.matlab
 .vim
 .viminfo
 ><b>.vimrc</b>
 >[...]
 ></pre>
 
+<sub>[(**sommaire ^**)](#sommaire)</sub>
+
+&nbsp;
+
+#### <a name="crevimrc">Création du `~/.vimrc` et déclaration de la langue</a>
+
 Il est probable, si nous ne l'avons pas déjà créé, qu'il n'existe pas… il faut
 donc le créer sous ton répertoire de connexion &nbsp;:
-
-- par défaut `vi` cherche un `.vimrc` dans le répertoire d'où tu le lances
-
-- s'il en trouve un, il l'applique, sinon, il cherche le répertoire de connexion.
-(ça permet d'avoir des configurations dédiées).
 
 Voici celui que nous allons créé :
 
@@ -339,15 +381,14 @@ Donc création du fichier, ou ouverture, il sera vide si nouveau&nbsp;:
 ><b>a</b> pour passer en insertion sur la 1ère ligne
 ></pre>
 
-Et tu tapes...
-
 Les lignes commençant par un `"` (guillemet) en 1ère colonne (pas d'espace
 avant) sont ignorées, ce sont les commentaires.
 
 ><pre>
+>" commandes de base
 >set ai wm=4 ts=4 sw=4 tw=80
->[ESC]:w[return] pour enregistrer sans quitter
-><b>attention</b> il faudra repasser en insertion, par exemple en ouvrant une ligne
+>----> <b>ne pas saisir</b> [ESC]:w[return] pour enregistrer sans quitter
+>----> <b>attention</b> il faudra repasser en insertion, par exemple en ouvrant une ligne
 >dessous <b>o</b>, <b>O</b> ouvre au dessus de la position courante.
 ></pre>
 
@@ -366,18 +407,29 @@ On continue...
 
 ><pre>
 ><b>o</b> pour ouvrir une ligne dessous
->au BufRead *.txt setlocal spell spelllang=fr
-[ESC]:w[return]
+>au BufRead &#42;.txt setlocal spell spelllang=fr
+>----> <b>ne pas saisir</b> [ESC]:w[return] <sub>(sauvegarde en cours de session)</sub>
 ></pre>
 
 - `au` : *autocommand* en fonction des événements 
-- `BufRead` : *Buffer Read*, le tampon mémoire de lecture
-- `*.txt` : n'importe quoi suivi de l'extension `.txt`, présent dans *BufRead*
+- `BufRead` : *Buffer Read*, événement déclenché lors du chargement en mémoire
+  du fichier.
+- `&#42;.txt` : n'importe quoi suivi de l'extension `.txt`, présent dans *BufRead*
 - `setlocal spell spelllang=fr`
 
-En clair, on demande à `vim` d'activer la correction **uniquemenτ** lorsque le
-*buffer* de lecture contient un fichier `.txt`, ce qui évite les surgacharges
+Note à propos de *BufRead* : *BufRead* est un événement
+déclenché lorsque `vi` a chargé son fichier en mémoire ; il y a d'autres
+*BufNew*, *BufEnter*, et *BufAdd*. À ma connaissance, sous Debian, *BufRead* fonctionne dans tous les
+cas, même avec de l'édition de plusieurs fichiers et des va-et-vient incessants.
+
+
+On demande donc à `vim` d'activer la correction **uniquemenτ** lorsque le
+*buffer* de lecture contient un fichier `.txt`, ce qui évite les surcharges
 dans les fichiers de développement. :wink:
+
+<sub>[(**sommaire ^**)](#sommaire)</sub>
+
+#### <a name="addmacros">Ajout des macros de désactivation/activation</a>
 
 
 On termine avec les macros pour désactiver/activer la correction.
@@ -393,7 +445,9 @@ Attention :
   les écrire dans le fichier `~/.vimrc`.
 
 ><pre>
+>" F6 désactive, c'est-à-dire repasse en anglais
 >map &lt;silent&gt; &lt;f6&gt; "&lt;esc&gt;:silent setlocal spell! spelllang=en&lt;cr&gt;"
+>" F7 repasse en français
 >map &lt;silent&gt; &lt;f7&gt; "&lt;esc&gt;:silent setlocal spell! spelllang=fr&lt;cr&gt;"
 ></pre>
 
@@ -402,20 +456,196 @@ Attention :
   - `<silent>`: doit être le premier argument de la commande map ; comme son nom l'indique, pas d'écho de ce que l'on fait
   - `<f6>` : l'action d'appuyer sur F6, idem pour `<F7>`
   - `"`...`"` : toute l'action qui sera déroulée lors de la frappe de f6 ou f7
-  - `<esc>` : la touche escape, pas nécessaire puisqu'on est censé être en mode
-	commande... juste une habitude...
+  - `<esc>` : la touche escape, **nécessaire** même si on est censé être en mode
+	commande... 
   - `:silent ...` : la commande que l'on taperait à l'invite en mode commande `:`, 
   sauf qu'on ne taperait pas `<silent>` 
 
+Encore quelques macros... Et on joue :blink:
 
 <sub>[(**sommaire ^**)](#sommaire)</sub>
 
+&nbsp;
 
+#### <a name="commandes">Commandes d'utilisation  et macros</a>
+
+En mode commande, lorsqu'on est sur un mot mal orthographié, les principales commandes sont :
+
+- `z=` obtenir la liste des suggestions
+- `zg` ajouter le mot dans le dictionnaire
+- `zug`annuler l'ajout au dictionnaire
+- `]s` se déplacer au prochain mot
+- `[s` revenir sur le précédent
+
+Toutes sont décrites sur [Vim documentation:
+spell](http://vimdoc.sourceforge.net/htmldoc/spell.html), il y a de quoi faire.
+
+<sub>[(**sommaire ^**)](#sommaire)</sub>
+
+&nbsp;
+
+#### <a name="addmacroscorrect">Ajout des macros de correction</a>
+
+Ce n'est pas forcément une bonne idée de créer des touches de raccourci avec les
+commandes de correction, car il faut d'abord bien les connaître afin de s'en
+servir quel que soit le système.
+
+Néanmoins, si nous voulions associer les fonctions *mot_suivant*, 
+*mot_précédent*, et *suggestions*  à trois touches :
+
+><pre>
+>" map de la touche [tab]
+>map &lt;silent&gt; &lt;tab&gt; "&lt;esc&gt;&rbrack;s"
+>" map de la combinaison [shift][tab]
+>map &lt;silent&gt; &lt;s-tab&gt; "&lt;esc&gt;&lbrack;s"
+>" map de la combinaison [shift][flèche UP]
+>map &lt;silent&gt; &lt;s-up&gt; "&lt;esc&gt;z="
+></pre>
+
+<sub>[(**sommaire ^**)](#sommaire)</sub>
+
+<br>
 
 ---
 
-### <a name="resume">Résumé</a>
+### <a name="playspell">Utilisation de la correction</a>
 
+#### <a name="namefile">Nommer correctement les fichiers</a>
+
+Comme préciser dans le `~/.vimrc` la correction n'interviendra que sur les
+fichiers d'extension `.txt` ou `.md`.
+
+Comme nous le verrons, il pourrait être de judicieux de nommer `.de_txt` les
+fichiers que tu rédiges en allemand.
+
+Il faudra alors ajouter dans `~/.vimrc`&nbsp;:
+
+><pre>
+>au BufRead &#42;.de_txt setlocal spell spelllang=de
+>" F4 désactive, c'est-à-dire repasse en anglais
+>map &lt;silent&gt; &lt;f6&gt; "&lt;esc&gt;:silent setlocal spell! spelllang=en&lt;cr&gt;"
+>" F5 repasse en allemand
+>map &lt;silent&gt; &lt;f7&gt; "&lt;esc&gt;:silent setlocal spell! spelllang=de&lt;cr&gt;"
+></pre>
+
+Même méthode pour utiliser d'autres langues pour la correction.
+
+#### <a name="propernouns">Empêcher la correction sur les noms propres</a>
+
+Reprenons notre fichier `prout.txt`&nbsp;
+
+><pre>
+> Ken Thompson, Brian Kernigham et Denis Ritchie
+> sont à l'orrigine du systaime Unix.
+> Richard Stallman est le grad maître de la profétie.
+></pre>
+
+En lançant `vi` dessus, on obtient
+
+![vi prout.txt](/a/b/spell_prout_txt.png)
+
+La correction orthographique opère également sur les noms propres...
+
+En utilisant les expressions régulières (méthode de description de motifs), on
+peut préciser dans `~/.vimrc` de ne pas opérer sur les mots commençant pas une
+majuscule :
+
+><pre>
+>au BufRead *.txt syntax match noms_propres +\<\u\w*\>+ contains=@NoSpell
+></pre>
+
+- `syntax` le mot clé pour introduire ce qui suit
+- `match` : correspond... sous-entendu à ce qui suit...
+
+- `noms_propres` : un identifiant obligatoire pour le motif qui suit. 
+- <code>+&#92;&lt;&#92;u&#92;w&ast;&#92;&gt;+</code> la description de ce que
+  l'on considère être un nom propre :
+  - <code>+</code>1 ou plusieurs fois le caractères **précédent** le `+` comme
+	on n'a rien précisé, c'est quel que soit.
+  - <code>&#92;&lt;...&#92;&gt;</code> : c'est la façon de décrire quelque chose
+	précédé et suivi d'un blanc ou d'une tab <sub>(très utile pour la recherche dans
+	`vi` : si tu cherches `/de` tu obtiens `**de**vant`, `**de**vinette`, etc.
+	Si tu cherches <code>**/**&#92;&lt;de&#92;&gt;</code> tu obtiens **le mot** `de`)</sub>
+	- <code>&#92;u</code> : un caractère en Majuscule (*upper*)
+	- <code>&#92;w*</code> : suivi d'un caractère composant un mot (*word*), 0
+	  ou plusieurs fois, jusqu'à un blanc ou une tabulation
+	  (<code>&#92;&lt;...&#92;&gt;</code>) ; **&ast;** est un
+	  **quantificateur**... S'il y a 0 caractère, c'est une lettre majuscule
+	  seule, comme dans `À toi` ou `A est la première...`.
+
+- `contains=@nospell` : on *check* partout **sauf** pour le motif qu'on vient de
+  décrire, l'aide interne de `vim` est très claire :
+  <br>`:h spell-syntax`
+  ><code>
+  >Files that use syntax highlighting can specify where spell checking should be
+  >done:<br>
+  >1 -  everywhere  default<br>
+  >2 -  in specific items  use "contains=@Spell" (par exemple **que dans les
+  >commentaires d'un programme**)<br>
+  >3 -  everywhere **but specific** items  use "contains=@NoSpell" (**sauf**
+  >spécifiques)<br>
+  ></code>
+
+<sub>[(**sommaire ^**)](#sommaire)</sub>
+
+<br>
+
+---
+
+
+### <a name="resume">Pour aller plus loin : bibliothèque et sites</a>
+
+<br>
+
+Les livres de bibliothèque (étiquettes vi_vim, série editors_n_tools :blink:)
+
+- **Use Vim like a pro**, Tim Ottinger (2014).
+
+- **Learning the `vi` and `vim` editors**, Arnold Robbins (2008)
+
+- **`vi` editor cheat sheet**, pour retrouver rapidement les bases
+
+- **Learning the `vi` editor**, exercices et solutions.
+
+<br>
+
+**Pour les sites, ne se fier qu'aux sites spécialisés** :
+
+Références rapides en lignes :
+
+- [La cheat sheet de Harvard](https://hea-www.harvard.edu/~fine/Tech/vi.html)
+
+Pour les discussions générales :
+
+- [stackoverflow](https://stackoverflow.com/), en *googlelisant* par exemple :
+  `vim howto map shift enter` et tu apprendrans dans la discussion que certaines
+  associations ne fonctionnent que dans `gvim` (l'interface graphique).
+
+- [stackexchange](https://vi.stackexchange.com/questions/6731/vim-syntax-pattern-to-highlight-python-keyword-argument)
+  pour cette piste que nous explorerons plus tard.
+
+Pour le fonctionnement de `spell` dans `vim` :
+
+- [`vim` documentation : `spell`](http://vimdoc.sourceforge.net/htmldoc/spell.html)
+
+Pour les maps et les touches *mappables*, sur le *FanDom* `vim` :
+
+- [Les 3 tutos à partir de celui là](http://vim.wikia.com/wiki/Mapping_keys_in_Vim_-_Tutorial_(Part_1)
+
+Toujours sur le *FanDom* `vim` :
+
+- [Tips, guides, et tutoriaux](http://vim.wikia.com/wiki/Vim_documentation)
+
+Pour les expressions régulières dans `vim` :
+
+- [Le site dédié aux expressions régulières VIM d'Oleg Raisky](http://vimregex.com/)
+
+Pour les caractères spéciaux un peu compliqués à reproduire en *markdown*, on
+utilise :
+
+- [les caractères spéciaux HTML](https://www.jchr.be/html/caracteres.htm)
+
+<br>
 
 <sub>[(**sommaire ^**)](#sommaire)</sub>
 
