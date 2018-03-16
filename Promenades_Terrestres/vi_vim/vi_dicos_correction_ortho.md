@@ -568,7 +568,7 @@ majuscule :
 	on n'a rien précisé, c'est quel que soit.
   - <code>&#92;&lt;...&#92;&gt;</code> : c'est la façon de décrire quelque chose
 	précédé et suivi d'un blanc ou d'une tab <sub>(très utile pour la recherche dans vi :
-	si tu cherches <code>/de<code> tu obtiens <code>devant</code>, <code>devinette</code>, etc.
+	si tu cherches <code>/de</code> tu obtiens <code>devant</code>, <code>devinette</code>, etc.
 	Si tu cherches <code>/&#92;&lt;de&#92;&gt;</code> tu obtiens le mot de)</sub>
 	- <code>&#92;u</code> : un caractère en Majuscule (_upper_)
 	- <code>&#92;w&ast;</code> : suivi d'un caractère composant un mot (_word_), 0
