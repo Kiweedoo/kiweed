@@ -198,7 +198,7 @@ Pour faire simple, `LC_` pour *Locales Categories*, elles sont définies par
 POSIX, et sont destinées aux applications. Par exemple `LC_MESSAGES` pour les
 messages d'information ou d'erreur, etc. Et `LC_COLLATE`, pour *Collation* pris
 ici dans le sens de tri, d'ordre... <sub>(LC_COLLATE... Cette variable à elle
-seule mérite un article dédiée... :blink:)</sub>
+seule mérite un article dédiée... :sunglasses:)</sub>
 
 Par opposition aux variables d'environnement, destinées aux sous processus du *shell*, affichable avec la commande `env` dont on
 filtre ici le résultat :
@@ -375,7 +375,7 @@ Voici celui que nous allons créé :
 ></pre>
 
 
-Il s'enrichira au fur et à mesure :blink:
+Il s'enrichira au fur et à mesure :sunglasses:
 
 Donc création du fichier, ou ouverture, il sera vide si nouveau&nbsp;:
 
@@ -429,7 +429,7 @@ cas, même avec de l'édition de plusieurs fichiers et des va-et-vient incessant
 
 On demande donc à `vim` d'activer la correction **uniquemenτ** lorsque le
 *buffer* de lecture contient un fichier `.txt`, ce qui évite les surcharges
-dans les fichiers de développement. :wink:
+dans les fichiers de développement. :sunglasses:
 
 <sub>[(**sommaire ^**)](#sommaire)</sub>
 
@@ -465,7 +465,7 @@ Attention :
   - `:silent ...` : la commande que l'on taperait à l'invite en mode commande `:`, 
   sauf qu'on ne taperait pas `<silent>` 
 
-Encore quelques macros... Et on joue :blink:
+Encore quelques macros... Et on joue :sunglasses:
 
 <sub>[(**sommaire ^**)](#sommaire)</sub>
 
@@ -598,7 +598,7 @@ En relançant sur `prout.txt` :
 C'est mieux non ?  :metal::alien::+1:
 
 Et nous finirons par une fine subtilité pour bien comprendre comprendre
-fonctionne le `spell` sur les noms propres :blink:
+fonctionne le `spell` sur les noms propres :sunglasses:
 
 <br>
 
@@ -613,7 +613,7 @@ fonctionne le `spell` sur les noms propres :blink:
 
 <br>
 
-Les livres de bibliothèque (étiquettes vi_vim, série editors_n_tools :blink:)
+Les livres de bibliothèque (étiquettes vi_vim, série editors_n_tools :sunglasses:)
 
 - **Use Vim like a pro**, Tim Ottinger (2014).
 
