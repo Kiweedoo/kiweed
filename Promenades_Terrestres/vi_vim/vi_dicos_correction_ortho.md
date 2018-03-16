@@ -418,7 +418,7 @@ On continue...
 - `au` : *autocommand* en fonction des événements 
 - `BufRead` : *Buffer Read*, événement déclenché lors du chargement en mémoire
   du fichier.
-- `&#42;.txt` : n'importe quoi suivi de l'extension `.txt`, présent dans *BufRead*
+- <code>&#42;.txt</code> : n'importe quoi suivi de l'extension `.txt`, présent dans *BufRead*
 - `setlocal spell spelllang=fr`
 
 Note à propos de *BufRead* : *BufRead* est un événement
