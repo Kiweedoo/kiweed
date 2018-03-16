@@ -542,7 +542,7 @@ Reprenons notre fichier `prout.txt`&nbsp;
 
 En lançant `vi` dessus, on obtient
 
-![vi prout.txt](/a/b/spell_prout_txt.png)
+![vi prout.txt](spell_prout_txt.png)
 
 La correction orthographique opère également sur les noms propres...
 
@@ -585,6 +585,11 @@ majuscule :
   >3 -  everywhere **but specific** items  use "contains=@NoSpell" (**sauf**
   >spécifiques)<br>
   ></code>
+
+
+En relançant sur `prout.txt` :
+
+![vispellprout.txt](spell_no_propers.png)
 
 <sub>[(**sommaire ^**)](#sommaire)</sub>
 
