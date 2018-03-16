@@ -583,8 +583,11 @@ majuscule :
   ><code>
   >Files that use syntax highlighting can specify where spell checking should be
   >done:<br>
+
   >1 -  everywhere  default<br>
+
   >2 -  in specific items  use "contains=@Spell" (par exemple **que dans les commentaires d'un programme**)<br>
+
   >3 -  everywhere **but specific** items  use "contains=@NoSpell" (**sauf** spécifiques)<br>
   ></code>
 
