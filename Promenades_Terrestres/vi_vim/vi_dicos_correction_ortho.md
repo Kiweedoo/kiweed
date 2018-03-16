@@ -567,15 +567,15 @@ majuscule :
   - <code>+</code>1 ou plusieurs fois le caractères **précédent** le `+` comme
 	on n'a rien précisé, c'est quel que soit.
   - <code>&#92;&lt;...&#92;&gt;</code> : c'est la façon de décrire quelque chose
-	précédé et suivi d'un blanc ou d'une tab <sub>(très utile pour la recherche dans
-	`vi` : si tu cherches `/de` tu obtiens `**de**vant`, `**de**vinette`, etc.
-	Si tu cherches <code>**/**&#92;&lt;de&#92;&gt;</code> tu obtiens **le mot** `de`)</sub>
+	précédé et suivi d'un blanc ou d'une tab <sub>(très utile pour la recherche dans vi :
+	si tu cherches <code>/de<code> tu obtiens <code>devant</code>, <code>devinette</code>, etc.
+	Si tu cherches <code>/&#92;&lt;de&#92;&gt;</code> tu obtiens le mot de)</sub>
 	- <code>&#92;u</code> : un caractère en Majuscule (_upper_)
 	- <code>&#92;w&ast;</code> : suivi d'un caractère composant un mot (_word_), 0
 	  ou plusieurs fois, jusqu'à un blanc ou une tabulation
 	  (<code>&#92;&lt;...&#92;&gt;</code>) ; __&ast;__ est un
 	  __quantificateur__... S'il y a 0 caractère, c'est une lettre majuscule
-	  seule, comme dans <code>À toi` ou `A est la première...`.
+	  seule, comme dans <code>À toi</code>  ou <code>A est la première...</code>.
 
 - <code>contains=@nospell</code> : on *check* partout **sauf** pour le motif qu'on vient de
   décrire, l'aide interne de `vim` est très claire :
