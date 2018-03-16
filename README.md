@@ -1,6 +1,6 @@
 Dernier ajout : 
 
-- [x] Promenades terrestres : [Langues et correction d'orthographe avec `vim`](https://github.com/Kiweedoo/kiweed/blob/master/Promenades_Terrestres/vi_vim/vi_dicos_correction_ortho.md) (status : en cours)
+- [x] Promenades terrestres : [Langues et correction d'orthographe avec `vim`](https://github.com/Kiweedoo/kiweed/blob/master/Promenades_Terrestres/vi_vim/vi_dicos_correction_ortho.md) (status : en cours, **finalisation**)
 
 - [x] Promenades terrestres :
   [bash_type_file_commands_vi_vim.md](https://github.com/Kiweedoo/kiweed/blob/master/Promenades_Terrestres/bash_type_file_commands_vi_vim.md)
