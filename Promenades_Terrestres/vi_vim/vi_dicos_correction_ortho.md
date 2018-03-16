@@ -582,7 +582,7 @@ majuscule :
 <br>
 <code>:h spell-syntax</code>
 <br>
-<pre>
+><pre>
 >Files that use syntax highlighting can specify where spell checking should be done:
 >1 -  everywhere  default
 >2 -  in specific items  use "contains=@Spell" (par exemple **que dans les commentaires d'un programme**)<br>
