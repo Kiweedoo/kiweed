@@ -595,6 +595,13 @@ En relançant sur `prout.txt` :
 
 ![vispellprout.txt](spell_no_propers.png)
 
+C'est mieux non ?  :metal::alien::+1:
+
+Et nous finirons par une fine subtilité pour bien comprendre comprendre
+fonctionne le `spell` sur les noms propres :blink:
+
+<br>
+
 <sub>[(**sommaire ^**)](#sommaire)</sub>
 
 <br>
