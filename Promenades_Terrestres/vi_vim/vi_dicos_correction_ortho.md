@@ -578,18 +578,20 @@ majuscule :
 	  seule, comme dans <code>À toi</code>  ou <code>A est la première...</code>.
 
 - <code>contains=@nospell</code> : on *check* partout **sauf** pour le motif qu'on vient de
-  décrire, l'aide interne de `vim` est très claire :
-  <br>`:h spell-syntax`
-  ><code>
-  >Files that use syntax highlighting can specify where spell checking should be
-  >done:
-  <br>
-  >1 -  everywhere  default
-  <br>
-  >2 -  in specific items  use "contains=@Spell" (par exemple **que dans les commentaires d'un programme**)<br>
-  <br>
-  >3 -  everywhere **but specific** items  use "contains=@NoSpell" (**sauf** spécifiques)<br>
-  ></code>
+  décrire, l'aide interne de `vim` est très claire&nbsp;:
+<br>
+`:h spell-syntax`
+<br>
+<code>
+Files that use syntax highlighting can specify where spell checking should be
+done:
+<br>
+1 -  everywhere  default
+<br>
+2 -  in specific items  use "contains=@Spell" (par exemple **que dans les commentaires d'un programme**)<br>
+br>
+3 -  everywhere **but specific** items  use "contains=@NoSpell" (**sauf** spécifiques)<br>
+</code>
 
 
 En relançant sur `prout.txt` :
