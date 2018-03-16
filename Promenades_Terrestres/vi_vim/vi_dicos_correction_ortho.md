@@ -579,14 +579,14 @@ majuscule :
 
 - <code>contains=@nospell</code> : on *check* partout **sauf** pour le motif qu'on vient de
   décrire, l'aide interne de `vim` est très claire&nbsp;:
-<br>
+
 <code>:h spell-syntax</code>
-<br>
+
 ><pre>
 >Files that use syntax highlighting can specify where spell checking should be done:
 >1 -  everywhere  default
->2 -  in specific items  use "contains=@Spell" (par exemple **que dans les commentaires d'un programme**)<br>
->3 -  everywhere **but specific** items  use "contains=@NoSpell" (**sauf** spécifiques)<br>
+>2 -  in specific items  use "contains=@Spell" (par exemple **que dans les commentaires d'un programme**)
+>3 -  everywhere **but specific** items  use "contains=@NoSpell" (**sauf** spécifiques)
 ></pre>
 
 
