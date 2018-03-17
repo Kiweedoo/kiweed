@@ -1,5 +1,3 @@
-# :smile:
-
 <sub>Statut : en_cours | Complexité : basique (au décollage) | Temps : 45mn | Mars 2018 | Georges AKA Kiweed | Tested on Debian U</sub>
 
 ### Balade : langues et correction orthographique dans `vi`
@@ -68,6 +66,10 @@
 - [x] Lire l'aide interne de `vi` avec `:h mot_clé`
 
 - [x] Écrire des macros **touffues** pour stopper l'analyse des noms propres
+
+- [X] Correction automatique
+
+- [x] Corriger par région : commentaires d'un source C, Python, Java, Bash, etc.
 
 <sub>[(**sommaire ^**)](#sommaire)</sub>
 
@@ -138,7 +140,7 @@ Les *locales* supportées lors d'une installation sont définies dans le fichier
 Le choix de la langue au démarrage de l'installation est une chose, le choix de la ville en est une autre, tout aussi
 importante.
 
-La grammaire de *la locale* est toujours : `langue` `pays` `encodage`.
+:bell: La grammaire de *la locale* est toujours : `langue` `pays` `encodage`.
 
 L'encodage est déterminé par le choix du clavier lors de l'installation.
 
@@ -164,7 +166,7 @@ Les spécificités des *locales* nationales sont ici : [liste des locales sur lh
 (`ctrl-f` + `fr_`)
 
 
-**IMPORTANT**(re) : **une seule _locale_** sur un système, **qui prévaut toujours SI**
+:bell: :red square: :bangbang: :pencil: **IMPORTANT**(re) : **une seule _locale_** sur un système, **qui prévaut toujours SI**
 une application est bien programmée (pour éviter les affichages exotiques...).
 
 <sub>Par exemple, *Java*, sous Linux, Mac, Windows, représente en UTF-16 en interne, 
@@ -196,7 +198,7 @@ Deux commandes pour différencier différents type de variables&nbsp;: <sub>(ava
 > LC_ALL=
 ></pre>
 
-Pour faire simple, `LC_` pour *Locales Categories*, elles sont définies par
+:trident: Pour faire simple, `LC_` pour *Locales Categories*, elles sont définies par
 POSIX, et sont destinées aux applications. Par exemple `LC_MESSAGES` pour les
 messages d'information ou d'erreur, etc. Et `LC_COLLATE`, pour *Collation* pris
 ici dans le sens de tri, d'ordre... <sub>(LC_COLLATE... Cette variable à elle
@@ -314,7 +316,7 @@ notamment la lecture des fichiers de configuration par défaut.
 Comme `vi` est prévu pour n'importe quelle distribution, il peut tester
 plusieurs répertoires/fichiers avant de trouver celui qu'il recherche.
 
-Sur une Debian par exemple, il prend les informations dans :
+:radio_button: :white_check_mark: :black_large_square: :red_circle: :medium_arge_square: Sur une Debian par exemple, il prend les informations dans :
 
 - `/usr/lib/locale/locale-archive` (les catégories de locales, compilées,
   définies dans `/usr/lib/locale/C.UTF-8/`, dont chaque contenu est visible avec la 
