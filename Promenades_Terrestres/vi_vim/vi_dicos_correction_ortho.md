@@ -682,8 +682,7 @@ Internationalement adopté en 1996, il est entièrement rétro compatible avec l
 UTF-8.
 
 :trident: l'UTF-8 encode les caractères en utilisant **un encodage à longeur
-variable** jusqu'à 4 octets, soit plus
-de 4 milliards de caractères, et intègre une grammaire dans le 1er octet 
+variable** jusqu'à 4 octets, et intègre une grammaire dans le 1er octet 
 pour définir le nombre d'octet utilisés pour encoder le caractère. <sub>(voir article dédié)</sub>
 
 Le rang, ou l'index d'un caractère, en Unicode c'est son point de code, ou *code
