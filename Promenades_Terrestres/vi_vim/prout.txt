@@ -1,9 +1,17 @@
 Ken Thompson, Brian Kernigham et Denis Ritchie
 sont à l'orrigine du systaime Unix.
 Richard Stallman est le grad maître de la profétie.
-Si j'écris pour Élie, qu'il habite Nîmes, Périgueux, 
-ou Orléans, c'est bon.
+À ceci ajoutons que si j'écris pour Élie, 
+qu'il habite Nîmes, Périgueux, ou Orléans, c'est bon.
 Si j'orthographie mal Pérgiueux, c'est normal...
 Mais s'il se nomme Sallé ou en majuscule SALLÉ...
-Ça se gâte...
 
+Si je parle de Georges Méliès... Oups.  Par contre si 
+je l'écris sur le mode ASCII 7bits, sans les accents,
+ça va beaucoup mieux : Melies.
+
+Connaît-il Zaphod Beeblebrox, le Président de la Galaxie ?
+
+Et si nous parlions de Ériphile, fille de la Princesse Aristione, 
+dans la pièce de Molière "Les amants magnifiques" (1670)...
+Ou Éraste dans le "Dépit amoureux", toujours de Molière, plus jeune, en 1659.

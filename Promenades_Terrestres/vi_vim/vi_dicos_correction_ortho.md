@@ -24,8 +24,8 @@
 <sub> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Nommer correctement les fichiers](#namefile)
 
 <sub> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Empêcher la correction sur les noms propres](#propernouns)
-##### &nbsp;&nbsp;&nbsp;[Résumé](#resume)
-##### &nbsp;&nbsp;&nbsp;[La minute HHGTTG : comment remodeler le concept même de l'espace-temps ?](#hhgttg)
+#### [Expressions régulières et noms propres](#propers_w_k)
+##### &nbsp;&nbsp;&nbsp;[La minute HHGTTG : plonger dans les *inky depths*](#hhgttg)
 
 
 ---
@@ -125,7 +125,7 @@ Le tout premier choix, celui de la langue, est retenu dans **LA locale** (on en 
 En revanche, cette unique *locale* sert de base à de nombreuses autres variables, **attention**, certaines sont aussi baptisées
 *locales*, par opposition aux variables d'environnement (futur article).
 
-Nous parlons ici de **LA** Locale, qui représente une valeurs parmi un ensemble de *locales* supportée.
+Nous parlons ici de **LA** Locale, qui représente une valeur parmi un ensemble de *locales* supportées.
 
 Les *locales* supportées lors d'une installation sont définies dans le fichier de la langue `fr` ou `en`&nbsp;:
 
@@ -154,17 +154,18 @@ l'encodage `iso-latin1-8859`, voir `latin-9` lors de l'ajout des caractères `�
 `Œ`, le `æ` du *et cætera*, etc.
 )</sub>
 
-Sous Windows 10, l'UTF-16 est de rigueur... 
+Sous Windows 10, l'UTF-16 est de rigueur... Il est un peu plus simple à utiliser
+car il manipule des unités de 2 octets, contre 4 unités de 1 octet en UTF-8,
+et 1 seule unité de 32 bits en UTF-32.
 
-**Important** Même si la langue est la même, la disposition clavier aussi, le choix de la ville, et donc du pays, 
-n'est pas anodin.
+**Important** : même si la langue est la même, la disposition clavier aussi, le choix de la ville, 
+et donc du pays, n'est pas anodin.
 
 Par exemple, les principales différences entre la Belgique (`fr_BE`), la France (`fr_FR`), 
 et la Suisse (`fr_CH`) relèvent du&nbsp;:
 - **symbole monétaire** (CHF pour la Suisse), 
-- **séparateur décimal** (`,` pour la France et la Belgique, `.` pour 
-la Suisse), 
-- **séparateur de milliers** (` ` pour la France, `.` pour la Belgique, et `'` pour la Suisse), etc.
+- **séparateur décimal** (`,` pour la France et la Belgique, `.` pour la Suisse), 
+- **séparateur de milliers** (` ` pour la France, `.` pour la Belgique, et `'` apostrophe pour la Suisse), etc.
 
 Les spécificités des *locales* nationales sont ici : [liste des locales sur lh.2xlibre.net](https://lh.2xlibre.net/locales/)
 (`ctrl-f` + `fr_`)
@@ -175,10 +176,15 @@ une application est bien programmée (pour éviter les affichages exotiques...).
 
 <sub>Par exemple, *Java*, sous Linux, Mac, Windows, représente en UTF-16 en interne, 
 puis traduit dans la *locale* système pour l'affichage... 
-De cela il faut également déduire qu'il n'y aucun moyen, à ma connaissance, du visualiser 
+De cela il faut également déduire qu'il n'y a aucun moyen, à ma connaissance, du visualiser 
 le mécanisme d'encodage interne et sa traduction...</sub>
 
-Une seule *locale*... Mais qui est la base de bien d'autres...
+Une seule *locale*... Mais à la base de bien d'autres...
+
+:trident: **bien comprendre** que modifier sa Locale pour de l'UTF-16, voire 32,
+pour voir... **ne sert à rien** car **l'affichage deviendra exotique** : 
+- **UTF-8 encode exactement les mêmes caractères**, et la même quantité, que l'UTF-32, 
+sauf qu'il manipule ses 4 octets différemment... Résultat... Affichage exotique.
 
 
 Deux commandes pour différencier différents type de variables&nbsp;: <sub>(avant d'y consacrer un article particulier)</sub>
@@ -208,7 +214,7 @@ messages d'information ou d'erreur, etc. Et `LC_COLLATE`, pour *Collation* pris
 ici dans le sens de tri, d'ordre... <sub>(LC_COLLATE... Cette variable à elle
 seule mérite un article dédiée... :sunglasses:)</sub>
 
-Par opposition aux variables d'environnement, destinées aux sous processus du *shell*, affichable avec la commande `env` dont on
+Par opposition aux variables d'environnement, destinées aux sous processus du *shell*, affichables avec la commande `env` dont on
 filtre ici le résultat :
 
 ><pre>
@@ -220,7 +226,7 @@ filtre ici le résultat :
 
 <sub>*GDM* pour *Gnome Display Manager* qui gère l'affichage graphique et les sessions de connexion.</sub>
 
-Ce sont les variables d'environnement (c'est-à-dire chargées dans l'environnement de travail lors de la connexion, avant celles
+Ce sont les variables d'environnement (c'est-à-dire chargées en mémoire lors de la connexion, avant celles
 que l'utilisatrice.teur pourrait déclarer pour ses propres besoins).
 
 
@@ -388,8 +394,8 @@ donc le créer sous ton répertoire de connexion &nbsp;:
 > <b>cat .vimrc</b>
 > set ai wm=4 ts=4 sw=4  tw=80
 > au BufRead \*.txt setlocal spell spelllang=fr
-> map <silent> <f6> "<esc>:silent setlocal spell! spelllang=en<cr>"
-> map <silent> <f7> "<esc>:silent setlocal spell! spelllang=fr<cr>"
+> map &lt;silent&gt; &lt;f6&gt; "&lt;esc&gt;:silent setlocal spell! spelllang=en&lt;cr&gt;"
+> map &lt;silent&gt; &lt;f7&gt; "&lt;esc&gt;:silent setlocal spell! spelllang=fr&lt;cr&gt;"
 ></pre>
 
 
@@ -437,13 +443,13 @@ On continue...
 - `au` : *autocommand* en fonction des événements 
 - `BufRead` : *Buffer Read*, événement déclenché lors du chargement en mémoire
   du fichier.
-- <code>&#42;.txt</code> : n'importe quoi suivi de l'extension `.txt`, présent dans *BufRead*
+- <code>&#42;.txt</code> : n'importe quel nom de fichier d'extension `.txt`, présent dans *BufRead*
 - `setlocal spell spelllang=fr`
 
 Note à propos de *BufRead* : *BufRead* est un événement
-déclenché lorsque `vi` a chargé son fichier en mémoire ; il y a d'autres
+déclenché lorsque `vi` a chargé son fichier en mémoire ; il y en a d'autres
 *BufNew*, *BufEnter*, et *BufAdd*. À ma connaissance, sous Debian, *BufRead* fonctionne dans tous les
-cas, même avec de l'édition de plusieurs fichiers et des va-et-vient incessants.
+cas, même avec l'édition de plusieurs fichiers et des va-et-vient incessants.
 
 
 On demande donc à `vim` d'activer la correction **uniquemenτ** lorsque le
@@ -468,8 +474,8 @@ Attention :
 
 - La touche F1 ne peut être utilisée (aide contextuelle), probablement d'autres
 - Les touches F6 et F7 sont ok ici
-- Les `<...>` sont **importants**,  ils valent pour des actions clavier, il faut
-  les écrire dans le fichier `~/.vimrc`.
+- Les `<...>` sont **importants**,  ils valent pour des actions clavier, **il faut
+  les écrire** dans le fichier `~/.vimrc`.
 
 ><pre>
 >" F6 désactive, c'est-à-dire repasse en anglais
@@ -550,10 +556,10 @@ Néanmoins, si nous voulions associer les fonctions *mot_suivant*,
 
 <br>
 
-Comme préciser dans le `~/.vimrc` la correction n'interviendra que sur les
+Comme précisé dans le `~/.vimrc` la correction n'interviendra que sur les
 fichiers d'extension `.txt` ou `.md`.
 
-Comme nous le verrons, il pourrait être de judicieux de nommer `.de_txt` les
+Il pourrait être de judicieux de nommer `.de_txt` les
 fichiers que tu rédiges en allemand.
 
 Il faudra alors ajouter dans `~/.vimrc`&nbsp;:
@@ -589,7 +595,7 @@ En lançant `vi` dessus, on obtient
 
 La correction orthographique opère également sur les noms propres...
 
-En utilisant les expressions régulières (méthode de description de motifs), on
+En utilisant les expressions régulières (syntaxes de description de motifs), on
 peut préciser dans `~/.vimrc` de ne pas opérer sur les mots commençant pas une
 majuscule :
 
@@ -604,8 +610,10 @@ majuscule :
 - `noms_propres` : un identifiant obligatoire pour le motif qui suit. 
 - <code>+&#92;&lt;&#92;u&#92;w&ast;&#92;&gt;+</code> la description de ce que
   l'on considère être un nom propre :
-  - <code>+</code>1 ou plusieurs fois le caractères **précédent** le `+` comme
-	on n'a rien précisé, c'est quel que soit.
+  - <code>+</code> au moins un caractère avant le motif (ça exclu les capitales
+	seules en début de ligne qui seront recherchées dzans le dictionnaire),
+	quant à la fin de ligne, il y a toujours un caractère, le retour chariot.
+	Ici, ils servent aussi à baliser le motifs, car **ils sont nécessaires**.
   - <code>&#92;&lt;...&#92;&gt;</code> : c'est la façon de décrire quelque chose
 	précédé et suivi d'un blanc ou d'une tab <sub>(très utile pour la recherche dans vi :
 	si tu cherches <code>/de</code> tu obtiens <code>devant</code>, <code>devinette</code>, etc.
@@ -638,16 +646,81 @@ En relançant sur `prout.txt` :
 
 C'est mieux non ?  :metal::alien::+1:
 
-Et nous finirons par une fine subtilité pour bien comprendre comprendre
-fonctionne le `spell` sur les noms propres :sunglasses:
+Le paragraphe suivant boucle le sujet avec les petites subtilités de `spell`
+et de l'encodage des caractères... Encore... :wink:
+
+:trident: De petites subtilités... Pour une grande ouverture d'esprit... 
 
 <br>
 
-#### <a name="propers_w_k">Expressions régulière et noms propres</a>
+<sub>[(**sommaire ^**)](#sommaire)</sub>
+
+<br>
+---
+
+### <a name="propers_w_k">Expressions régulières et noms propres</a>
 
 <br>
 
-Ajoutons quelques lignes à `prout.txt` :
+Décollons un petit peu... Et renforçons nos bases sur l'historique de l'encodage UTF-8...
+
+Pour rester (ultra) simple, au départ ASCII sur 7 bits, soit 128 possibilités,
+indexées à partir de 0, dont 96 imprimables, et 32 pour coder les historiques
+caractères de contrôle des transmissions.
+
+Puis 8bits pour s'adapter aux processeurs qui travaillaient avec des groupes de
+8 bits, et 128 "places" pour encoder de nouveau caractères. Un seul octet donc
+pour coder les accents, le umlaut, le tilde, etc.
+
+En 1992, l'Unicode venait d'être accepté depuis un an pour encoder les
+caractères mondiaux, Ken Thompson et Rob Pike
+(les mêmes que ceux d'Unix :wink:) conçoivent sur un coin de table ce
+qui va devenir l'UTF-8 pour être facilement compatible avec les systèmes historiques. 
+<sub>(L'histoire d'UTF8 et les archives mail de 1992 sont ici
+[rob_pike_explique_comment_ken_thompson_invente_UTF-8](http://doc.cat-v.org/bell_labs/utf-8_history))</sub>
+
+Internationalement adopté en 1996, il est entièrement rétro compatible avec l'ASCII, les 128 premiers sont les mêmes en
+UTF-8.
+
+:trident: l'UTF-8 encode les caractères en utilisant **un encodage à longeur
+variable** jusqu'à 4 octets, soit plus
+de 4 milliards de caractères, et intègre une grammaire dans le 1er octet 
+pour définir le nombre d'octet utilisés pour encoder le caractère. <sub>(voir article dédié)</sub>
+
+Les 128 premiers sont les mêmes qu'en ASCII, ensuite c'est le point de code, en
+fait l'index dans la liste des caractères, qui détermine le nombre d'octet.
+Ainsi, pour l'UTF-8, pour l'index des caractères :
+
+- de 0 à 127, un seul octet
+- de 128 à 2047, deux octets
+- de 2048 à 65535   , trois octets
+- 65536  à > 1,1 millions, 4 octets.
+
+Le rang, ou l'index d'un caractère, en Unicode c'est son point de code, ou *code
+point* en anglais ; la notation habituelle est :
+
+- U+0000 à U+007F, un octet (se lit du 0ème au 127ème etc)
+- U+0080 à U+07FF, deux octets
+- U+0800 à U+FFFF, trois octets
+- U+10000 à U+10FFFF, quatre octets
+
+Parfait pour les langues européennes... Insuffisant pour les langues
+indo-asiatiques... 
+
+Tandis qu'UTF-32 est un encodage de longueur fixe et encode 2^32 points de
+codes... 
+
+<br>
+
+Ces bases étant fixées, revenons à notre `prout.txt` et la définition par
+expressions régulières de ce qu'est un nom propre : 
+
+- une suite caractères imprimables comprises entre deux séparateurs (par défaut blanc ou tab) débutant
+par une majuscule.
+
+<br>
+
+Ajoutons donc quelques lignes à `prout.txt` :
 
 ><pre>
 ><b>cat prout.txt</b>
@@ -661,33 +734,195 @@ Ajoutons quelques lignes à `prout.txt` :
 >Ça se gâte...
 </pre>
 
-:trident: 
+<br>
 
-Rien de particulier avec la majuscule accentuée d'Élie... 
+Sans l'exclusion des noms propres, la correction donne :
 
-`Pérgiueux`, ou `Éliie` sont marqués **faute**... Les suggestions (`z=`)
-montrent que prénoms et noms de villes appartiennent au dictionnaire.
+<br>
 
-En revanche, `Sallé` n'y appartient pas... Alors que c'est un nom propre.
+![sans exclusion des noms propres](spell_all.png)
 
-Sachant que notre motif décrit avec les expressions régulières est correct :
-une majuscule, suivie ou non, d'un caractère appartenant à un mot
-(<code>&#92;w&ast;</code>).<sub>(<code>&ast;</code> pour le "ou non", <code>0</code> ou <code>n</code> fois)</sub>
 
-Attardons-nous sur <code>&#92;w</code> en consultant le `help` interne :
+<br>
+
+Quelques mots avant d'aller plus loin : Thompson est aussi de le nom d'une
+rivière du Canada, Denis, Élie, et Georges sont des prénoms appartenant au
+dictionnaire. Tout comme les noms propres de villes, de rivières, etc.
+
+Pour `connaît-il`, aucune faute, les traits d'union ne sont pas son point fort.
+On peut ajouter avec `zg`.
+
+Tous les autres n'appartiennent pas au dictionnaire.
+
+Ajoutant la ligne qui suit dans `~/.vimrc` :
+
+><pre>
+>au BufRead *.txt syntax match noms_propres +\<\u\w*\>+ contains=@NoSpell
+></pre>
+
+On obtient :
+
+
+![sans exclusion des noms propres](spell_w.png)
+
+<br>
+
+C'est mieux... 
+
+<br>
+
+Si j'orthographie mal un mot présent dans le dictionnaire, nom propre, ou pas,
+la correction opère : c'est le cas pour `Pérgiueux`.
+
+Pour les autres, excepté `connaît-il` qui n'a pas de faute, ils répondent à notre 
+définition du nom propre : 
+
+>un caractère majuscule (<code>&#92;u</code>) suivi de <code>0</code> ou <code>n</code> fois 
+>(<code>&ast;</code>) un caractère qui compose un mot (donc pas une ponctuation ou autre), le
+>tout entre deux séparateurs, par défaut blanc ou tabulation (<code>&#92;&lt;...&#92;&gt;</code>).
+
+<br>
+
+:trident: La piste est donnée, puisque `Melies` sans accent matche notre
+motif...
+
+D'abord la solution pour voir que c'est possible, ensuite... le vécu :wink:
+
+Si nous modifions `~/.vimrc` en remplaçant <code>&#92;w</code> par <code>&#92;k</code>, 
+soit :
+
+
+><pre>
+>au BufRead *.txt syntax match noms_propres +\<\u\k*\>+ contains=@NoSpell
+></pre>
+
+<br>
+
+
+voilà ce que nous obtenons :
+
+<br>
+
+![sans exclusion des noms propres](spell_k.png)
+
+<br>
+
+:sunglasses: Authentique... Voilà comment j'ai procédé :
+
+- <code>&#92;w</code> ne fonctionne pas avec les nom propres à accent... Ça sent
+  l'intervalle de caractères... Dans le vrai monde on parle de "classes de
+  caractères", en anglais *characters classes*, une classe précise, soit en
+  définition, soit en extension, soit les deux (comme plus bas) **un ensemble auquel 
+  doit appartenir** le caractère
+  *matché*. **ici la classe de caractères n'inclut pas les majuscules
+  accentuées**
+
+- Que dit le `help` interne de `vim` ?
 
 ><pre>
 >:h &#92;w
 ></pre>
 
+(`:q` pour quitter le `help` et revenir au *buffer* principal)
+
+![sans exclusion des noms propres](help_w.png)
+
+Bingo ! <code>&#92;w</code> vaut pour l'ensemble de caractères <code>[0-9A-Za-z\_]</code> (*underscore* compris)
+
+Il est également précisé qu'utiliser la forme atomique <code>&#92;w</code> est
+plus rapide que les <code>[...]</code>
+
+En remontant avec la flèche pour voir les entêtes de ce qui apparaît comme un
+tableau... Voici ce qu'on peut lire :
 
 
+![sans exclusion des noms propres](help_k.png)
+
+><pre>
+> NOTE: <b>the above also work for multi-byte characters.  The ones below only
+> match ASCII characters, as indicated by the range.</b>
+></pre>
+
+Voilà comment je suis arrivé à <code>&#92;k</code>.
 
 <br>
+
+Si tu as tout suivi, il reste un petit mystère à éclaircir...
+
+<br>
+
+Avec ou sans correction, `Élie` sort sans faute... :wink:
+
+<br>
+
+Or, dans la première image du `help \w` on peut lire que <code>&#92;u</code> 
+vaut pour <code>[A-Z]</code>... Et entre `A` et `Z` en ASCII il n'y a rien
+d'autre que le capitales sans accents...
+
+Alors ?...
+
+Élie est dans le dictionnaire...  Bravo !
+
+<br>
+
+Essayons donc avec des noms propres avec
+majuscules accentuées qui n'ont probablement aucune chance d'être 
+dans le dictionnaire... Comme ceux de Molière, par exemple.
+
+Et surtout commençant par une lettre majuscule qui n''appartient pas à
+l'intervalle ASCII [A-Z]...
+
+<br>
+
+Sans rien inventer, recourrons donc à Molière :
+
+![moliere_u](moliere_u.png)
+
+<br>
+
+Bien entendu, plus on ajoute, plus on alourdit... L'idée est donc de définir
+proprement sans avoir à ajouter au dictionnaire.
+
+<br>
+
+Je n'ai trouvé qu'une seule façon de faire, en évitant la forme atomique
+puisqu'elle ne répond pas à notre besoin : la bonne vielle méthode pour 
+définir une classe de caractère, avec les `[` et `]`, au moins on voit tout de
+suite quels caractères sont concernés :
+
+- `[A-ZÉÔÀÈ]` : doit obligatoirement appartenir à A-Z ou être É, Ô, etc.
+
+- `[^A-ZÉÔÀÈ]`: `^` à l'intérieur des crochets pour dire n'importe quel
+  caractère **sauf** ceux-là.
+
+<br>
+
+Finalement, une bonne commande dans `~/.vimrc` est :
+
+><pre>
+><code>au BufRead *.txt syntax match noms_propres +\<[A-ZÉÈÔÀÎ]\k*\>+ contains=@NoSpell</code>
+></pre>
+
+<br>
+
+![moliere_u](spell_all_names.png)
+
+<br>
+
+#### good prommamer knows how things work
+### great programmer knows why things work
+
+<br>
+
+:metal::alien::+1:
 
 <sub>[(**sommaire ^**)](#sommaire)</sub>
 
 <br>
+
+---
+
+Il nous reste à traiter la correction automatique...
 
 ---
 
@@ -752,14 +987,20 @@ utilise :
 
 ---
 
-#### <a name="hhgttg">La minute qui remodèle le concept même du temps et de l'espace</a>
+#### <a name="hhgttg">La minute HHGTTG : Plonger dans les *inky depths*</a>
+
+><pre>
+> Away in the inky depths of space invisible movements were being made. Invisible
+> to any of the inhabitants of the strange and temperamental Plural zone at the
+> focus of which lay the infinitely multitudinous possibilities of the planet
+> called Earth, but not inconsequential to them.
+></pre>
 
 <br>
 
 
-<sub>(The HHGTTG, T3, Life, the Universe, and Everything, p.73 )</sub>
+<sub>(The HHGTTG, T5, Mostly Harmless, p.175 )</sub>
 
 <sub>[(**sommaire ^**)](#sommaire)</sub>
 
 
-:metal::alien::+1:
