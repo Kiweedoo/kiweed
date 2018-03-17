@@ -903,8 +903,8 @@ Finalement, une bonne commande dans `~/.vimrc` est :
 
 <br>
 
-#### good prommamer knows how things work
-### great programmer knows why things work
+## good prommamer knows how things work
+# great programmer knows why things work
 
 <br>
 
