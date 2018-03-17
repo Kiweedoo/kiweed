@@ -372,7 +372,7 @@ Documents
 
 <sub>[(**sommaire ^**)](#sommaire)</sub>
 
-&nbsp;
+<br>
 
 #### <a name="crevimrc">Création du `~/.vimrc` et déclaration de la langue</a>
 
@@ -452,6 +452,8 @@ dans les fichiers de développement. :sunglasses:
 
 <sub>[(**sommaire ^**)](#sommaire)</sub>
 
+<br>
+
 #### <a name="addmacros">Ajout des macros de désactivation/activation</a>
 
 <br>
@@ -491,7 +493,7 @@ Encore quelques macros... Et on joue :sunglasses:
 
 <sub>[(**sommaire ^**)](#sommaire)</sub>
 
-&nbsp;
+<br>
 
 #### <a name="commandes">Commandes d'utilisation  et macros</a>
 
@@ -511,7 +513,7 @@ spell](http://vimdoc.sourceforge.net/htmldoc/spell.html), il y a de quoi faire.
 
 <sub>[(**sommaire ^**)](#sommaire)</sub>
 
-&nbsp;
+<br>
 
 #### <a name="addmacroscorrect">Ajout des macros de correction</a>
 
@@ -566,6 +568,8 @@ Il faudra alors ajouter dans `~/.vimrc`&nbsp;:
 ></pre>
 
 Même méthode pour utiliser d'autres langues pour la correction.
+
+<br>
 
 #### <a name="propernouns">Empêcher la correction sur les noms propres</a>
 
