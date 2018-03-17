@@ -672,9 +672,9 @@ En revanche, `Sallé` n'y appartient pas... Alors que c'est un nom propre.
 
 Sachant que notre motif décrit avec les expressions régulières est correct :
 une majuscule, suivie ou non, d'un caractère appartenant à un mot
-(<code>&#92;w&ast;</code> (<code>&ast;</code> pour le "ou non", <code>0</code> ou <code>n</code> fois)
+(<code>&#92;w&ast;</code>).<sub>(<code>&ast;</code> pour le "ou non", <code>0</code> ou <code>n</code> fois)</sub>
 
-Attardons-nous sur <code>&92;w</code> en consultant le `help` interne :
+Attardons-nous sur <code>&#92;w</code> en consultant le `help` interne :
 
 ><pre>
 >:h &#92;w
