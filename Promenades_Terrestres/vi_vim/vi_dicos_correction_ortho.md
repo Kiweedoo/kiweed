@@ -166,7 +166,7 @@ Les spécificités des *locales* nationales sont ici : [liste des locales sur lh
 (`ctrl-f` + `fr_`)
 
 
-:bell: :red square: :bangbang: :pencil: **IMPORTANT**(re) : **une seule _locale_** sur un système, **qui prévaut toujours SI**
+:bell: :pencil: **Une seule _locale_** sur un système, **qui prévaut toujours SI**
 une application est bien programmée (pour éviter les affichages exotiques...).
 
 <sub>Par exemple, *Java*, sous Linux, Mac, Windows, représente en UTF-16 en interne, 
@@ -316,7 +316,7 @@ notamment la lecture des fichiers de configuration par défaut.
 Comme `vi` est prévu pour n'importe quelle distribution, il peut tester
 plusieurs répertoires/fichiers avant de trouver celui qu'il recherche.
 
-:radio_button: :white_check_mark: :black_large_square: :red_circle: :medium_arge_square: Sur une Debian par exemple, il prend les informations dans :
+:trident: Sur une Debian par exemple, il prend les informations dans :
 
 - `/usr/lib/locale/locale-archive` (les catégories de locales, compilées,
   définies dans `/usr/lib/locale/C.UTF-8/`, dont chaque contenu est visible avec la 
@@ -367,7 +367,7 @@ Documents
 Il est probable, si nous ne l'avons pas déjà créé, qu'il n'existe pas… il faut
 donc le créer sous ton répertoire de connexion &nbsp;:
 
-Voici celui que nous allons créé :
+:trident: Voici celui que nous allons créer :
 
 ><pre>
 > <b>cd ~</b>
@@ -400,7 +400,7 @@ avant) sont ignorées, ce sont les commentaires.
 >dessous <b>o</b>, <b>O</b> ouvre au dessus de la position courante.
 ></pre>
 
-
+:bell: :pencil:
 - `set` : pour positionner les paramètres.
   - `ai` : *autoindent*
   - `wm` : *wrap margin*, ici 4 caractères, à, environ 4 caractères de la fin de
@@ -419,6 +419,7 @@ On continue...
 >----> <b>ne pas saisir</b> [ESC]:w[return] <sub>(sauvegarde en cours de session)</sub>
 ></pre>
 
+:bell: :pencil:
 - `au` : *autocommand* en fonction des événements 
 - `BufRead` : *Buffer Read*, événement déclenché lors du chargement en mémoire
   du fichier.
@@ -459,6 +460,7 @@ Attention :
 >map &lt;silent&gt; &lt;f7&gt; "&lt;esc&gt;:silent setlocal spell! spelllang=fr&lt;cr&gt;"
 ></pre>
 
+:bell: :pencil:
   - `map` : c'est la commande d'association d'actions **en mode commande** (il
 	faut être en mode commande pour que cela fonctionne)
   - `<silent>`: doit être le premier argument de la commande map ; comme son nom l'indique, pas d'écho de ce que l'on fait
@@ -479,6 +481,7 @@ Encore quelques macros... Et on joue :sunglasses:
 
 En mode commande, lorsqu'on est sur un mot mal orthographié, les principales commandes sont :
 
+:bell: :pencil:
 - `z=` obtenir la liste des suggestions
 - `zg` ajouter le mot dans le dictionnaire
 - `zug`annuler l'ajout au dictionnaire
@@ -501,6 +504,7 @@ servir quel que soit le système.
 Néanmoins, si nous voulions associer les fonctions *mot_suivant*, 
 *mot_précédent*, et *suggestions*  à trois touches :
 
+:bell: :pencil:
 ><pre>
 >" map de la touche [tab]
 >map &lt;silent&gt; &lt;tab&gt; "&lt;esc&gt;&rbrack;s"
@@ -528,6 +532,7 @@ fichiers que tu rédiges en allemand.
 
 Il faudra alors ajouter dans `~/.vimrc`&nbsp;:
 
+:bell: :pencil:
 ><pre>
 >au BufRead &#42;.de_txt setlocal spell spelllang=de
 >" F4 désactive, c'est-à-dire repasse en anglais
@@ -562,6 +567,7 @@ majuscule :
 >au BufRead *.txt syntax match noms_propres +\<\u\w*\>+ contains=@NoSpell
 ></pre>
 
+:bell: :pencil:
 - `syntax` le mot clé pour introduire ce qui suit
 - `match` : correspond... sous-entendu à ce qui suit...
 
@@ -584,7 +590,9 @@ majuscule :
 - <code>contains=@nospell</code> : on *check* partout **sauf** pour le motif qu'on vient de
   décrire, l'aide interne de `vim` est très claire&nbsp;:
 
-<code>:h spell-syntax</code>
+<code>:h spell-syntax</code> ou <code>:help spell-syntax</code>... 
+<code>:h h</code> pour l'aide sur l'aide, `:q` pour quitter l'aide et revenir au
+*buffer* principal.
 
 ><pre>
 >Files that use syntax highlighting can specify where spell checking should be done:
