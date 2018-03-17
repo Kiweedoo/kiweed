@@ -522,6 +522,8 @@ Néanmoins, si nous voulions associer les fonctions *mot_suivant*,
 
 ### <a name="playspell">Utilisation de la correction</a>
 
+<br>
+
 #### <a name="namefile">Nommer correctement les fichiers</a>
 
 Comme préciser dans le `~/.vimrc` la correction n'interviendra que sur les
