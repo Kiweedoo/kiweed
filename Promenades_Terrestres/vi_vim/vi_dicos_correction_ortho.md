@@ -183,8 +183,7 @@ Une seule *locale*... Mais à la base de bien d'autres...
 
 :trident: **bien comprendre** que modifier sa Locale pour de l'UTF-16, voire 32,
 pour voir... **ne sert à rien** car **l'affichage deviendra exotique** : 
-- **UTF-8 encode exactement les mêmes caractères**, et la même quantité, que l'UTF-32, 
-sauf qu'il manipule ses 4 octets différemment... Résultat... Affichage exotique.
+- **UTF-8 encode  aussi sur 4 octets, mais les manipule différemment**... Résultat... Affichage exotique.
 
 
 Deux commandes pour différencier différents type de variables&nbsp;: <sub>(avant d'y consacrer un article particulier)</sub>
