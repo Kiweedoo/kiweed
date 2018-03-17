@@ -643,6 +643,48 @@ fonctionne le `spell` sur les noms propres :sunglasses:
 
 <br>
 
+#### <a name="propers_w_k">Expressions régulière et noms propres</a>
+
+<br>
+
+Ajoutons quelques lignes à `prout.txt` :
+
+><pre>
+><b>cat prout.txt</b>
+>Ken Thompson, Brian Kernigham et Denis Ritchie
+>sont à l'orrigine du systaime Unix.
+>Richard Stallman est le grad maître de la profétie.
+>Si j'écris pour Élie, qu'il habite Nîmes, Périgueux, 
+>ou Orléans, c'est bon.
+>Si j'orthographie mal Pérgiueux, ou Éliie, en fait c'est normal...
+>Mais s'il se nomme Sallé ou en majuscule SALLÉ...
+>Ça se gâte...
+</pre>
+
+:trident: 
+
+Rien de particulier avec la majuscule accentuée d'Élie... 
+
+`Pérgiueux`, ou `Éliie` sont marqués **faute**... Les suggestions (`z=`)
+montrent que prénoms et noms de villes appartiennent au dictionnaire.
+
+En revanche, `Sallé` n'y appartient pas... Alors que c'est un nom propre.
+
+Sachant que notre motif décrit avec les expressions régulières est correct :
+une majuscule, suivie ou non, d'un caractère appartenant à un mot
+(<code>&#92;w&ast;</code> (<code>&ast;</code> pour le "ou non", <code>0</code> ou <code>n</code> fois)
+
+Attardons-nous sur <code>&92;w</code> en consultant le `help` interne :
+
+><pre>
+>:h &#92;w
+></pre>
+
+
+
+
+<br>
+
 <sub>[(**sommaire ^**)](#sommaire)</sub>
 
 <br>
@@ -675,8 +717,8 @@ Références rapides en lignes :
 Pour les discussions générales :
 
 - [stackoverflow](https://stackoverflow.com/), en *googlelisant* par exemple :
-  `vim howto map shift enter` et tu apprendrans dans la discussion que certaines
-  associations ne fonctionnent que dans `gvim` (l'interface graphique).
+  `vim howto map shift enter` et :trident: tu apprendras dans la discussion que certaines
+  associations ne fonctionnent **que** dans `gvim` (l'interface graphique).
 
 - [stackexchange](https://vi.stackexchange.com/questions/6731/vim-syntax-pattern-to-highlight-python-keyword-argument)
   pour cette piste que nous explorerons plus tard.
