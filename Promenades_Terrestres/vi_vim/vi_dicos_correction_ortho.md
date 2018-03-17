@@ -1,4 +1,4 @@
-<sub>Statut : en_cours | Complexité : basique (au décollage) | Temps : 45mn | Mars 2018 | Georges AKA Kiweed | Tested on Debian U</sub>
+<sub>Statut : en_cours | Complexité : intermédiaire | Temps : 1h | Mars 2018 | Georges AKA Kiweed | Tested on Debian U</sub>
 
 ### Balade : langues et correction orthographique dans `vi`
 
