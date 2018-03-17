@@ -24,7 +24,7 @@
 <sub> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Nommer correctement les fichiers](#namefile)
 
 <sub> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Empêcher la correction sur les noms propres](#propernouns)
-#### [Expressions régulières et noms propres](#propers_w_k)
+##### &nbsp;&nbsp;&nbsp;[Expressions régulières et noms propres](#propers_w_k)
 ##### &nbsp;&nbsp;&nbsp;[La minute HHGTTG : plonger dans les *inky depths*](#hhgttg)
 
 
