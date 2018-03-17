@@ -77,8 +77,11 @@
 
 
 ### <a name="preambule">Préambule</a>
+
 <br>
+
 #### <a name="varloc">Les Locales</a>
+
 <br>
 
 La correction orthographique dans `vi` est basée sur la commande `aspell` (qui remplace `ispell` pour opérer sur des fichiers en
@@ -226,6 +229,7 @@ que l'utilisatrice.teur pourrait déclarer pour ses propres besoins).
 ---
 
 #### <a name="aspell">`aspell` et dictionnaires</a>
+
 <br>
 
 Il existe plusieurs correcteurs, les *spell checkers*, `aspell`, `hunspell`, et
@@ -253,6 +257,7 @@ Reprenons l'exemple avec le fichier `prout.txt`&nbsp;
 
 
 ### <a name="installdicos">Installation des dictionnaires</a>
+
 <br>
 
 
@@ -310,9 +315,11 @@ Plus qu'à configurer `vi`.
 ---
 
 ### <a name="vimrc">[Configuration de la langue dans `vi`](#vimrc)</a>
+
 <br>
 
 #### <a name="launch">Le démarrage de `vi`</a>
+
 <br>
 
 Lors du lancement de `vi`, un certain nombre de d'actions sont effectuées,
@@ -368,6 +375,7 @@ Documents
 &nbsp;
 
 #### <a name="crevimrc">Création du `~/.vimrc` et déclaration de la langue</a>
+
 <br>
 
 Il est probable, si nous ne l'avons pas déjà créé, qu'il n'existe pas… il faut
@@ -445,6 +453,7 @@ dans les fichiers de développement. :sunglasses:
 <sub>[(**sommaire ^**)](#sommaire)</sub>
 
 #### <a name="addmacros">Ajout des macros de désactivation/activation</a>
+
 <br>
 
 
@@ -485,6 +494,7 @@ Encore quelques macros... Et on joue :sunglasses:
 &nbsp;
 
 #### <a name="commandes">Commandes d'utilisation  et macros</a>
+
 <br>
 
 En mode commande, lorsqu'on est sur un mot mal orthographié, les principales commandes sont :
@@ -504,6 +514,7 @@ spell](http://vimdoc.sourceforge.net/htmldoc/spell.html), il y a de quoi faire.
 &nbsp;
 
 #### <a name="addmacroscorrect">Ajout des macros de correction</a>
+
 <br>
 
 Ce n'est pas forcément une bonne idée de créer des touches de raccourci avec les
@@ -534,6 +545,7 @@ Néanmoins, si nous voulions associer les fonctions *mot_suivant*,
 <br>
 
 #### <a name="namefile">Nommer correctement les fichiers</a>
+
 <br>
 
 Comme préciser dans le `~/.vimrc` la correction n'interviendra que sur les
@@ -556,6 +568,7 @@ Il faudra alors ajouter dans `~/.vimrc`&nbsp;:
 Même méthode pour utiliser d'autres langues pour la correction.
 
 #### <a name="propernouns">Empêcher la correction sur les noms propres</a>
+
 <br>
 
 Reprenons notre fichier `prout.txt`&nbsp;
