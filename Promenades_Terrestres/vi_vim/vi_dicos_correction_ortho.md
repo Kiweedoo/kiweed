@@ -686,15 +686,6 @@ variable** jusqu'à 4 octets, soit plus
 de 4 milliards de caractères, et intègre une grammaire dans le 1er octet 
 pour définir le nombre d'octet utilisés pour encoder le caractère. <sub>(voir article dédié)</sub>
 
-Les 128 premiers sont les mêmes qu'en ASCII, ensuite c'est le point de code, en
-fait l'index dans la liste des caractères, qui détermine le nombre d'octet.
-Ainsi, pour l'UTF-8, pour l'index des caractères :
-
-- de 0 à 127, un seul octet
-- de 128 à 2047, deux octets
-- de 2048 à 65535   , trois octets
-- 65536  à > 1,1 millions, 4 octets.
-
 Le rang, ou l'index d'un caractère, en Unicode c'est son point de code, ou *code
 point* en anglais ; la notation habituelle est :
 
@@ -705,6 +696,11 @@ point* en anglais ; la notation habituelle est :
 
 Parfait pour les langues européennes... Insuffisant pour les langues
 indo-asiatiques... 
+
+La capacité totale de l'UTF-8 est bien moindre que ses 2^32 possibilités sur
+quatre octet... Limitations dues à sa grammaire pour déterminer le nombres
+d'octets utilisés, un, deux, trois, ou quatre... Donc quelques bits en moins
+dans l'encodage effectif.
 
 Tandis qu'UTF-32 est un encodage de longueur fixe et encode 2^32 points de
 codes... 
