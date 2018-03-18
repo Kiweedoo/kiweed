@@ -4,8 +4,8 @@ La Terre en question ?... Ubuntu... Planète solaire de la galaxie Debian.
 
 Des balades qui préludent de promenades plus... Interstellaires, ou intergalactiques :alien:
 
-- [X] **vi_vim** : dictionnaires et correction orthographique (status : **En cours**)
-- [x] **bash** : *vi* ou *vim* ? Commandes `type` et `file`(status : **ok**)
+- [X] [**vi_vim** : dictionnaires et correction orthographique (statut : **ok**)](https://github.com/Kiweedoo/kiweed/blob/master/Promenades_Terrestres/vi_vim/vi_dicos_correction_ortho.md)
+- [x] **bash** : *vi* ou *vim* ? Commandes `type` et `file`(statut : **ok**)
 - [ ] Previewer MarkDown
 - [ ] Installation d'un serveur Apache simple
 - [ ] Création d'un site web simple et/ou un site FTP
