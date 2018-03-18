@@ -654,6 +654,7 @@ et de l'encodage des caractères... Encore... :wink:
 <sub>[(**sommaire ^**)](#sommaire)</sub>
 
 <br>
+
 ---
 
 ### <a name="propers_w_k">Expressions régulières et noms propres</a>
