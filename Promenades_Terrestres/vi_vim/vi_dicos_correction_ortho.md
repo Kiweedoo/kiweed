@@ -1133,6 +1133,9 @@ utilise :
 
 <sub>(The HHGTTG, T5, Mostly Harmless, p.175 )</sub>
 
+
+:metal::alien::+1:
+
 <sub>[(**sommaire ^**)](#sommaire)</sub>
 
 
