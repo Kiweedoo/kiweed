@@ -1,3 +1,14 @@
+[//]: # (-----------------------------------------------------------------)
+
+[//]: # (Projet Kiweed - Article :  installation et utilisation des langues
+					et des autocorrections)
+
+[//]: # (Date : dim. 18 mars 2018 à 20:09:50)
+
+[//]: # (Auteur : )
+
+[//]: # (-----------------------------------------------------------------)
+
 <sub>Statut : OK | Complexité : intermédiaire | Temps : 1h30 | Mars 2018 | Georges AKA Kiweed | Tested on Debian U</sub>
 
 ### Balade : langues et correction orthographique dans `vi`
@@ -1033,6 +1044,11 @@ C'est parti... Voici celui que tu peux créer pour commencer :
   	<code><b>&lt;c-r&gt;=</b></code> pour demander **l'exécution ET le remplacement en
 	place** de la fonction *strftime()* à laquelle on passe les arguments qui
 	vont bien pour afficher la date et l'heure comme on veut... `:h strftime` :wink:
+
+	:trident: le dernier <code><b>&lt;cr&gt;</b></code> **est nécessaire**
+	(toujours pareil, c'est comme si on tapait la ligne à la main... donc
+	*return* pour envoyer)
+
   - Ensuite, on repasse en mode commande, on remonte de 3 lignes en simulant la
 	flèche vers le haut <code>&lt;up&gt;</code> et on passe en insertion
 	**directement à la fin de la ligne** avec <code><b>A</b></code> pour être
