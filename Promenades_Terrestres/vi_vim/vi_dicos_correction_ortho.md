@@ -963,7 +963,7 @@ sa définition, sur plusieurs lignes.
 - Deux façons de faire :
   - Nous avons vu les `map` en mode commande ; existe également `imap` 
   pour en dédier au mode insertion... 
-  - Nous utiliserons `ia` pour `iab` lui-même pour `iabbrev`.
+  - Cependant, **nous utiliserons les abréviations** : `ia` pour `iab` lui-même pour `iabbrev`.
 
 - Dans tous les cas, on peut :
   - Définir en ligne de commande en tapant `:ia MOT1 SEQUENCE1`
