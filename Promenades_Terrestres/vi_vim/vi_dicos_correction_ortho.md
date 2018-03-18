@@ -392,7 +392,7 @@ donc le créer sous ton répertoire de connexion &nbsp;:
 > <b>cd ~</b>
 > <b>cat .vimrc</b>
 > set ai wm=4 ts=4 sw=4  tw=80
-> au BufRead \*.txt setlocal spell spelllang=fr
+> au BufRead,BufNewFile \*.txt setlocal spell spelllang=fr
 > map &lt;silent&gt; &lt;f6&gt; "&lt;esc&gt;:silent setlocal spell! spelllang=en&lt;cr&gt;"
 > map &lt;silent&gt; &lt;f7&gt; "&lt;esc&gt;:silent setlocal spell! spelllang=fr&lt;cr&gt;"
 ></pre>
@@ -434,20 +434,22 @@ On continue...
 
 ><pre>
 ><b>o</b> pour ouvrir une ligne dessous
->au BufRead &#42;.txt setlocal spell spelllang=fr
+>au BufRead,BufNewFile &#42;.txt setlocal spell spelllang=fr
 >----> <b>ne pas saisir</b> [ESC]:w[return] <sub>(sauvegarde en cours de session)</sub>
 ></pre>
 
 :bell: :pencil:
 - `au` : *autocommand* en fonction des événements 
-- `BufRead` : *Buffer Read*, événement déclenché lors du chargement en mémoire
-  du fichier.
-- <code>&#42;.txt</code> : n'importe quel nom de fichier d'extension `.txt`, présent dans *BufRead*
+- `BufRead,BufNewFile` : *Buffer Read*, événement déclenché lors du chargement en mémoire
+  du fichier. *Buffer New File*, lorsque le fichier n'existe pas et vient d'être
+  créé.
+- <code>&#42;.txt</code> : n'importe quel nom de fichier d'extension `.txt` (c'est le *filetype*)
 - `setlocal spell spelllang=fr`
 
 Note à propos de *BufRead* : *BufRead* est un événement
 déclenché lorsque `vi` a chargé son fichier en mémoire ; il y en a d'autres
-*BufNew*, *BufEnter*, et *BufAdd*. À ma connaissance, sous Debian, *BufRead* fonctionne dans tous les
+*BufNewFile* pour un nouveau fichier, *BufNew*, *BufEnter*, et *BufAdd*. 
+À ma connaissance, sous Debian, *BufRead* et *BufNewFile* fonctionnent dans tous les
 cas, même avec l'édition de plusieurs fichiers et des va-et-vient incessants.
 
 
@@ -571,7 +573,7 @@ Il faudra alors ajouter dans `~/.vimrc`&nbsp;:
 
 :bell: :pencil:
 ><pre>
->au BufRead &#42;.de_txt setlocal spell spelllang=de
+>au BufRead,BufNewFile &#42;.de_txt setlocal spell spelllang=de
 >" F4 désactive, c'est-à-dire repasse en anglais
 >map &lt;silent&gt; &lt;f6&gt; "&lt;esc&gt;:silent setlocal spell! spelllang=en&lt;cr&gt;"
 >" F5 repasse en allemand
@@ -605,7 +607,7 @@ peut préciser dans `~/.vimrc` de ne pas opérer sur les mots commençant pas un
 majuscule :
 
 ><pre>
->au BufRead *.txt syntax match noms_propres +\<\u\w*\>+ contains=@NoSpell
+>au BufRead,BufNewFile *.txt syntax match noms_propres +\<\u\w*\>+ contains=@NoSpell
 ></pre>
 
 :bell: :pencil:
@@ -757,7 +759,7 @@ Tous les autres n'appartiennent pas au dictionnaire.
 Ajoutant la ligne qui suit dans `~/.vimrc` :
 
 ><pre>
->au BufRead *.txt syntax match noms_propres +\<\u\w*\>+ contains=@NoSpell
+>au BufRead,BufNewFile *.txt syntax match noms_propres +\<\u\w*\>+ contains=@NoSpell
 ></pre>
 
 On obtient :
@@ -793,7 +795,7 @@ soit :
 
 
 ><pre>
->au BufRead *.txt syntax match noms_propres +\<\u\k*\>+ contains=@NoSpell
+>au BufRead,BufNewFile *.txt syntax match noms_propres +\<\u\k*\>+ contains=@NoSpell
 ></pre>
 
 <br>
@@ -900,7 +902,7 @@ suite quels caractères sont concernés :
 Finalement, une bonne commande dans `~/.vimrc` est :
 
 ><pre>
-><code>au BufRead *.txt syntax match noms_propres +\<[A-ZÉÈÔÀÎ]\k*\>+ contains=@NoSpell</code>
+><code>au BufRead,BufNewFile *.txt syntax match noms_propres +\<[A-ZÉÈÔÀÎ]\k*\>+ contains=@NoSpell</code>
 ></pre>
 
 <br>
