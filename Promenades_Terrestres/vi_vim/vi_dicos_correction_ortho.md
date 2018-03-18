@@ -512,6 +512,12 @@ En mode commande, lorsqu'on est sur un mot mal orthographié, les principales co
 - `]s` se déplacer au prochain mot
 - `[s` revenir sur le précédent
 
+:trident: L'ajout s'effectue dans les fichiers `~/.vim/spell/fr.utf-8.add` et `~/.vim/spell/fr.utf-8.spl`.
+
+:bell: :pencil: `Guillaume` est différent de `guillaume`, tout comme `tables`
+est différent de `table`.
+
+
 Toutes sont décrites sur [Vim documentation:
 spell](http://vimdoc.sourceforge.net/htmldoc/spell.html), il y a de quoi faire.
 
