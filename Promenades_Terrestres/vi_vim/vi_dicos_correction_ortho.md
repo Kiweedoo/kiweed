@@ -1,4 +1,4 @@
-<sub>Statut : en_cours | Complexité : intermédiaire | Temps : 1h | Mars 2018 | Georges AKA Kiweed | Tested on Debian U</sub>
+<sub>Statut : OK | Complexité : intermédiaire | Temps : 1h30 | Mars 2018 | Georges AKA Kiweed | Tested on Debian U</sub>
 
 ### Balade : langues et correction orthographique dans `vi`
 
@@ -25,6 +25,7 @@
 
 <sub> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Empêcher la correction sur les noms propres](#propernouns)
 ##### &nbsp;&nbsp;&nbsp;[Expressions régulières et noms propres](#propers_w_k)
+##### &nbsp;&nbsp;&nbsp;[Abréviations et auto-correction](#auto_correct)
 ##### &nbsp;&nbsp;&nbsp;[La minute HHGTTG : plonger dans les *inky depths*](#hhgttg)
 
 
@@ -921,7 +922,143 @@ Finalement, une bonne commande dans `~/.vimrc` est :
 
 ---
 
-Il nous reste à traiter la correction automatique...
+### <a name="auto_correct">Abréviations et auto-correction</a>
+
+**Quelques généralités** :
+
+- Les auto-corrections permettent, comme dans Libre Office ou d'autres,  de corriger une 
+faute de frappe ou d'orthographe **en cours de saisie** (donc en mode insertion).
+
+- Les auto-corrections sont basées, par choix, sur les abréviations. 
+
+:bell::pencil:
+
+- Une abréviation en mode insertion permet de remplacer une séquence par une autre
+dès que la touche <code>&lt;space&gt;</code> est enfoncée. Par exemple, la faute
+de frappe, courante chez moi, `sorite` par `sortie`.
+
+- Une abréviation, donc une suite de quelques caractères, peut s'entendre, lors de
+sa définition, sur plusieurs ligne.
+
+**Quelques bases techniques** :
+
+- Deux façons de faire :
+  - Nous avons vu les `map` en mode commande ; existe également `imap` 
+  pour en dédier au mode insertion... 
+  - Nous utiliserons `ia` pour `iab` lui-même pour `iabbrev`.
+
+- Dans tous les cas, on peut :
+  - Définir en ligne de commande en tapant `:ia MOT1 SEQUENCE1`
+  - Définir dans un fichier externe :
+     - Dans ce cas, plus besoin du `:`, une abréviation par ligne `ia M1 S1`
+     - suivant sont emplacement, il sera lu automatiquement 
+	 ou devra être *sourcé* par `:source path_fo_file` ou son raccourci `:so
+	 path_to_file`.
+  - Définir dans `~/.vimrc`... C'est une mauvaise pratique que nous
+	n'utiliseront pas car le fichier devient très vite **très** chargé. Ça
+	peut toutefois rendre service de le savoir...
+  - Afficher les abréviations actives en cours de sessions : `:verbose ia` ou le
+	raccourci `:verb ia`.
+
+- Tout comme pour la langue de correction, il est possible de définir plusieurs
+  fichiers d'abréviations par exemple, pour Java, C, Python, etc. Ou encore du
+  jargon dédié à la rédaction d'articles techniques. C'est la principale raison
+  pour laquelle je n'utilise pas le `~/.vimrc`. (article dédié)
+  
+- Les abréviations en insertion ou les `imap` en insertion font **exactement**
+  la même chose... Question d'habitude.
+
+**Emplacement du fichier**
+
+Le répertoire `~/.vim/plugin` contient tous les fichiers et dossiers qui doivent
+être lus au lancement de `vi`.
+
+Si tu as déjà ajouté des mots au dictionnaire (avec `zg`), le dossier
+`~/.vim/spell` a été créé.
+
+Si le dossier `~/.vim/plugin` n'existe pas, il faut le créer.
+
+Le fichier d'abréviations **doit iméprativement** avoir l'extension `.vim` pour
+être chargé dynamiquement.
+
+C'est parti... Voici celui que tu peux créer pour commencer :
+
+
+><pre>
+> " les autocorrections
+> ia sorite sortie
+> ia domage dommage
+> ia etC. etc.
+> " la classique d'un exo Java <b>avec le O (oh maj) pour ouvrir une ligne</b>
+> ia psvm public static void main(String[] args){<code>&lt;CR&gt;</code>}<code>&lt;esc&gt;</code>O	
+> " cartouche de présentation, en Java, C ou Python, même commentaires...
+> ia ppz //----------------------------------------------------------------
+> \&lt;cr&gt;// Guillaume
+> \&lt;cr&gt;//
+> \&lt;cr&gt;// Projet : 
+> \&lt;cr&gt;//
+> \&lt;cr&gt;// Date : &lt;c-r&gt;=strftime("%a %d %b %Y à %H:%M:%S")&lt;cr&gt;
+> \&lt;cr&gt;//---------------------------------------------&lt;esc&gt;&lt;up&gt;&lt;up&gt;&lt;up&gt;A
+></pre>
+
+
+:bell::pencil:
+
+- Les auto-corrections : lorsque tu taperas `sorite` **immédiatement suivi** de
+  `barre_espace`, ce sera automatiquement remplacé par `sortie`
+
+- exos Java... ou autre à définir bien sûr, ici sur une seule ligne : lorsque tu
+  taperas <code>psvm&lt;espace&gt;</code> ce sera remplacé pour toute la
+  séquence... Comment ça fonctionne ?... Tout se passe comme si tu tapais à la
+  main : 
+  - rien à dire pour le début de séquence, c'est remplacé par <code>public
+	static void main(String[] args){</code>
+  - <code>&lt;CR&gt;</code>, pour un *carriage return* après l'accolade
+  - <code>}&lt;esc&gt;O</code>, la saisie de l'accolade de fin, suivi de <code>&lt;esc&gt;</code>,
+  pour repasser en mode commande  et **se repositionner entre** les accolades en ouvrant une ligne **au
+  dessus** : <code>O</code>	(sinon, en reste en insertion à la suite de
+  l'accolade fermante...)
+
+- pour la prez, `ppz`... peu de choses à dire :wink: :
+  - Pour déclarer une `ia` sur plusieurs lignes, la suivante **débute
+	impérativement** par <code>&#92;&lt;CR&gt;</code>
+  - ici les  <code>//</code> sont pour les commentaires en Java, C, Python
+  - tu sautes une ligne comme si tu faisais la saisie à la main...
+  - <code>\\&lt;cr&gt;// Date : &lt;c-r&gt;=strftime("%a %d %b %Y à %H:%M:%S")&lt;cr&gt;</code>
+
+  	<code><b>&lt;c-r&gt;=</b></code> pour demander **l'exécution ET le remplacement en
+	place** de la fonction *strftime()* à laquelle on passe les arguments qui
+	vont bien pour afficher la date et l'heure comme on veut... `:h strftime` :wink:
+  - Ensuite, on repasse en mode commande, on remonte de 3 lignes en simulant la
+	flèche vers le haut <code>&lt;up&gt;</code> et on passe en insertion
+	**directement à la fin de la ligne** avec <code><b>A</b></code> pour être
+	prêt à saisir avec `Projet : `
+
+
+**Dernières choses** :
+
+Pour désactiver une abréviation... <code><b>:una ppz</b></code> par exemple, (pour *unabbreviate*),
+même pour les `ia` d'insertion.
+
+Pour vérifier... <code><b>:verb ia</b></code>
+
+Pour vérifier les caractères non-affichables tabulation et retour
+chariot : <code><b>:set list</b></code> et <code><b>:set nolist</b></code>.
+
+- affiche un `$` pour le retour chariot, 
+- et `^I` pour une tabulation
+
+Par exemple, tu vois que j'ai bien mis un espace après le `:` de Projet.
+
+><pre>
+> \&lt;cr&gt;// Projet : $
+></pre>
+
+
+
+
+
+<sub>[(**sommaire ^**)](#sommaire)</sub>
 
 ---
 
