@@ -1048,15 +1048,11 @@ chariot : <code><b>:set list</b></code> et <code><b>:set nolist</b></code>.
 - affiche un `$` pour le retour chariot, 
 - et `^I` pour une tabulation
 
-Par exemple, tu vois que j'ai bien mis un espace après le `:` de Projet.
+Tu devrais pouvoir obtenir ça :
 
-><pre>
-> \&lt;cr&gt;// Projet : $
-></pre>
+![auto_corrections](./images/auto_abb.png)
 
-
-
-
+<br>
 
 <sub>[(**sommaire ^**)](#sommaire)</sub>
 
