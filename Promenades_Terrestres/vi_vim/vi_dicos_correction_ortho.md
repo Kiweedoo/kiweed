@@ -42,7 +42,7 @@
 
 - [x] Utiliser les commandes de bases de correction.
 
-- [x] Correction automatique ?
+- [x] Correction automatique en cours de saisie (autocorrection)
 
 
 &nbsp;
