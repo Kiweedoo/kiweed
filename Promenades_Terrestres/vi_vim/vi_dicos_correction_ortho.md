@@ -359,18 +359,17 @@ avec un simple `ls`, il faut utiliser l'option `-a` pour *all*
 ><pre>
 > <b>cd ~</b>
 > <b>ls</b>
-Bureau
-Documents
-[...]
-VirtualBox VMs
+> Bureau
+> Documents
+> [...]
 > <b>ls -a</b>
-.
-..
-[...]
-Bureau
-Documents
-.vim
-.viminfo
+> .
+> ..
+> [...]
+> Bureau
+> Documents
+> .vim
+> .viminfo
 ><b>.vimrc</b>
 >[...]
 ></pre>
