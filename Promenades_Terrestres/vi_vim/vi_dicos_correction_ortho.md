@@ -518,7 +518,7 @@ En mode commande, lorsqu'on est sur un mot mal orthographié, les principales co
 est différent de `table`.
 
 
-Toutes sont décrites sur [Vim documentation:
+Toutes les commandes `vim-spell` sont décrites sur [Vim documentation:
 spell](http://vimdoc.sourceforge.net/htmldoc/spell.html), il y a de quoi faire.
 
 <sub>[(**sommaire ^**)](#sommaire)</sub>
