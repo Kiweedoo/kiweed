@@ -937,12 +937,17 @@ Finalement, une bonne commande dans `~/.vimrc` est :
 
 ### <a name="auto_correct">Abréviations et auto-correction</a>
 
+Avant tout... Les auto-corrections n'ont rien à voir avec la correction
+lexicales (avec `spell` et son dictionnaire) mais c'est le même esprit.
+
+Correction lexicale active ou non, les auto-corrections par abréviations seront actives.
+
 **Quelques généralités** :
 
 - Les auto-corrections permettent, comme dans Libre Office ou d'autres,  de corriger une 
 faute de frappe ou d'orthographe **en cours de saisie** (donc en mode insertion).
 
-- Les auto-corrections sont basées, par choix, sur les abréviations. 
+- Les auto-corrections sont **basées sur les abréviations**, par choix. 
 
 :bell::pencil:
 
