@@ -954,7 +954,7 @@ sa définition, sur plusieurs lignes.
      - suivant son emplacement, il sera lu automatiquement 
 	 ou devra être *sourcé* par `:source path_fo_file` ou son raccourci `:so
 	 path_to_file`.
-	 <sub>(*sourcer* c'est exécuter le contenu, c'est exécuter chaque ligne di
+	 <sub>(*sourcer* c'est exécuter le contenu, comme si tu tapais chaque ligne du
 	 fichier en ligne de commande après `:`)</sub>
   - Définir dans `~/.vimrc`... C'est une mauvaise pratique que nous
 	n'utiliseront pas car le fichier devient très vite **très** chargé. Ça
