@@ -802,13 +802,12 @@ voilà ce que nous obtenons :
 
 :sunglasses: Authentique... Voilà comment j'ai procédé :
 
-- <code>&#92;w</code> ne fonctionne pas avec les nom propres à accent... Ça sent
+- <code>&#92;w</code> ne fonctionne pas avec les nom propres avec accents... Ça sent
   l'intervalle de caractères... Dans le vrai monde on parle de "classes de
   caractères", en anglais *characters classes*, une classe précise, soit en
   définition, soit en extension, soit les deux (comme plus bas) **un ensemble auquel 
-  doit appartenir** le caractère
-  *matché*. **ici la classe de caractères n'inclut pas les majuscules
-  accentuées**
+  doit appartenir** le caractère *matché*. 
+  **Ici la classe de caractères n'inclut pas les majuscules accentuées**
 
 - Que dit le `help` interne de `vim` ?
 
