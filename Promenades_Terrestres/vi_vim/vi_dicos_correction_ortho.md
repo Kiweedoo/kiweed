@@ -937,7 +937,7 @@ faute de frappe ou d'orthographe **en cours de saisie** (donc en mode insertion)
 dès que la touche <code>&lt;space&gt;</code> est enfoncée. Par exemple, la faute
 de frappe, courante chez moi, `sorite` par `sortie`.
 
-- Une abréviation, donc une suite de quelques caractères, peut s'entendre, lors de
+- Une abréviation, donc une suite de quelques caractères, peut s'étendre, lors de
 sa définition, sur plusieurs ligne.
 
 **Quelques bases techniques** :
