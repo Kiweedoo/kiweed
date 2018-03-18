@@ -589,7 +589,7 @@ Reprenons notre fichier `prout.txt`&nbsp;
 
 En lançant `vi` dessus, on obtient
 
-![vi prout.txt](spell_prout_txt.png)
+![vi prout.txt](./images/spell_prout_txt.png)
 
 La correction orthographique opère également sur les noms propres...
 
@@ -640,7 +640,7 @@ majuscule :
 
 En relançant sur `prout.txt` :
 
-![vispellprout.txt](spell_no_propers.png)
+![vispellprout.txt](./images/spell_no_propers.png)
 
 C'est mieux non ?  :metal::alien::+1:
 
@@ -733,7 +733,7 @@ Sans l'exclusion des noms propres, la correction donne :
 
 <br>
 
-![sans exclusion des noms propres](spell_all.png)
+![sans exclusion des noms propres](./images/spell_all.png)
 
 
 <br>
@@ -756,7 +756,7 @@ Ajoutant la ligne qui suit dans `~/.vimrc` :
 On obtient :
 
 
-![sans exclusion des noms propres](spell_w.png)
+![sans exclusion des noms propres](./images/spell_w.png)
 
 <br>
 
@@ -796,7 +796,7 @@ voilà ce que nous obtenons :
 
 <br>
 
-![sans exclusion des noms propres](spell_k.png)
+![sans exclusion des noms propres](./images/spell_k.png)
 
 <br>
 
@@ -818,7 +818,7 @@ voilà ce que nous obtenons :
 
 (`:q` pour quitter le `help` et revenir au *buffer* principal)
 
-![sans exclusion des noms propres](help_w.png)
+![sans exclusion des noms propres](./images/help_w.png)
 
 Bingo ! <code>&#92;w</code> vaut pour l'ensemble de caractères <code>[0-9A-Za-z\_]</code> (*underscore* compris)
 
@@ -829,7 +829,7 @@ En remontant avec la flèche pour voir les entêtes de ce qui apparaît comme un
 tableau... Voici ce qu'on peut lire :
 
 
-![sans exclusion des noms propres](help_k.png)
+![sans exclusion des noms propres](./images/help_k.png)
 
 ><pre>
 > NOTE: <b>the above also work for multi-byte characters.  The ones below only
@@ -869,7 +869,7 @@ l'intervalle ASCII [A-Z]...
 
 Sans rien inventer, recourrons donc à Molière :
 
-![moliere_u](moliere_u.png)
+![moliere_u](./images/moliere_u.png)
 
 <br>
 
@@ -898,7 +898,7 @@ Finalement, une bonne commande dans `~/.vimrc` est :
 
 <br>
 
-![moliere_u](spell_all_names.png)
+![moliere_u](./images/spell_all_names.png)
 
 <br>
 
