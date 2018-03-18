@@ -938,7 +938,7 @@ dès que la touche <code>&lt;space&gt;</code> est enfoncée. Par exemple, la fau
 de frappe, courante chez moi, `sorite` par `sortie`.
 
 - Une abréviation, donc une suite de quelques caractères, peut s'étendre, lors de
-sa définition, sur plusieurs ligne.
+sa définition, sur plusieurs lignes.
 
 **Quelques bases techniques** :
 
@@ -951,17 +951,17 @@ sa définition, sur plusieurs ligne.
   - Définir en ligne de commande en tapant `:ia MOT1 SEQUENCE1`
   - Définir dans un fichier externe :
      - Dans ce cas, plus besoin du `:`, une abréviation par ligne `ia M1 S1`
-     - suivant sont emplacement, il sera lu automatiquement 
+     - suivant son emplacement, il sera lu automatiquement 
 	 ou devra être *sourcé* par `:source path_fo_file` ou son raccourci `:so
 	 path_to_file`.
   - Définir dans `~/.vimrc`... C'est une mauvaise pratique que nous
 	n'utiliseront pas car le fichier devient très vite **très** chargé. Ça
 	peut toutefois rendre service de le savoir...
-  - Afficher les abréviations actives en cours de sessions : `:verbose ia` ou le
+  - Afficher les abréviations actives en cours de session : `:verbose ia` ou le
 	raccourci `:verb ia`.
 
 - Tout comme pour la langue de correction, il est possible de définir plusieurs
-  fichiers d'abréviations par exemple, pour Java, C, Python, etc. Ou encore du
+  fichiers d'abréviations, par exemple pour Java, C, Python, etc. Ou encore du
   jargon dédié à la rédaction d'articles techniques. C'est la principale raison
   pour laquelle je n'utilise pas le `~/.vimrc`. (article dédié)
   
@@ -1009,8 +1009,8 @@ C'est parti... Voici celui que tu peux créer pour commencer :
 
 - exos Java... ou autre à définir bien sûr, ici sur une seule ligne : lorsque tu
   taperas <code>psvm&lt;espace&gt;</code> ce sera remplacé pour toute la
-  séquence... Comment ça fonctionne ?... Tout se passe comme si tu tapais à la
-  main : 
+  séquence... Comment ça fonctionne ?... Tout se passe **comme si tu tapais à la
+  main** : 
   - rien à dire pour le début de séquence, c'est remplacé par <code>public
 	static void main(String[] args){</code>
   - <code>&lt;CR&gt;</code>, pour un *carriage return* après l'accolade
