@@ -608,19 +608,18 @@ majuscule :
 - `noms_propres` : un identifiant obligatoire pour le motif qui suit. 
 - <code>+&#92;&lt;&#92;u&#92;w&ast;&#92;&gt;+</code> la description de ce que
   l'on considère être un nom propre :
-  - <code>+</code> au moins un caractère avant le motif (ça exclu les capitales
-	seules en début de ligne qui seront recherchées dzans le dictionnaire),
-	quant à la fin de ligne, il y a toujours un caractère, le retour chariot.
-	Ici, ils servent aussi à baliser le motifs, car **ils sont nécessaires**.
+  - <code>+</code> au moins un caractère avant le motif...  Ici, ils servent **essentiellement de 
+  balisage** du motif, car **ils sont nécessaires**.
   - <code>&#92;&lt;...&#92;&gt;</code> : c'est la façon de décrire quelque chose
 	précédé et suivi d'un blanc ou d'une tab <sub>(très utile pour la recherche dans vi :
 	si tu cherches <code>/de</code> tu obtiens <code>devant</code>, <code>devinette</code>, etc.
 	Si tu cherches <code>/&#92;&lt;de&#92;&gt;</code> tu obtiens le mot de)</sub>
 	- <code>&#92;u</code> : un caractère en Majuscule (_upper_)
 	- <code>&#92;w&ast;</code> : suivi d'un caractère composant un mot (_word_), 0
-	  ou plusieurs fois, jusqu'à un blanc ou une tabulation
-	  (<code>&#92;&lt;...&#92;&gt;</code>) ; __&ast;__ est un
-	  __quantificateur__... S'il y a 0 caractère, c'est une lettre majuscule
+	  ou plusieurs fois <code>&ast;</code>, jusqu'à un blanc ou une tabulation
+	  (imposé par <code>&#92;&lt;...&#92;&gt;</code>) ; __&ast;__ est un
+	  __quantificateur__... S'il y a 0 caractère, car un quantificateur
+	  quantifie **l'occurrence précédente**, c'est une lettre majuscule
 	  seule, comme dans <code>À toi</code>  ou <code>A est la première...</code>.
 
 - <code>contains=@nospell</code> : on *check* partout **sauf** pour le motif qu'on vient de
@@ -820,7 +819,8 @@ voilà ce que nous obtenons :
 
 ![sans exclusion des noms propres](./images/help_w.png)
 
-Bingo ! <code>&#92;w</code> vaut pour l'ensemble de caractères <code>[0-9A-Za-z\_]</code> (*underscore* compris)
+Bingo ! <code>&#92;w</code> vaut pour **1** caractère appartenant à l'ensemble 
+<code>[0-9A-Za-z\_]</code> (*underscore* compris)
 
 Il est également précisé qu'utiliser la forme atomique <code>&#92;w</code> est
 plus rapide que les <code>[...]</code>
