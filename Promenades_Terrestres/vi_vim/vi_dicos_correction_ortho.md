@@ -687,7 +687,7 @@ pour définir le nombre d'octet utilisés pour encoder le caractère. <sub>(voir
 Le rang, ou l'index d'un caractère, en Unicode c'est son point de code, ou *code
 point* en anglais ; la notation habituelle est :
 
-- U+0000 à U+007F, un octet (se lit du 0ème au 127ème etc)
+- U+0000 à U+007F, un octet (se lit du 0ème au 127ème s'encode sur etc)
 - U+0080 à U+07FF, deux octets
 - U+0800 à U+FFFF, trois octets
 - U+10000 à U+10FFFF, quatre octets
