@@ -89,9 +89,16 @@ Il en est de même pour les abréviations :
 #### <a name="dv">Démarrage de <code>vim</code> et exécution des scripts</a>
 
 Comme nous l'avons vu ([Démarrage de
-<code>vi</code>](https://github.com/Kiweedoo/kiweed/blob/master/Promenades_Terrestres/vi_vim/vi_dicos_correction_ortho.md#launch)
+<code>vi</code>](https://github.com/Kiweedoo/kiweed/blob/master/Promenades_Terrestres/vi_vim/vi_dicos_correction_ortho.md#launch))
 de nombreux scripts et plugins présents par défaut dans les répertoires système
 sont exécutés. Mais qu'en est-il des scripts personnels et des plugins ?
+
+Pour voir tout ce que <code>vi</code> exécute lors de son lancement, et dans
+l'ordre dans lequel il lit les répertoires et exécute leurs contenus :
+
+><pre>
+> 
+></pre>
 
 Il est important de bien comprendre d'ordre d'exécution afin de pouvoir garder
 propre, et surtout sans conflit, le <code>~/.vimrc</code> et les <code>.vim</code> dédiés.

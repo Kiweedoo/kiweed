@@ -599,6 +599,14 @@ Même méthode pour utiliser d'autres langues pour la correction.
 
 <br>
 
+:trident: __Attention__ : ce qui suit vaut pour les fichiers <code>.txt</code>
+et <code>.tex</code> (pour LaTex), sûrement d'autres. Par contre, pour les fichiers de 
+langage <code>c, java, markdown,etc.</code>, un fichier de syntaxe est déjà exécuté
+par défaut pour activer la correction __uniquement__ dans __les régions de
+commentaires__ (balisées par des commentaires)... Annuler la correction sur les noms propres en général __impose
+de dupliquer ces fichiers__ dans <code>~/.vim/syntax</code> et __d'ajouter... Au bon
+endroit :wink: ce que l'on souhaite__...
+
 Reprenons notre fichier `prout.txt`&nbsp;
 
 ><pre>
