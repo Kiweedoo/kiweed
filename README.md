@@ -8,16 +8,6 @@
 
 [//]: # (-----------------------------------------------------------------)
 
-Derniers ajouts : 
-
-- [x] Promenades terrestres : [Type de fichiers et corrections : <code>filetype</code> et <code>ftplugin</code>](https://github.com/Kiweedoo/kiweed/blob/master/Promenades_Terrestres/vi_vim/corrections_abreviations_filetype.md) (statut : en_cours)
-
-- [x] Promenades terrestres : [Langues et correction d'orthographe avec `vim`](https://github.com/Kiweedoo/kiweed/blob/master/Promenades_Terrestres/vi_vim/vi_dicos_correction_ortho.md)
-
-- [x] Promenades terrestres :
-  [bash_type_file_commands_vi_vim.md](https://github.com/Kiweedoo/kiweed/blob/master/Promenades_Terrestres/bash/vi_vim_type_file_commands.md)
-
----
 
 # [kiweed](#)
 
