@@ -14,9 +14,6 @@
 
 ### <a name="sommaire">Sommaire</a>
 ##### [(très)Brève histoire d'unix et de linux](#u_histo)
-##### [Promenades Terrestres](#terre)
-##### [Balades Interstellaires](#interstellar)
-##### [Guide du Codeur Galactique ](#intergal)
 
 ---
 
