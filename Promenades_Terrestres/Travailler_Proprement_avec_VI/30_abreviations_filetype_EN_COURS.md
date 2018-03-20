@@ -11,7 +11,7 @@
 
 [//]: # (-----------------------------------------------------------------)
 
-<sub>Statut : en_cours | Complexité : intermédiaire | Temps : 1h | Mars 2018 |
+<sub>Statut : **EN_COURS** | Complexité : intermédiaire | Temps : 1h | Mars 2018 |
 Georges AKA Kiweed | Tested on Debian U</sub>
 
 
