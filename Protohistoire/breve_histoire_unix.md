@@ -81,39 +81,3 @@ Pour plus de détails, et une image beaucoup plus complète, lire l'article [*wi
 
 
 [(**sommaire ^**)](#sommaire)
-
----
-
-##### <a name="terre">Balades Terrestres</a>
-
-
-Ce sera le dossier des choses techniques abordées simplement, sans dans trop de détails.
-
-Sans autre précision, tout se passe sous Ubuntu.
-
-
-[(**sommaire ^**)](#sommaire)
-
----
-
-
-##### <a name="interstellar">Balades Interstellaires</a>
-
-
-Une exploration de la galaxie Debian et ses multiples systèmes solaires : Ubuntu, Slackware, Debian, etc.
-
-
-[(**sommaire ^**)](#sommaire)
-
----
-
-
-##### <a name="intergal">Guide du Codeur Galactique</a>
-
-Des galaxies Unix, RedHat, MacOsX, BSD, et toutes les autres... Même très éloignées :alien:
-
-Pour coder, décoder, reverser, etc. :metal::smile::+1:
-
-[(**sommaire ^**)](#sommaire)
-
----
