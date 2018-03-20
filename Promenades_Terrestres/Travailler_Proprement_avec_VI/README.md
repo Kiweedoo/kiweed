@@ -3,9 +3,13 @@
 
 [//]: # (----------------------------------------------------------------------)
 
-- [ ] [Corrections et abréviations par type de fichiers (Statut : **en cours**)](#)
-- [x] [Dictionnaires et correction d'orthographe (Statut : **ok**)](https://github.com/Kiweedoo/kiweed/blob/master/Promenades_Terrestres/vi_vim/vi_dicos_correction_ortho.md)
-- [ ] *vi* et le plugin *vim-instant-markdown*
+- [x] Organiser son <code>~/.vimrc</code>
+- [x] Configurer la  correction orthographique
+- [x] Auto-corrections et abréviations
+- [x] Utiliser les répertoires de <code>~/.vim</code> en fonction des types de
+  fichiers
+
+
 
 :metal::alien::+1:
 
