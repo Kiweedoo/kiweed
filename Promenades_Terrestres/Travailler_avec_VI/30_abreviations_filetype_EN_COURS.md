@@ -95,7 +95,6 @@ l'ordre de lecture et d'exécution des fichiers.
 
 ><pre>
 > <b>:scriptname</b>
-
 > 1: /usr/share/vim/vimrc
 > 2: /usr/share/vim/vim80/debian.vim
 > 3: /usr/share/vim/vim80/syntax/syntax.vim
