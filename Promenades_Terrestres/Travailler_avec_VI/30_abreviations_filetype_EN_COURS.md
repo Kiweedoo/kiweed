@@ -117,10 +117,156 @@ l'ordre de lecture et d'exécution des fichiers.
 > [...] 
 > 31: ~/.vim/after/ftplugin/markdown/instant-markdown.vim
 ></pre>
+
+(le résultat diffère suivant l'extension du fichier...)
+
 <br>
 
-#### <a name="orga">Organiser <code>~/.vim</code> pour gagner du temps</a>
+<code>~/.vimrc</code> est lu est exécuté **avant** d'autres scripts système...
 
+Si ces scripts contiennent une des commandes <code>~/.vimrc</code>, cette
+dernière sera écrasée.
+
+Le paragraphe suivant explique comment est organisée l'arborescence de <code>~/.vim</code>.
+
+#### <a name="orga">Arborescence de <code>~/.vim</code></a>
+
+:trident: L'arborescence de <code>~/.vim</code> contient les répertoires dont les contenus
+vont compléter, ou remplacer, les actions exécutées par défaut (celles des
+scripts système lus avant).
+
+À ma connaissance, il y en a cinq (probablement d'autres) :
+
+- <code><b>~/.vim/after</b></code> : pour tout ce qui est fait après, en dernier. C'est
+  celui que nous utiliserons pour le *previewer* markdown.
+
+- <code><b>~/.vim/ftplugin</b></code> : les actions (commandes) à exécuter **en fonction** du
+  *filetype* (déterminer par l'extension).
+
+- <code><b>~/.vim/plugin</b></code> : celles qui s'appliquent à tous les fichiers quelle qu'en
+  soit l'extension.
+
+- <code><b>~/.vim/syntax</b></code> : les fichiers spécifiques de syntaxes... Un exemple plus
+  bas.
+
+- <code><b>~/.vim/ftdetect</b></code> : pour définir notre propre type de fichier, d'extension
+  particulière... Exemple ci-dessous.
+
+
+:bell::pencil:
+:trident: Ces répertoires sont lus **avant** les scripts système correspondant. Leur
+contenu peut éventuellement être écrasé.
+
+<br>
+
+#### <a name="progression">Progression pour bien comprendre</a>
+
+Au départ, j'ai les répertoires suivant sous <code>~/.vim</code>
+
+><pre>
+> drwxrwxr-x 3 georges georges 4096 2018-03-10-17:10 after
+> drwxrwxr-x 2 georges georges 4096 2018-03-21-10:38 ftdetect
+> drwxrwxr-x 2 georges georges 4096 2018-03-20-18:23 ftplugin
+> drwxrwxr-x 2 georges georges 4096 2018-03-18-19:46 plugin
+> drwxr-xr-x 2 georges georges 4096 2018-03-18-09:11 spell
+> drwxrwxr-x 2 georges georges 4096 2018-03-20-13:22 syntax
+></pre>
+
+On se crée un petit répertoire de tests, et on s'y place :
+
+><pre>
+> mkdir vim_tests
+> cd vim_tests
+></pre>
+
+On crée un fichier bidon, pour lancer la commande <code>:scriptname</code>, en
+lui donnant l'extension <code>.md</code> (markdown) puisque c'est mon activité
+du moment :
+
+><pre>
+> vi prout.md
+> <b>:scriptname</b>
+
+></pre>
+
+:trident: Bien entendu le résultat est différent si on a donné une autre extension
+connue à <code>prout</code>...
+
+
+><pre>
+> 1: /usr/share/vim/vimrc
+> 2: /usr/share/vim/vim80/debian.vim
+> 3: /usr/share/vim/vim80/syntax/syntax.vim
+> 4: /usr/share/vim/vim80/syntax/synload.vim
+> 5: /usr/share/vim/vim80/syntax/syncolor.vim
+> 6: /usr/share/vim/vim80/filetype.vim
+> <b>7: ~/.vim/ftdetect/pad.vim</b>
+> <b>8: ~/.vimrc</b>
+> 9: /usr/share/vim/vim80/ftplugin.vim
+> 10: /usr/share/vim/vim80/indent.vim
+> 11: /usr/share/vim/vim80/plugin/getscriptPlugin.vim
+> 12: /usr/share/vim/vim80/plugin/gzip.vim
+> 13: /usr/share/vim/vim80/plugin/logiPat.vim
+> 14: /usr/share/vim/vim80/plugin/manpager.vim
+> 15: /usr/share/vim/vim80/plugin/matchparen.vim
+> 16: /usr/share/vim/vim80/plugin/netrwPlugin.vim
+> 17: /usr/share/vim/vim80/plugin/rrhelper.vim
+> 18: /usr/share/vim/vim80/plugin/spellfile.vim
+> 19: /usr/share/vim/vim80/plugin/tarPlugin.vim
+> 20: /usr/share/vim/vim80/plugin/tohtml.vim
+> 21: /usr/share/vim/vim80/plugin/vimballPlugin.vim
+> 22: /usr/share/vim/vim80/plugin/zipPlugin.vim
+> 23: /usr/share/vim/vim80/syntax/markdown.vim
+> 24: /usr/share/vim/vim80/syntax/html.vim
+> 25: /usr/share/vim/vim80/syntax/javascript.vim
+> 26: /usr/share/vim/vim80/syntax/vb.vim
+> 27: /usr/share/vim/vim80/syntax/css.vim
+> <b>28: ~/.vim/ftplugin/markdown.vim</b>
+> <b>29: /usr/share/vim/vim80/ftplugin/markdown.vim</b>
+> 30: /usr/share/vim/vim80/ftplugin/html.vim
+> 31: /usr/share/vim/vim80/autoload/htmlcomplete.vim
+> <b>32: ~/.vim/after/ftplugin/markdown/instant-markdown.vim</b>
+> ></pre>
+
+
+Revenons à une situation dans laquelle nous n'avons pas de <code>~/.vimrc</code>
+
+On le renomme donc, quel que soit le répertoire courant :
+
+><pre>
+> mv ~/.vimrc ~/.vimrc.ORI
+></pre>
+
+
+
+Pour obtenir la liste et l'ordre de lecture des scripts :
+
+><pre>
+> 1: /usr/share/vim/vimrc
+> 2: /usr/share/vim/vim80/debian.vim
+> 3: /usr/share/vim/vim80/syntax/syntax.vim
+> 4: /usr/share/vim/vim80/syntax/synload.vim
+> 5: /usr/share/vim/vim80/syntax/syncolor.vim
+> 6: /usr/share/vim/vim80/filetype.vim
+> 7: ~/.vim/ftdetect/potion.vim
+> 8: /usr/share/vim/vim80/defaults.vim
+> 9: /usr/share/vim/vim80/syntax/nosyntax.vim
+> 10: /usr/share/vim/vim80/ftplugin.vim
+> 11: /usr/share/vim/vim80/indent.vim
+> 12: /usr/share/vim/vim80/plugin/getscriptPlugin.vim
+> 13: /usr/share/vim/vim80/plugin/gzip.vim
+> 14: /usr/share/vim/vim80/plugin/logiPat.vim
+> 15: /usr/share/vim/vim80/plugin/manpager.vim
+> 16: /usr/share/vim/vim80/plugin/matchparen.vim
+> 17: /usr/share/vim/vim80/plugin/netrwPlugin.vim
+> 18: /usr/share/vim/vim80/plugin/rrhelper.vim
+> 19: /usr/share/vim/vim80/plugin/spellfile.vim
+> 20: /usr/share/vim/vim80/plugin/tarPlugin.vim
+> 21: /usr/share/vim/vim80/plugin/tohtml.vim
+> 22: /usr/share/vim/vim80/plugin/vimballPlugin.vim
+> 23: /usr/share/vim/vim80/plugin/zipPlugin.vim
+> 24: /usr/share/vim/vim80/scripts.vim
+></pre>
 Corrections, auto-corrections, abréviations, <code>map</code>, etc.
 
 Suivant le contexte, développement ou rédaction d'article par exemple, la
