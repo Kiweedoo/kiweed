@@ -21,6 +21,8 @@ Georges AKA Kiweed | Tested on Debian U</sub>
 
 ##### &nbsp;&nbsp;&nbsp;[Objectifs](#objectifs)
 ##### &nbsp;&nbsp;&nbsp;[Contexte](#preambule)
+<sub> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Comprendre le fonctionnement des scripts par défaut](#fctmnt)</sub>
+
 <sub> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Organiser <code>~/.vim</code> pour gagner du temps](#orga)</sub>
 
 <sub> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Démarrage de <code>vim</code> et exécution des scripts](#dv)</sub>
@@ -63,7 +65,59 @@ Georges AKA Kiweed | Tested on Debian U</sub>
 
 ### <a name="preambule">Contexte</a>
 
+Nous allons définir des actions, des abréviations (ou autre), en fonction du
+type de fichier (son extension).
 
+Si on travaille avec un fichier <code>.java</code>, le fichier spécifique
+contenant les abréviations pour <code>.java</code> sera exécuté. 
+
+Pareil pour les
+<code>.c</code>, <code>.md</code> (markdown), <code>.txt</code>, <code>.tex</code> (LaTex), etc.
+
+Parfois... Ça semble ne pas fonctionner... D'où l'intérêt du paragraphe suivant
+:wink:
+
+<br>
+
+#### <a name="fctmnt">Comprendre l'exécution des scripts par défaut</a>
+
+Nous l'avons déjà vu ([Démarrage de <code>vi</code>](https://github.com/Kiweedoo/kiweed/blob/master/Promenades_Terrestres/Travailler_avec_VI/20_vi_dicos_correction_ortho.md#launch)), il se passe des choses.
+
+Si l'on s'en tient uniquement aux scripts (<code>~/.vimrc</code> en est un)...
+
+:trident: <code>script</code> :  sont des fichiers de commandes <code>vi</code> 
+qui sont lus et exécutés au lancement... Exactement comme si on exécutait, 
+pas à pas, à la main, en ligne de commande <code>vi</code> (par la 
+commande <code>:</code>) chacune des instructions.
+
+La commande interne à <code>vi</code>, <code>scriptname</code> permet de lister
+l'ordre de lecture et d'exécution des fichiers.
+
+><pre>
+> <b>:scriptname</b>
+
+> 1: /usr/share/vim/vimrc
+> 2: /usr/share/vim/vim80/debian.vim
+> 3: /usr/share/vim/vim80/syntax/syntax.vim
+> 4: /usr/share/vim/vim80/syntax/synload.vim
+> 5: /usr/share/vim/vim80/syntax/syncolor.vim
+> 6: /usr/share/vim/vim80/filetype.vim
+> 7: ~/.vimrc
+> 8: /usr/share/vim/vim80/ftplugin.vim
+> 9: /usr/share/vim/vim80/indent.vim
+> [...] 
+> 17: /usr/share/vim/vim80/plugin/spellfile.vim
+> [...] 
+> 22: /usr/share/vim/vim80/syntax/markdown.vim
+> 23: /usr/share/vim/vim80/syntax/html.vim
+> [...] 
+> 26: /usr/share/vim/vim80/syntax/css.vim
+> 27: ~/.vim/ftplugin/markdown.vim
+> 28: /usr/share/vim/vim80/ftplugin/markdown.vim
+> 29: /usr/share/vim/vim80/ftplugin/html.vim
+> [...] 
+> 31: ~/.vim/after/ftplugin/markdown/instant-markdown.vim
+></pre>
 <br>
 
 #### <a name="orga">Organiser <code>~/.vim</code> pour gagner du temps</a>
