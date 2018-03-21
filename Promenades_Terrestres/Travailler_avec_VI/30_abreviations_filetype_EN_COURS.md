@@ -101,17 +101,17 @@ l'ordre de lecture et d'exécution des fichiers.
 > 4: /usr/share/vim/vim80/syntax/synload.vim
 > 5: /usr/share/vim/vim80/syntax/syncolor.vim
 > 6: /usr/share/vim/vim80/filetype.vim
-> 7: ~/.vimrc
+> <b>7: ~/.vimrc</b>
 > 8: /usr/share/vim/vim80/ftplugin.vim
 > 9: /usr/share/vim/vim80/indent.vim
 > [...] 
 > 17: /usr/share/vim/vim80/plugin/spellfile.vim
 > [...] 
-> 22: /usr/share/vim/vim80/syntax/markdown.vim
+> <b>22: /usr/share/vim/vim80/syntax/markdown.vim</b>
 > 23: /usr/share/vim/vim80/syntax/html.vim
 > [...] 
 > 26: /usr/share/vim/vim80/syntax/css.vim
-> 27: ~/.vim/ftplugin/markdown.vim
+> <b>27: ~/.vim/ftplugin/markdown.vim</b>
 > 28: /usr/share/vim/vim80/ftplugin/markdown.vim
 > 29: /usr/share/vim/vim80/ftplugin/html.vim
 > [...] 
