@@ -63,10 +63,9 @@ Georges AKA Kiweed | Tested on Debian U</sub>
 
 <sub>[(**sommaire ^**)](#sommaire)</sub>
 
----
+<br>
 
-
-### <a name="preambule">Contexte</a>
+## <a name="preambule">Contexte</a>
 
 Nous allons définir des actions, des abréviations (ou autre), en fonction du
 type de fichier (son extension).
@@ -106,9 +105,11 @@ Il en est de même pour les abréviations :
 
 <sub>[(**sommaire ^**)](#sommaire)</sub>
 
----
+<br>
 
-### <a name="fctmnt">L'exécution des scripts par défaut</a>
+## <a name="fctmnt">L'exécution des scripts par défaut</a>
+
+<br>
 
 Nous l'avons déjà vu ([Démarrage de <code>vi</code>](https://github.com/Kiweedoo/kiweed/blob/master/Promenades_Terrestres/Travailler_avec_VI/20_vi_dicos_correction_ortho.md#launch)), il se passe des choses.
 
@@ -158,7 +159,7 @@ dernière sera écrasée... Sauf si on prend prend les précautions qui s'impose
 
 <br>
 
-#### <a name="orga">Arborescence de <code>&#126;/.vim</code></a>
+### <a name="orga">Arborescence de <code>&#126;/.vim</code></a>
 
 <br>
 
@@ -190,7 +191,7 @@ contenu peut éventuellement être écrasé.
 
 <br>
 
-#### <a name="progression">Progression pour bien comprendre</a>
+### <a name="progression">Progression pour bien comprendre</a>
 
 <br>
 
@@ -355,11 +356,9 @@ puisque certains scripts sont exécutés par défaut.
 
 <sub>[(**sommaire ^**)](#sommaire)</sub>
 
----
 <br>
 
 ## <a name="ptvim"><code>~/.vimrc</code> et <code>&#126;/.vim</code></a>
-
 
 <br>
 
