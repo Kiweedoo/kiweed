@@ -15,7 +15,7 @@
 Georges AKA Kiweed | Tested on Debian U</sub>
 
 
-### Balade : Types de fichiers et corrections : <code>filetype</code> et <code>./vim/ftplugin</code>
+### Balade : Types de fichiers, plugins et corrections</code>
 
 #### <a name="sommaire">**Sommaire**</a>
 
@@ -229,7 +229,7 @@ connue à <code>prout</code>...
 > ></pre>
 
 
-Revenons à une situation dans laquelle nous n'avons pas de <code>~/.vimrc</code>
+Revenons maintenant à une situation dans laquelle nous n'avons pas de <code>~/.vimrc</code>
 
 On le renomme donc, quel que soit le répertoire courant :
 
@@ -237,6 +237,79 @@ On le renomme donc, quel que soit le répertoire courant :
 > mv ~/.vimrc ~/.vimrc.ORI
 ></pre>
 
+Renommons également <code>~/.vim</code> en <code>~/.vim.ORI</code> car même sans
+<code>~/.vimrc</code> il y a des choses par défaut dans la configuration par
+défaut, notamment l'exécution du plugin pour le _previewer_ markdown.
+
+Maintenant que nous n'avons ni <code>~/.vimrc</code>, ni répertoire <code>~/.vim</code>,
+relançons un <code>vi prout.md</code> en exécutant <code>:scriptname</code>
+
+><pre>
+> 1: /usr/share/vim/vimrc
+> 2: /usr/share/vim/vim80/debian.vim
+> 3: /usr/share/vim/vim80/syntax/syntax.vim
+> 4: /usr/share/vim/vim80/syntax/synload.vim
+> 5: /usr/share/vim/vim80/syntax/syncolor.vim
+> 6: /usr/share/vim/vim80/filetype.vim
+> 7: /usr/share/vim/vim80/defaults.vim
+> 8: /usr/share/vim/vim80/syntax/nosyntax.vim
+> 9: /usr/share/vim/vim80/ftplugin.vim
+> 10: /usr/share/vim/vim80/indent.vim
+> 11: /usr/share/vim/<vim80/plugin/getscriptPlugin.vim
+> 12: /usr/share/vim/vim80/plugin/gzip.vim
+> 13: /usr/share/vim/vim80/plugin/logiPat.vim
+> 14: /usr/share/vim/vim80/plugin/manpager.vim
+> 15: /usr/share/vim/vim80/plugin/matchparen.vim
+> 16: /usr/share/vim/vim80/plugin/netrwPlugin.vim
+> 17: /usr/share/vim/vim80/plugin/rrhelper.vim
+> 18: /usr/share/vim/vim80/plugin/spellfile.vim
+> 19: /usr/share/vim/vim80/plugin/tarPlugin.vim
+> 20: /usr/share/vim/vim80/plugin/tohtml.vim
+> 21: /usr/share/vim/vim80/plugin/vimballPlugin.vim
+> 22: /usr/share/vim/vim80/plugin/zipPlugin.vim
+> 23: /usr/share/vim/vim80/syntax/markdown.vim
+> 24: /usr/share/vim/vim80/syntax/html.vim
+> 25: /usr/share/vim/vim80/syntax/javascript.vim
+> 26: /usr/share/vim/vim80/syntax/vb.vim
+> 27: /usr/share/vim/vim80/syntax/css.vim
+> 28: /usr/share/vim/vim80/ftplugin/markdown.vim
+> 29: /usr/share/vim/vim80/ftplugin/html.vim 
+> 30: /usr/share/vim/vim80/autoload/htmlcomplete.vim
+></pre>
+
+Ok, voilà donc la liste de tous les scripts exécuter par défaut lors du
+lancement d'une session __pour un fichier <code>.md</code>__.
+
+Toujours pareil, puisque des actions sont exécutées par défaut, le lancement
+simple :
+
+><pre>
+> vi prout
+> <b>:sciptname</b>
+> 1: /usr/share/vim/vimrc
+> 2: /usr/share/vim/vim80/debian.vim
+> 3: /usr/share/vim/vim80/syntax/syntax.vim
+> 4: /usr/share/vim/vim80/syntax/synload.vim
+> 5: /usr/share/vim/vim80/syntax/syncolor.vim
+> 6: /usr/share/vim/vim80/filetype.vim
+> 7: /usr/share/vim/vim80/defaults.vim
+> 8: /usr/share/vim/vim80/syntax/nosyntax.vim
+> 9: /usr/share/vim/vim80/ftplugin.vim
+> 10: /usr/share/vim/vim80/indent.vim
+> 11: /usr/share/vim/vim80/plugin/getscriptPlugin.vim
+> 12: /usr/share/vim/vim80/plugin/gzip.vim
+> 13: /usr/share/vim/vim80/plugin/logiPat.vim
+> 14: /usr/share/vim/vim80/plugin/manpager.vim
+> 15: /usr/share/vim/vim80/plugin/matchparen.vim
+> 16: /usr/share/vim/vim80/plugin/netrwPlugin.vim
+> 17: /usr/share/vim/vim80/plugin/rrhelper.vim
+> 18: /usr/share/vim/vim80/plugin/spellfile.vim
+> 19: /usr/share/vim/vim80/plugin/tarPlugin.vim
+> 20: /usr/share/vim/vim80/plugin/tohtml.vim
+> 21: /usr/share/vim/vim80/plugin/vimballPlugin.vim
+> 22: /usr/share/vim/vim80/plugin/zipPlugin.vim
+> 23: /usr/share/vim/vim80/scripts.vim
+></pre>
 
 
 Pour obtenir la liste et l'ordre de lecture des scripts :
@@ -283,27 +356,12 @@ Il en est de même pour les abréviations :
 - celles qui font office de raccourcis pour déclarer des fonctions ou des
   classes.
 
+- ou encore les abréviations d'auto-correction pour les fichiers <code>.txt</code>
+
 <br>
 
 #### <a name="dv">Démarrage de <code>vim</code> et exécution des scripts</a>
 
-Comme nous l'avons vu ([Démarrage de
-<code>vi</code>](https://github.com/Kiweedoo/kiweed/blob/master/Promenades_Terrestres/vi_vim/vi_dicos_correction_ortho.md#launch))
-de nombreux scripts et plugins présents par défaut dans les répertoires système
-sont exécutés. Mais qu'en est-il des scripts personnels et des plugins ?
-
-Pour voir tout ce que <code>vi</code> exécute lors de son lancement, et dans
-l'ordre dans lequel il lit les répertoires et exécute leurs contenus :
-
-><pre>
-> 
-></pre>
-
-Il est important de bien comprendre d'ordre d'exécution afin de pouvoir garder
-propre, et surtout sans conflit, le <code>~/.vimrc</code> et les <code>.vim</code> dédiés.
-
-
-<br>
 
 <sub>[(**sommaire ^**)](#sommaire)</sub>
 
