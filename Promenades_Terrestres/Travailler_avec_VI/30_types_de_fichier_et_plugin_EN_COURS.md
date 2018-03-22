@@ -295,7 +295,7 @@ relançons avec un fichier sans extension :
 > 12: /usr/share/vim/vim80/plugin/gzip.vim
 > 13: /usr/share/vim/vim80/plugin/logiPat.vim
 > 14: /usr/share/vim/vim80/plugin/manpager.vim
-> 15: /usr/share/vim/vim80/plugin/matchparen.vim
+> 15: <b>/usr/share/vim/vim80/plugin/matchparen.vim</b>
 > 16: /usr/share/vim/vim80/plugin/netrwPlugin.vim
 > 17: /usr/share/vim/vim80/plugin/rrhelper.vim
 > 18: /usr/share/vim/vim80/plugin/spellfile.vim
@@ -327,7 +327,7 @@ Même idée avec un <code>prout.md</code>
 > 12: /usr/share/vim/vim80/plugin/gzip.vim
 > 13: /usr/share/vim/vim80/plugin/logiPat.vim
 > 14: /usr/share/vim/vim80/plugin/manpager.vim
-> 15: /usr/share/vim/vim80/plugin/matchparen.vim
+> 15: <b>/usr/share/vim/vim80/plugin/matchparen.vim</b>
 > 16: /usr/share/vim/vim80/plugin/netrwPlugin.vim
 > 17: /usr/share/vim/vim80/plugin/rrhelper.vim
 > 18: /usr/share/vim/vim80/plugin/spellfile.vim
@@ -414,10 +414,44 @@ Le résulat est :
 > " - when 'compatible' is set
 > " - the "CursorMoved" autocmd event is not available.
 > <b>if exists("g:loaded_matchparen")</b> || &cp || !exists("##CursorMoved")
-> &nbps;&nbps;&nbps;finish
+>     finish
 > endif
 > <b>let g:loaded_matchparen = 1</b>
 ></pre>
+
+Rien de bien sorcier, si le label global <code>g:loaded_matchparen</code>
+existe... Terminé... Sinon, il le positionne.
+
+Tous les plugins commencent de la même manière.
+
+Une fois que l'on connait le label testé, il suffit de le déclarer dans
+<code>&#126;/.vimrc</code> avev la commande <code>let</code>
+
+
+><pre>
+> vi &#126;/vimrc
+> let loaded_matchparen = 1
+> [esc]:x 
+></pre>
+
+Et c'est terminé... Examinons néanmoins la finesse... :
+
+><pre>
+> vi prout
+> :scriptname
+> [...]
+> <b>&#126;/.vimrc</b>
+> [...]
+> <b>/usr/share/vim/vim80/plugin/matchparen.vim</b>
+> [...]
+></pre>
+
+Il est chargé... et exécuté... 
+
+C'est bien l'exécution du <code>if exists</code> qui permet de s'affranchir de
+l'appariement des parenthèses... :smiling_imp:
+
+
 
 
 
