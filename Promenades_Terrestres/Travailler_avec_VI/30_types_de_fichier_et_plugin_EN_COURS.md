@@ -281,29 +281,29 @@ relançons avec un fichier sans extension :
 ><pre>
 > vi prout
 > <b>:scriptname</b>
-&gt; 1: /usr/share/vim/vimrc
-&gt; 2: /usr/share/vim/vim80/debian.vim
-&gt; 3: /usr/share/vim/vim80/syntax/syntax.vim
-&gt; 4: /usr/share/vim/vim80/syntax/synload.vim
-&gt; 5: /usr/share/vim/vim80/syntax/syncolor.vim
-&gt; 6: /usr/share/vim/vim80/filetype.vim
-&gt; 7: /usr/share/vim/vim80/defaults.vim
-&gt; 8: /usr/share/vim/vim80/syntax/nosyntax.vim
-&gt; 9: /usr/share/vim/vim80/ftplugin.vim
-&gt; 10: /usr/share/vim/vim80/indent.vim
-&gt; 11: /usr/share/vim/vim80/plugin/getscriptPlugin.vim
-&gt; 12: /usr/share/vim/vim80/plugin/gzip.vim
-&gt; 13: /usr/share/vim/vim80/plugin/logiPat.vim
-&gt; 14: /usr/share/vim/vim80/plugin/manpager.vim
-&gt; 15: /usr/share/vim/vim80/plugin/matchparen.vim
-&gt; 16: /usr/share/vim/vim80/plugin/netrwPlugin.vim
-&gt; 17: /usr/share/vim/vim80/plugin/rrhelper.vim
-&gt; 18: /usr/share/vim/vim80/plugin/spellfile.vim
-&gt; 19: /usr/share/vim/vim80/plugin/tarPlugin.vim
-&gt; 20: /usr/share/vim/vim80/plugin/tohtml.vim
-&gt; 21: /usr/share/vim/vim80/plugin/vimballPlugin.vim
-&gt; 22: /usr/share/vim/vim80/plugin/zipPlugin.vim
-&gt; 23: /usr/share/vim/vim80/scripts.vim
+> 1: /usr/share/vim/vimrc
+> 2: /usr/share/vim/vim80/debian.vim
+> 3: /usr/share/vim/vim80/syntax/syntax.vim
+> 4: /usr/share/vim/vim80/syntax/synload.vim
+> 5: /usr/share/vim/vim80/syntax/syncolor.vim
+> 6: /usr/share/vim/vim80/filetype.vim
+> 7: /usr/share/vim/vim80/defaults.vim
+> 8: /usr/share/vim/vim80/syntax/nosyntax.vim
+> 9: /usr/share/vim/vim80/ftplugin.vim
+> 10: /usr/share/vim/vim80/indent.vim
+> 11: /usr/share/vim/vim80/plugin/getscriptPlugin.vim
+> 12: /usr/share/vim/vim80/plugin/gzip.vim
+> 13: /usr/share/vim/vim80/plugin/logiPat.vim
+> 14: /usr/share/vim/vim80/plugin/manpager.vim
+> 15: /usr/share/vim/vim80/plugin/matchparen.vim
+> 16: /usr/share/vim/vim80/plugin/netrwPlugin.vim
+> 17: /usr/share/vim/vim80/plugin/rrhelper.vim
+> 18: /usr/share/vim/vim80/plugin/spellfile.vim
+> 19: /usr/share/vim/vim80/plugin/tarPlugin.vim
+> 20: /usr/share/vim/vim80/plugin/tohtml.vim
+> 21: /usr/share/vim/vim80/plugin/vimballPlugin.vim
+> 22: /usr/share/vim/vim80/plugin/zipPlugin.vim
+> 23: /usr/share/vim/vim80/scripts.vim
 ></pre>
 
 <br>
