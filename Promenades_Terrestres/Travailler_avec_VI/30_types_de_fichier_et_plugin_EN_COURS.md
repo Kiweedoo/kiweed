@@ -397,7 +397,7 @@ Regardons d'abord par quoi  commencent **tous** les plugins par défaut :
 > head -12 <b>/usr/share/vim/vim80/plugin/matchparen.vim</b>
 ></pre>
 
-<sub><code>head</code>, sans option, pour afficher les 10 premières lignes d'un
+<sub><code>head</code>, sans option, pour afficher 10 lignes d'un
 fichier **à partir du début** ; <code>tail</code>, idem, **à partir de la fin**.
 Si <code>-12</code>, les 12 premières lignes, etc.</sub>
 
@@ -449,6 +449,13 @@ Il est chargé... et exécuté...
 
 C'est bien l'exécution du <code>if exists</code> qui permet de s'affranchir de
 l'appariement des parenthèses... :smiling_imp:
+
+:bell::pencil: : même si la coloration syntaxique n'apparait plus, il **est
+toujours** possible de vérifier l'appariement, à l'ancienne, mode commande : 
+- en se plaçant sur une <code>&#40;</code>, une <code>&#123;</code>, 
+ou un <code>&#91;</code>, et en appuyant sur <code><b>%</b></code>
+
+
 
 
 
