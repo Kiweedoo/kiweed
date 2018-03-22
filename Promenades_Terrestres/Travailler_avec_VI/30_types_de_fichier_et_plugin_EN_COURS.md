@@ -382,7 +382,7 @@ Très bien... Sauf que la couleur d'appariement dépend de la coloration
 syntaxique suivant le type de fichiers <code>.c</code>, <code>.txt</code>, etc.
 
 Et bien sûr, suivant les cas, je ne vois plus mon curseur et ne sais donc pas
-s'il est sur la parenthèse ouvrante, ou celle fermante... :shit:
+s'il est sur la parenthèse ouvrante, ou celle fermante... :rage:
 
 Résultat... vérification des appariements à l'ancienne : en mode commande
 avec <code>%</code> quand placé sur l'une ou l'autre.
@@ -395,7 +395,7 @@ L'unique façon propre d'empêcher le chargement d'un plugin et de le dire dans 
 Regardons d'abord comment commencent **tous** les plugins par défaut :
 
 ><pre>
-> head -12 <b>/usr/share/vim/vim80/plugin/matchparen.vim<b>
+> head -12 <b>/usr/share/vim/vim80/plugin/matchparen.vim</b>
 ></pre>
 
 <sub><code>head</code>, sans option, pour afficher les 10 premières lignes d'un
