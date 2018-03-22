@@ -392,14 +392,14 @@ avec <code>%</code> quand placé sur l'une ou l'autre.
 L'unique façon propre d'empêcher le chargement d'un plugin et de le dire dans le
 <code>&#126;/.vimrc</code>.
 
-Regardons d'abord comment commencent __tous__ les plugins par défaut :
+Regardons d'abord comment commencent **tous** les plugins par défaut :
 
 ><pre>
 > head -12 <b>/usr/share/vim/vim80/plugin/matchparen.vim<b>
 ></pre>
 
 <sub><code>head</code>, sans option, pour afficher les 10 premières lignes d'un
-fichier __à partir du début__ ; <code>tail</code>, idem, __à partir de la fin_.
+fichier **à partir du début** ; <code>tail</code>, idem, **à partir de la fin**.
 Si <code>-12</code>, les 12 premières lignes, etc.</sub>
 
 Le résulat est :
