@@ -27,10 +27,11 @@ Georges AKA Kiweed | Tested on Debian U</sub>
 <sub> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Progression pour bien comprendre](#progression)</sub>
 
 ##### &nbsp;&nbsp;&nbsp;[<code>~/.vimrc</code> et <code>.vim</code>](#ptvim)
-<sub> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[<code>~/.vimrc</code> : désactiver un plugin par défaut](#delplug)</sub>
+<sub> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Désactiver un plugin par défaut : <code>~/.vimrc</code>](#delplug)</sub>
 
-<sub> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[<code>~/.vim</code> : personnaliser le lancement](#myplug)</sub>
+<sub> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Adapter le lancement : <code>~/.vim</code>](#myplug)</sub>
 
+##### &nbsp;&nbsp;&nbsp;[*FileType* et plugins : <code>~/.vim/ftplugin</code>](#ftplugin)
 ##### &nbsp;&nbsp;&nbsp;[La minute HHGTTG : plonger dans les *inky depths*](#hhgttg)
 
 ---
@@ -375,7 +376,7 @@ plugins chargés par défaut**.
 <br>
 
 Prenons par exemple le cas de <code>matchparen.vim</code> qui permet d'avoir une
-coloration syntaxique sur l'appariement des (), des {} et des crochets...
+coloration syntaxique sur l'appariement des parenthèses, des accolades, et des crochets...
 
 Très bien... Sauf que la couleur d'appariement dépend de la coloration
 syntaxique suivant le type de fichiers <code>.c</code>, <code>.txt</code>, etc.
@@ -464,12 +465,84 @@ ou un <code>&#91;</code>, et en appuyant sur <code><b>%</b></code>
 
 <br>
 
-### <a name="myplug"><code>~/.vim</code> : personnaliser le lancement</a>
+### <a name="myplug">Adapter le lancement : <code>~/.vim</code></a>
+
+<br>
+
+Restaurons maintenant le dossier <code>&#126;/.vim</code> :
+
+><pre>
+> mv &#126;/.vim.ORI &#126;/.vim
+></pre>
+
+Si on ne fait rien de plus, il n'y aura aucune différence : 
+
+- le <code>&#126;/.vimrc</code> sera lu et exécuté
+
+- les plugins par défaut seront lu et exécutés...
+
+L'arborescence <code>&#126;/.vim</code> contient les scripts de
+personnalisation.
+
+Encore faut-il dire dans <code>&#126;/.vimrc</code> qu'on veut les appliquer...
+
+Commençons par le type de fichier (<code>filetype</code>), en aditant <code>&#126;/.vimrc</code> pour
+ajouter :
+
+><pre>
+> vi &#126;/.vimrc
+> let loaded_matchparen = 1
+> filetype plugin indent on
+></pre>
+
+Pour détecter le type **et** activer l'exécution des contenus de
+<code>&#126;/.vim</code> et la gestion de l'indentation qui rend bien des
+services, notamment pour le déplacement de blocs... (mais pas nécessaire pour ce
+qui suit)
+
+Maintenant, lançons un <code>prout.md</code> (extension markdown) :
+
+><pre>
+> vi prout.md
+> :scriptname
+>
+> 1: /usr/share/vim/vimrc
+> 2: /usr/share/vim/vim80/debian.vim
+> [...]
+> 6: /usr/share/vim/vim80/filetype.vim
+> 7: ~/.vim/ftdetect/pad.vim
+> 8: ~/.vimrc
+> 9: /usr/share/vim/vim80/ftplugin.vim
+> 22: /usr/share/vim/vim80/syntax/markdown.vim
+> [...]
+> 27: <b>~/.vim/ftplugin/markdown.vim</b>
+> 28: /usr/share/vim/vim80/ftplugin/markdown.vim
+> [...]
+> 31: <b>~/.vim/after/ftplugin/markdown/instant-markdown.vim</b>
+> [...]
+></pre>
+
+Il est bien aller chercher ce qui concernait le markdown dans le
+<code>&#126;/.vim</code> perso.
+
+<br>
+
+<sub>[(**sommaire ^**)](#sommaire)</sub>
+<br>
+
+## <a name="ftplugin">*FileType* et plugins : <code>~/.vim/ftplugin</code></a>
+
+<br>
+
+C'est-à-dire les scripts qui seront exécutés **en fonction de l'extension
+détectée au lancement**.
+
 
 <br>
 
 <sub>[(**sommaire ^**)](#sommaire)</sub>
 
+ICI
 ---
 
 ### [La minute HHGTTG : ](#hhgttg)
