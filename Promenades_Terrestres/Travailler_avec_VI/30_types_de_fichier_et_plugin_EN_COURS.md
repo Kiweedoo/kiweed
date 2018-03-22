@@ -11,11 +11,11 @@
 
 [//]: # (-----------------------------------------------------------------)
 
-<sub>Statut : **EN_COURS** | Complexité : intermédiaire | Temps : 1h | Mars 2018 |
+<sub>Statut : **EN_COURS** | Complexité : basique | Temps : 1h | Mars 2018 |
 Georges AKA Kiweed | Tested on Debian U</sub>
 
 
-### Balade : Types de fichiers, plugins et corrections</code>
+### Balade : plugins et types de fichiers</code>
 
 #### <a name="sommaire">**Sommaire**</a>
 
@@ -26,8 +26,8 @@ Georges AKA Kiweed | Tested on Debian U</sub>
 
 <sub> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Progression pour bien comprendre](#progression)</sub>
 
-##### &nbsp;&nbsp;&nbsp;[Exécution des scripts  de <code>.vim</code>](#ptvim)
-<sub> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Paragraphe1](#parag1)</sub>
+##### &nbsp;&nbsp;&nbsp;[<code>~/.vimrc</code> et <code>.vim</code>](#ptvim)
+<sub> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[<code>~/.vimrc</code> : déscativer un plugin par défaut](#delplug)</sub>
 
 ##### &nbsp;&nbsp;&nbsp;[Le <code>~/.vimrc</code>](#vimrc)
 
@@ -41,17 +41,20 @@ Georges AKA Kiweed | Tested on Debian U</sub>
 
 - [x] Comprendre les <code>filetype</code>
 
-- [x] Créer les corrections et abréviations suivant le type de fichier
+- [x] Créer son propre <code>filetype</code>
+
+- [x] Préparer la création d'abréviations dédiées (<code>.java</code>,
+  <code>c</code>, <code>.md</code>, etc.
 
 ##### Ce qu'on y apprend au passage...
 
 - [x] Différencier les trois répertoire <code>after</code>, <code>ftplugin</code>, 
 <code>plugin</code>, <code>syntax</code>
 
-- [x] Garder un <code>~/.vimrc</code> propre
-
 - [x] Lister dans l'ordre les scripts exécuter lors du démarrage de
   <code>vim</code>
+
+- [x] Garder un <code>~/.vimrc</code> propre
 
 - [x] Afficher l'ensemble des <code>filetype</code> reconnus par vim
 
@@ -154,7 +157,11 @@ dernière sera écrasée.
 
 Le paragraphe suivant explique comment est organisée l'arborescence de <code>~/.vim</code>.
 
+<br>
+
 #### <a name="orga">Arborescence de <code>~/.vim</code></a>
+
+<br>
 
 :trident: L'arborescence de <code>~/.vim</code> contient les répertoires dont les contenus
 vont compléter, ou remplacer, les actions exécutées par défaut (celles des
@@ -186,6 +193,8 @@ contenu peut éventuellement être écrasé.
 
 #### <a name="progression">Progression pour bien comprendre</a>
 
+<br>
+
 Au départ, j'ai les répertoires suivant sous <code>~/.vim</code>
 
 ><pre>
@@ -214,8 +223,8 @@ du moment :
 
 ></pre>
 
-:trident: Bien entendu le résultat est différent si on a donné une autre extension
-connue à <code>prout</code>...
+:trident: Bien entendu le résultat est différent si on donne une autre extension
+connue...
 
 
 ><pre>
@@ -253,18 +262,17 @@ connue à <code>prout</code>...
 > <b>32: ~/.vim/after/ftplugin/markdown/instant-markdown.vim</b>
 > ></pre>
 
+Bien... On voit qu'i lfait __beaucoup__ de choses... Purgeons !
 
-Revenons maintenant à une situation dans laquelle nous n'avons pas de <code>~/.vimrc</code>
+Revenons à une situation dans laquelle nous n'avons, ni <code>~/.vimrc</code>,
+ni <code>~/.vim</code> (car même sans
+<code>~/.vimrc</code>, le _par défaut_ gère la détection des types de fichiers)
 
-On le renomme donc, quel que soit le répertoire courant :
 
 ><pre>
 > mv ~/.vimrc ~/.vimrc.ORI
+> mv ~/.vim ~/.vim.ORI
 ></pre>
-
-Renommons également <code>~/.vim</code> en <code>~/.vim.ORI</code> car même sans
-<code>~/.vimrc</code> il y a des choses par défaut dans la configuration par
-défaut, notamment l'exécution du plugin pour le _previewer_ markdown.
 
 Maintenant que nous n'avons ni <code>~/.vimrc</code>, ni répertoire <code>~/.vim</code>,
 relançons un <code>vi prout.md</code> en exécutant <code>:scriptname</code>
@@ -302,8 +310,8 @@ relançons un <code>vi prout.md</code> en exécutant <code>:scriptname</code>
 > 30: /usr/share/vim/vim80/autoload/htmlcomplete.vim
 ></pre>
 
-Ok, voilà donc la liste de tous les scripts exécuter par défaut lors du
-lancement d'une session __pour un fichier <code>.md</code>__.
+Ok, voilà donc la liste de tous les scripts exécutés par défaut lors du
+lancement d'une session **pour un fichier <code>.md</code>**
 
 Toujours pareil, le résultat est différent avec ou sans extension, puisque 
 des actions sont exécutées par défaut. Lançons :
@@ -336,25 +344,27 @@ des actions sont exécutées par défaut. Lançons :
 > 23: /usr/share/vim/vim80/scripts.vim
 ></pre>
 
-
-
-
----
-
-
-#### <a name="dv">Démarrage de <code>vim</code> et exécution des scripts</a>
-
+<br>
 
 <sub>[(**sommaire ^**)](#sommaire)</sub>
 
 ---
+<br>
 
-#### <a name="ptvim">Exécution des scripts de <code>.vim</code></a>
+#### <a name="ptvim"><code>~/.vimrc</code> et <code>.vim</code></a>
 
 
 <br>
 
-#### <a name="sujet1">Sujet 1</a>
+Les deux sont intimement liés.
+
+La lecture du <code>~/.vimrc</code> **avant** les plugins par défaut, et donc
+**avant** l'exécution des contenus de <code>~/.vim</code>, **permet de gérer les
+plugins chargés par défaut**.
+
+<br>
+
+##### <a name="delplug"><code>~/.vimrc</code> : déscativer un plugin par défaut</a>
 
 
 <br>
