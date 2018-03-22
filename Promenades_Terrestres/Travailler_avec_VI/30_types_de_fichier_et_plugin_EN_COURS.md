@@ -358,7 +358,7 @@ des actions sont exécutées par défaut. Lançons :
 
 Les deux sont intimement liés.
 
-La lecture du <code>~/.vimrc</code> **avant** les plugins par défaut, et donc
+La lecture du <code>~/.vimrc</code> --  **avant** les plugins par défaut, et donc
 **avant** l'exécution des contenus de <code>~/.vim</code>, **permet de gérer les
 plugins chargés par défaut**.
 
