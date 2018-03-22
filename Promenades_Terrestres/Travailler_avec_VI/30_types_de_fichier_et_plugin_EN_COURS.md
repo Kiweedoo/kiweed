@@ -44,7 +44,7 @@ Georges AKA Kiweed | Tested on Debian U</sub>
 - [x] Créer son propre <code>filetype</code>
 
 - [x] Préparer la création d'abréviations dédiées (<code>.java</code>,
-  <code>c</code>, <code>.md</code>, etc.
+  <code>c</code>, <code>.md</code>, etc.)
 
 ##### Ce qu'on y apprend au passage...
 
@@ -83,14 +83,15 @@ Parfois... Ça semble ne pas fonctionner... D'où l'intérêt de cet article.
 <br>
 
 De la même façon, corrections, auto-corrections, abréviations, <code>map</code>, etc. 
-sont liées au type de fichier, son extension.
+sont liées au type de fichier, c'est-à-dire son extension pour <code>vi</code>.
 
 Suivant le contexte, développement ou rédaction d'article par exemple, la
-correction n'interviendra pas sur les mêmes régions :
+correction n'interviendra pas forcément sur les mêmes régions :
 
-- sur l'ensemble du fichier, s'il s'agit d'un article
+- sur l'ensemble du fichier, s'il s'agit d'un article en <code>.txt</code>
 
-- __seulement__ sur les commentaires s'il s'agit d'un source (article dédié)
+- __seulement__ sur les commentaires s'il s'agit d'un source <code>.c</code> ou
+  autre.
 
 Il en est de même pour les abréviations :
 
@@ -153,9 +154,7 @@ l'ordre de lecture et d'exécution des fichiers.
 <code>&#126;/.vimrc</code> est lu est exécuté **avant** d'autres scripts système...
 
 Si ces scripts contiennent une des commandes <code>&#126;/.vimrc</code>, cette
-dernière sera écrasée.
-
-Le paragraphe suivant explique comment est organisée l'arborescence de <code>&#126;/.vim</code>.
+dernière sera écrasée... Sauf si on prend prend les précautions qui s'imposent.
 
 <br>
 
@@ -163,7 +162,7 @@ Le paragraphe suivant explique comment est organisée l'arborescence de <code>&#
 
 <br>
 
-:trident: L'arborescence de <code>~/.vim</code> contient les répertoires dont les contenus
+:trident: <code>~/.vim</code> contient les répertoires dont les contenus
 vont compléter, ou remplacer, les actions exécutées par défaut (celles des
 scripts système lus avant).
 
@@ -262,7 +261,9 @@ connue...
 > <b>32: ~/.vim/after/ftplugin/markdown/instant-markdown.vim</b>
 > ></pre>
 
-Bien... On voit qu'i lfait __beaucoup__ de choses... Purgeons !
+Bien... On voit qu'il fait __beaucoup__ de choses... 
+
+Purgeons !
 
 Revenons à une situation dans laquelle nous n'avons, ni <code>&#126;/.vimrc</code>,
 ni <code>&#126;/.vim</code> (car même sans
@@ -275,9 +276,43 @@ ni <code>&#126;/.vim</code> (car même sans
 ></pre>
 
 Maintenant que nous n'avons ni <code>&#126;/.vimrc</code>, ni répertoire <code>&#126;/.vim</code>,
-relançons un <code>vi prout.md</code> en exécutant <code>:scriptname</code>
+relançons avec un fichier sans extension : 
 
 ><pre>
+> vi prout
+> <b>:sciptname</b>
+> 1: /usr/share/vim/vimrc
+> 2: /usr/share/vim/vim80/debian.vim
+> 3: /usr/share/vim/vim80/syntax/syntax.vim
+> 4: /usr/share/vim/vim80/syntax/synload.vim
+> 5: /usr/share/vim/vim80/syntax/syncolor.vim
+> 6: /usr/share/vim/vim80/filetype.vim
+> 7: /usr/share/vim/vim80/defaults.vim
+> 8: /usr/share/vim/vim80/syntax/nosyntax.vim
+> 9: /usr/share/vim/vim80/ftplugin.vim
+> 10: /usr/share/vim/vim80/indent.vim
+> 11: /usr/share/vim/vim80/plugin/getscriptPlugin.vim
+> 12: /usr/share/vim/vim80/plugin/gzip.vim
+> 13: /usr/share/vim/vim80/plugin/logiPat.vim
+> 14: /usr/share/vim/vim80/plugin/manpager.vim
+> 15: /usr/share/vim/vim80/plugin/matchparen.vim
+> 16: /usr/share/vim/vim80/plugin/netrwPlugin.vim
+> 17: /usr/share/vim/vim80/plugin/rrhelper.vim
+> 18: /usr/share/vim/vim80/plugin/spellfile.vim
+> 19: /usr/share/vim/vim80/plugin/tarPlugin.vim
+> 20: /usr/share/vim/vim80/plugin/tohtml.vim
+> 21: /usr/share/vim/vim80/plugin/vimballPlugin.vim
+> 22: /usr/share/vim/vim80/plugin/zipPlugin.vim
+> 23: /usr/share/vim/vim80/scripts.vim
+></pre>
+
+<br>
+
+Même idée avec un <code>prout.md</code>
+
+><pre>
+> vi prout.md
+> <b>:sciptname</b>
 > 1: /usr/share/vim/vimrc
 > 2: /usr/share/vim/vim80/debian.vim
 > 3: /usr/share/vim/vim80/syntax/syntax.vim
@@ -310,41 +345,13 @@ relançons un <code>vi prout.md</code> en exécutant <code>:scriptname</code>
 > 30: /usr/share/vim/vim80/autoload/htmlcomplete.vim
 ></pre>
 
-Ok, voilà donc la liste de tous les scripts exécutés par défaut lors du
+Voilà donc la liste de tous les scripts exécutés par défaut lors du
 lancement d'une session **pour un fichier <code>.md</code>**
 
-Toujours pareil, le résultat est différent avec ou sans extension, puisque 
-des actions sont exécutées par défaut. Lançons :
+:trident: on se rappelera que le résultat diffère suivant l'extension
+puisque certains scripts sont exécutés par défaut.
 
-><pre>
-> vi prout
-> <b>:sciptname</b>
-> 1: /usr/share/vim/vimrc
-> 2: /usr/share/vim/vim80/debian.vim
-> 3: /usr/share/vim/vim80/syntax/syntax.vim
-> 4: /usr/share/vim/vim80/syntax/synload.vim
-> 5: /usr/share/vim/vim80/syntax/syncolor.vim
-> 6: /usr/share/vim/vim80/filetype.vim
-> 7: /usr/share/vim/vim80/defaults.vim
-> 8: /usr/share/vim/vim80/syntax/nosyntax.vim
-> 9: /usr/share/vim/vim80/ftplugin.vim
-> 10: /usr/share/vim/vim80/indent.vim
-> 11: /usr/share/vim/vim80/plugin/getscriptPlugin.vim
-> 12: /usr/share/vim/vim80/plugin/gzip.vim
-> 13: /usr/share/vim/vim80/plugin/logiPat.vim
-> 14: /usr/share/vim/vim80/plugin/manpager.vim
-> 15: /usr/share/vim/vim80/plugin/matchparen.vim
-> 16: /usr/share/vim/vim80/plugin/netrwPlugin.vim
-> 17: /usr/share/vim/vim80/plugin/rrhelper.vim
-> 18: /usr/share/vim/vim80/plugin/spellfile.vim
-> 19: /usr/share/vim/vim80/plugin/tarPlugin.vim
-> 20: /usr/share/vim/vim80/plugin/tohtml.vim
-> 21: /usr/share/vim/vim80/plugin/vimballPlugin.vim
-> 22: /usr/share/vim/vim80/plugin/zipPlugin.vim
-> 23: /usr/share/vim/vim80/scripts.vim
-></pre>
 
-<br>
 
 <sub>[(**sommaire ^**)](#sommaire)</sub>
 
