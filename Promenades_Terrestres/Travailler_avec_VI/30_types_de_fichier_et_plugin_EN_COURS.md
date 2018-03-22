@@ -358,7 +358,7 @@ puisque certains scripts sont exécutés par défaut.
 ---
 <br>
 
-#### <a name="ptvim"><code>~/.vimrc</code> et <code>&#126;/.vim</code></a>
+## <a name="ptvim"><code>~/.vimrc</code> et <code>&#126;/.vim</code></a>
 
 
 <br>
@@ -371,7 +371,7 @@ plugins chargés par défaut**.
 
 <br>
 
-#### <a name="delplug"><code>~/.vimrc</code> : déscativer un plugin par défaut</a>
+### <a name="delplug"><code>~/.vimrc</code> : déscativer un plugin par défaut</a>
 
 <br>
 
