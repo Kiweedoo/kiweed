@@ -371,7 +371,7 @@ plugins chargés par défaut**.
 
 <br>
 
-##### <a name="delplug"><code>~/.vimrc</code> : déscativer un plugin par défaut</a>
+#### <a name="delplug"><code>~/.vimrc</code> : déscativer un plugin par défaut</a>
 
 <br>
 
