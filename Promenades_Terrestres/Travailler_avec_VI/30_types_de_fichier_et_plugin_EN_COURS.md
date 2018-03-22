@@ -348,7 +348,7 @@ Même idée avec un <code>prout.md</code>
 Voilà donc la liste de tous les scripts exécutés par défaut lors du
 lancement d'une session **pour un fichier <code>.md</code>**
 
-:trident: on se rappelera que le résultat diffère suivant l'extension
+:bell::pencil::trident: on se rappelera que le résultat diffère suivant l'extension
 puisque certains scripts sont exécutés par défaut.
 
 
