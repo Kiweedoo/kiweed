@@ -27,7 +27,7 @@ Georges AKA Kiweed | Tested on Debian U</sub>
 <sub> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Progression pour bien comprendre](#progression)</sub>
 
 ##### &nbsp;&nbsp;&nbsp;[<code>~/.vimrc</code> et <code>.vim</code>](#ptvim)
-<sub> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[<code>~/.vimrc</code> : déscativer un plugin par défaut](#delplug)</sub>
+<sub> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[<code>~/.vimrc</code> : désactiver un plugin par défaut](#delplug)</sub>
 
 ##### &nbsp;&nbsp;&nbsp;[Le <code>~/.vimrc</code>](#vimrc)
 
@@ -37,7 +37,7 @@ Georges AKA Kiweed | Tested on Debian U</sub>
 
 ### <a name="objectifs">Objectifs</a>
 
-- [x] Comprendre et organiser le répertoire <code>~/.vim</code> 
+- [x] Comprendre et organiser le répertoire <code>&#126;/.vim</code> 
 
 - [x] Comprendre les <code>filetype</code>
 
@@ -54,7 +54,7 @@ Georges AKA Kiweed | Tested on Debian U</sub>
 - [x] Lister dans l'ordre les scripts exécuter lors du démarrage de
   <code>vim</code>
 
-- [x] Garder un <code>~/.vimrc</code> propre
+- [x] Garder un <code>&#126;/.vimrc</code> propre
 
 - [x] Afficher l'ensemble des <code>filetype</code> reconnus par vim
 
@@ -150,16 +150,16 @@ l'ordre de lecture et d'exécution des fichiers.
 
 <br>
 
-<code>~/.vimrc</code> est lu est exécuté **avant** d'autres scripts système...
+<code>&#126;/.vimrc</code> est lu est exécuté **avant** d'autres scripts système...
 
-Si ces scripts contiennent une des commandes <code>~/.vimrc</code>, cette
+Si ces scripts contiennent une des commandes <code>&#126;/.vimrc</code>, cette
 dernière sera écrasée.
 
-Le paragraphe suivant explique comment est organisée l'arborescence de <code>~/.vim</code>.
+Le paragraphe suivant explique comment est organisée l'arborescence de <code>&#126;/.vim</code>.
 
 <br>
 
-#### <a name="orga">Arborescence de <code>~/.vim</code></a>
+#### <a name="orga">Arborescence de <code>&#126;/.vim</code></a>
 
 <br>
 
@@ -169,19 +169,19 @@ scripts système lus avant).
 
 À ma connaissance, il y en a cinq (probablement d'autres) :
 
-- <code><b>~/.vim/after</b></code> : pour tout ce qui est fait après, en dernier. C'est
+- <code><b>&#126;/.vim/after</b></code> : pour tout ce qui est fait après, en dernier. C'est
   celui que nous utiliserons pour le *previewer* markdown.
 
-- <code><b>~/.vim/ftplugin</b></code> : les actions (commandes) à exécuter **en fonction** du
+- <code><b>&#126;/.vim/ftplugin</b></code> : les actions (commandes) à exécuter **en fonction** du
   *filetype* (déterminer par l'extension).
 
-- <code><b>~/.vim/plugin</b></code> : celles qui s'appliquent à tous les fichiers quelle qu'en
+- <code><b>&#126;/.vim/plugin</b></code> : celles qui s'appliquent à tous les fichiers quelle qu'en
   soit l'extension.
 
-- <code><b>~/.vim/syntax</b></code> : les fichiers spécifiques de syntaxes... Un exemple plus
+- <code><b>&#126;/.vim/syntax</b></code> : les fichiers spécifiques de syntaxes... Un exemple plus
   bas.
 
-- <code><b>~/.vim/ftdetect</b></code> : pour définir notre propre type de fichier, d'extension
+- <code><b>&#126;/.vim/ftdetect</b></code> : pour définir notre propre type de fichier, d'extension
   particulière... Exemple ci-dessous.
 
 
@@ -195,7 +195,7 @@ contenu peut éventuellement être écrasé.
 
 <br>
 
-Au départ, j'ai les répertoires suivant sous <code>~/.vim</code>
+Au départ, j'ai les répertoires suivant sous <code>&#126;/.vim</code>
 
 ><pre>
 > drwxrwxr-x 3 georges georges 4096 2018-03-10-17:10 after
@@ -264,9 +264,9 @@ connue...
 
 Bien... On voit qu'i lfait __beaucoup__ de choses... Purgeons !
 
-Revenons à une situation dans laquelle nous n'avons, ni <code>~/.vimrc</code>,
-ni <code>~/.vim</code> (car même sans
-<code>~/.vimrc</code>, le _par défaut_ gère la détection des types de fichiers)
+Revenons à une situation dans laquelle nous n'avons, ni <code>&#126;/.vimrc</code>,
+ni <code>&#126;/.vim</code> (car même sans
+<code>&#126;/.vimrc</code>, le _par défaut_ gère la détection des types de fichiers)
 
 
 ><pre>
@@ -274,7 +274,7 @@ ni <code>~/.vim</code> (car même sans
 > mv ~/.vim ~/.vim.ORI
 ></pre>
 
-Maintenant que nous n'avons ni <code>~/.vimrc</code>, ni répertoire <code>~/.vim</code>,
+Maintenant que nous n'avons ni <code>&#126;/.vimrc</code>, ni répertoire <code>&#126;/.vim</code>,
 relançons un <code>vi prout.md</code> en exécutant <code>:scriptname</code>
 
 ><pre>
@@ -351,7 +351,7 @@ des actions sont exécutées par défaut. Lançons :
 ---
 <br>
 
-#### <a name="ptvim"><code>~/.vimrc</code> et <code>.vim</code></a>
+#### <a name="ptvim"><code>~/.vimrc</code> et <code>&#126;/.vim</code></a>
 
 
 <br>
