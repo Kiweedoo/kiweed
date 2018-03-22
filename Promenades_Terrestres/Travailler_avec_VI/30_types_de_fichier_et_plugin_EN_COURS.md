@@ -280,8 +280,30 @@ relançons avec un fichier sans extension :
 
 ><pre>
 > vi prout
-> <b>:sciptname</b>
-
+> <b>:scriptname</b>
+&gt; 1: /usr/share/vim/vimrc
+&gt; 2: /usr/share/vim/vim80/debian.vim
+&gt; 3: /usr/share/vim/vim80/syntax/syntax.vim
+&gt; 4: /usr/share/vim/vim80/syntax/synload.vim
+&gt; 5: /usr/share/vim/vim80/syntax/syncolor.vim
+&gt; 6: /usr/share/vim/vim80/filetype.vim
+&gt; 7: /usr/share/vim/vim80/defaults.vim
+&gt; 8: /usr/share/vim/vim80/syntax/nosyntax.vim
+&gt; 9: /usr/share/vim/vim80/ftplugin.vim
+&gt; 10: /usr/share/vim/vim80/indent.vim
+&gt; 11: /usr/share/vim/vim80/plugin/getscriptPlugin.vim
+&gt; 12: /usr/share/vim/vim80/plugin/gzip.vim
+&gt; 13: /usr/share/vim/vim80/plugin/logiPat.vim
+&gt; 14: /usr/share/vim/vim80/plugin/manpager.vim
+&gt; 15: /usr/share/vim/vim80/plugin/matchparen.vim
+&gt; 16: /usr/share/vim/vim80/plugin/netrwPlugin.vim
+&gt; 17: /usr/share/vim/vim80/plugin/rrhelper.vim
+&gt; 18: /usr/share/vim/vim80/plugin/spellfile.vim
+&gt; 19: /usr/share/vim/vim80/plugin/tarPlugin.vim
+&gt; 20: /usr/share/vim/vim80/plugin/tohtml.vim
+&gt; 21: /usr/share/vim/vim80/plugin/vimballPlugin.vim
+&gt; 22: /usr/share/vim/vim80/plugin/zipPlugin.vim
+&gt; 23: /usr/share/vim/vim80/scripts.vim
 ></pre>
 
 <br>
@@ -290,7 +312,7 @@ Même idée avec un <code>prout.md</code>
 
 ><pre>
 > vi prout.md
-> <b>:sciptname</b>
+> <b>:scriptname</b>
 
 
 
