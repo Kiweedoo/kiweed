@@ -29,7 +29,7 @@ Georges AKA Kiweed | Tested on Debian U</sub>
 ##### &nbsp;&nbsp;&nbsp;[<code>~/.vimrc</code> et <code>.vim</code>](#ptvim)
 <sub> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[<code>~/.vimrc</code> : désactiver un plugin par défaut](#delplug)</sub>
 
-##### &nbsp;&nbsp;&nbsp;[Le <code>~/.vimrc</code>](#vimrc)
+<sub> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[<code>~/.vim</code> : personnaliser le lancement](#myplug)</sub>
 
 ##### &nbsp;&nbsp;&nbsp;[La minute HHGTTG : plonger dans les *inky depths*](#hhgttg)
 
