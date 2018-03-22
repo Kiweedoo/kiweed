@@ -26,13 +26,11 @@ Georges AKA Kiweed | Tested on Debian U</sub>
 
 <sub> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Progression pour bien comprendre](#progression)</sub>
 
-<sub> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Démarrage de <code>vim</code> et exécution des scripts](#dv)</sub>
-##### &nbsp;&nbsp;&nbsp;[Organisation de <code>.vim</code>](#ptvim)
+##### &nbsp;&nbsp;&nbsp;[Exécution des scripts  de <code>.vim</code>](#ptvim)
 <sub> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Paragraphe1](#parag1)</sub>
 
-#### <a name="vimrc">Le <code>~/.vimrc</code></a>
+##### &nbsp;&nbsp;&nbsp;[Le <code>~/.vimrc</code>](#vimrc)
 
-##### &nbsp;&nbsp;&nbsp;[Résumé](#resume)
 ##### &nbsp;&nbsp;&nbsp;[La minute HHGTTG : plonger dans les *inky depths*](#hhgttg)
 
 ---
@@ -93,12 +91,12 @@ correction n'interviendra pas sur les mêmes régions :
 
 Il en est de même pour les abréviations :
 
-- celles pour présenter un entête C, Java ou autres
+- celles pour présenter un entête C, Java ou autre
 
 - celles qui font office de raccourcis pour déclarer des fonctions ou des
   classes.
 
-- ou encore les abréviations d'auto-correction pour les fichiers <code>.txt</code>
+- ou encore les abréviations d'auto-correction pour les fichiers <code>.txt</code>, voire d'autres.
 
 <br>
 
@@ -339,9 +337,6 @@ des actions sont exécutées par défaut. Lançons :
 ></pre>
 
 
----
-
-#### <a name="vimrc">Le <code>~/.vimrc</code></a>
 
 
 ---
@@ -354,7 +349,7 @@ des actions sont exécutées par défaut. Lançons :
 
 ---
 
-### <a name="ptvim">Organisation de <code>.vim</code></a>
+#### <a name="ptvim">Exécution des scripts de <code>.vim</code></a>
 
 
 <br>
@@ -368,9 +363,7 @@ des actions sont exécutées par défaut. Lançons :
 
 ---
 
-### <a name="resume">Résumé</a>
-
-
+#### <a name="vimrc">Exécution du script <code>~/.vimrc</code></a>
 
 <br>
 
