@@ -460,15 +460,11 @@ ou un <code>&#91;</code>, et en appuyant sur <code><b>%</b></code>
 
 
 
-
-
-
-
 <sub>[(**sommaire ^**)](#sommaire)</sub>
 
----
+<br>
 
-#### <a name="vimrc">Exécution du script <code>~/.vimrc</code></a>
+### <a name="myplug"><code>~/.vim</code> : personnaliser le lancement</a>
 
 <br>
 
