@@ -281,29 +281,7 @@ relançons avec un fichier sans extension :
 ><pre>
 > vi prout
 > <b>:sciptname</b>
-> 1: /usr/share/vim/vimrc
-> 2: /usr/share/vim/vim80/debian.vim
-> 3: /usr/share/vim/vim80/syntax/syntax.vim
-> 4: /usr/share/vim/vim80/syntax/synload.vim
-> 5: /usr/share/vim/vim80/syntax/syncolor.vim
-> 6: /usr/share/vim/vim80/filetype.vim
-> 7: /usr/share/vim/vim80/defaults.vim
-> 8: /usr/share/vim/vim80/syntax/nosyntax.vim
-> 9: /usr/share/vim/vim80/ftplugin.vim
-> 10: /usr/share/vim/vim80/indent.vim
-> 11: /usr/share/vim/vim80/plugin/getscriptPlugin.vim
-> 12: /usr/share/vim/vim80/plugin/gzip.vim
-> 13: /usr/share/vim/vim80/plugin/logiPat.vim
-> 14: /usr/share/vim/vim80/plugin/manpager.vim
-> 15: /usr/share/vim/vim80/plugin/matchparen.vim
-> 16: /usr/share/vim/vim80/plugin/netrwPlugin.vim
-> 17: /usr/share/vim/vim80/plugin/rrhelper.vim
-> 18: /usr/share/vim/vim80/plugin/spellfile.vim
-> 19: /usr/share/vim/vim80/plugin/tarPlugin.vim
-> 20: /usr/share/vim/vim80/plugin/tohtml.vim
-> 21: /usr/share/vim/vim80/plugin/vimballPlugin.vim
-> 22: /usr/share/vim/vim80/plugin/zipPlugin.vim
-> 23: /usr/share/vim/vim80/scripts.vim
+
 ></pre>
 
 <br>
@@ -313,36 +291,12 @@ Même idée avec un <code>prout.md</code>
 ><pre>
 > vi prout.md
 > <b>:sciptname</b>
-> 1: /usr/share/vim/vimrc
-> 2: /usr/share/vim/vim80/debian.vim
-> 3: /usr/share/vim/vim80/syntax/syntax.vim
-> 4: /usr/share/vim/vim80/syntax/synload.vim
-> 5: /usr/share/vim/vim80/syntax/syncolor.vim
-> 6: /usr/share/vim/vim80/filetype.vim
-> 7: /usr/share/vim/vim80/defaults.vim
-> 8: /usr/share/vim/vim80/syntax/nosyntax.vim
-> 9: /usr/share/vim/vim80/ftplugin.vim
-> 10: /usr/share/vim/vim80/indent.vim
-> 11: /usr/share/vim/<vim80/plugin/getscriptPlugin.vim
-> 12: /usr/share/vim/vim80/plugin/gzip.vim
-> 13: /usr/share/vim/vim80/plugin/logiPat.vim
-> 14: /usr/share/vim/vim80/plugin/manpager.vim
-> 15: /usr/share/vim/vim80/plugin/matchparen.vim
-> 16: /usr/share/vim/vim80/plugin/netrwPlugin.vim
-> 17: /usr/share/vim/vim80/plugin/rrhelper.vim
-> 18: /usr/share/vim/vim80/plugin/spellfile.vim
-> 19: /usr/share/vim/vim80/plugin/tarPlugin.vim
-> 20: /usr/share/vim/vim80/plugin/tohtml.vim
-> 21: /usr/share/vim/vim80/plugin/vimballPlugin.vim
-> 22: /usr/share/vim/vim80/plugin/zipPlugin.vim
-> 23: /usr/share/vim/vim80/syntax/markdown.vim
-> 24: /usr/share/vim/vim80/syntax/html.vim
-> 25: /usr/share/vim/vim80/syntax/javascript.vim
-> 26: /usr/share/vim/vim80/syntax/vb.vim
-> 27: /usr/share/vim/vim80/syntax/css.vim
-> 28: /usr/share/vim/vim80/ftplugin/markdown.vim
-> 29: /usr/share/vim/vim80/ftplugin/html.vim 
-> 30: /usr/share/vim/vim80/autoload/htmlcomplete.vim
+
+
+
+
+
+
 ></pre>
 
 Voilà donc la liste de tous les scripts exécutés par défaut lors du
