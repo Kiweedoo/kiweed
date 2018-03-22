@@ -373,8 +373,53 @@ plugins chargés par défaut**.
 
 ##### <a name="delplug"><code>~/.vimrc</code> : déscativer un plugin par défaut</a>
 
+<br>
+
+Prenons par exemple le cas de <code>matchparen.vim</code> qui permet d'avoir une
+coloration syntaxique sur l'appariement des (), des {} et des crochets...
+
+Très bien... Sauf que la couleur d'appariement dépend de la coloration
+syntaxique suivant le type de fichiers <code>.c</code>, <code>.txt</code>, etc.
+
+Et bien sûr, suivant les cas, je ne vois plus mon curseur et ne sais donc pas
+s'il est sur la parenthèse ouvrante, ou celle fermante... :shit:
+
+Résultat... vérification des appariements à l'ancienne : en mode commande
+avec <code>%</code> quand placé sur l'une ou l'autre.
 
 <br>
+
+L'unique façon propre d'empêcher le chargement d'un plugin et de le dire dans le
+<code>&#126;/.vimrc</code>.
+
+Regardons d'abord comment commencent __tous__ les plugins par défaut :
+
+><pre>
+> head -12 <b>/usr/share/vim/vim80/plugin/matchparen.vim<b>
+></pre>
+
+<sub><code>head</code>, sans option, pour afficher les 10 premières lignes d'un
+fichier __à partir du début__ ; <code>tail</code>, idem, __à partir de la fin_.
+Si <code>-12</code>, les 12 premières lignes, etc.</sub>
+
+Le résulat est :
+
+><pre>
+> " Vim plugin for showing matching parens
+> " Maintainer:  Bram Moolenaar <Bram@vim.org>
+> " Last Change: 2016 Feb 16
+> 
+> " Exit quickly when:
+> " - this plugin was already loaded (or disabled)
+> " - when 'compatible' is set
+> " - the "CursorMoved" autocmd event is not available.
+> <b>if exists("g:loaded_matchparen")</b> || &cp || !exists("##CursorMoved")
+> &nbps;&nbps;&nbps;finish
+> endif
+> <b>let g:loaded_matchparen = 1</b>
+></pre>
+
+
 
 <sub>[(**sommaire ^**)](#sommaire)</sub>
 
