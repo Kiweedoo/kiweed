@@ -389,10 +389,10 @@ avec <code>%</code> quand placé sur l'une ou l'autre.
 
 <br>
 
-L'unique façon propre d'empêcher le chargement d'un plugin et de le dire dans le
+L'unique façon propre d'empêcher le chargement d'un plugin est de le dire dans le
 <code>&#126;/.vimrc</code>.
 
-Regardons d'abord comment commencent **tous** les plugins par défaut :
+Regardons d'abord par quoi  commencent **tous** les plugins par défaut :
 
 ><pre>
 > head -12 <b>/usr/share/vim/vim80/plugin/matchparen.vim</b>
