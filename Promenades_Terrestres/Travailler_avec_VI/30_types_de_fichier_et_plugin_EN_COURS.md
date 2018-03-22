@@ -452,12 +452,11 @@ l'appariement des parenthèses... :smiling_imp:
 
 :bell::pencil:
 
-<pre>
 Même si la coloration syntaxique n'apparait plus, il **est
 toujours** possible de vérifier l'appariement, à l'ancienne, mode commande : 
+
 - en se plaçant sur une <code>&#40;</code>, une <code>&#123;</code>, 
 ou un <code>&#91;</code>, et en appuyant sur <code><b>%</b></code>
-</pre>
 
 
 
