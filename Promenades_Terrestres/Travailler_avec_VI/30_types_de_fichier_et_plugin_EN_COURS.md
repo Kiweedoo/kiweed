@@ -568,7 +568,8 @@ La syntaxe de nommage de ces fichiers **impérativement être** <code><b>filetyp
 Il est donc important de savoir quels sont les *filetype* reconnus.
 
 Pour celà, une façon élégante est d'utiliser la commande interne <code>filetype</code>
-suivi de sa complétion à l'aide des touches &lt;ctrl d&gt; (abrégé en &lt;c-d&gt;) :
+suivi de sa complétion à l'aide des touches <code>&lt;ctrl d&gt;</code> (abrégé en <code>&lt;c-d&gt;</code>) :
+
 <sub>[(**sommaire ^**)](#sommaire)</sub>
 
 ICI
