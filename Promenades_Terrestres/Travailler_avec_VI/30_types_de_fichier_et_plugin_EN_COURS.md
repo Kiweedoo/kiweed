@@ -387,8 +387,8 @@ syntaxique suivant le type de fichiers <code>.c</code>, <code>.txt</code>, etc.
 Et bien sûr, suivant les cas, je ne vois plus mon curseur et ne sais donc pas
 s'il est sur la parenthèse ouvrante, ou celle fermante... :rage:
 
-Résultat... vérification des appariements à l'ancienne : en mode commande
-avec <code>%</code> quand placé sur l'une ou l'autre.
+Résultat... Invalidation du plugin et vérification des appariements à 
+l'ancienne : en mode commande avec <code>%</code> quand placé sur l'une ou l'autre.
 
 <br>
 
