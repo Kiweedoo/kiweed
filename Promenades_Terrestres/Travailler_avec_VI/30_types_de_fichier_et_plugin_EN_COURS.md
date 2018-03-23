@@ -32,6 +32,7 @@ Georges AKA Kiweed | Tested on Debian U</sub>
 <sub> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Adapter le lancement : <code>~/.vim</code>](#myplug)</sub>
 
 ##### &nbsp;&nbsp;&nbsp;[*FileType* et plugins : <code>~/.vim/ftplugin</code>](#ftplugin)
+<sub> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Lister les *filetypes* déclarés](#lsft)</sub>
 ##### &nbsp;&nbsp;&nbsp;[La minute HHGTTG : plonger dans les *inky depths*](#hhgttg)
 
 ---
@@ -449,7 +450,7 @@ Et c'est terminé... Examinons néanmoins la finesse... :
 > [...]
 ></pre>
 
-Il est chargé... et exécuté... 
+Il est quand même chargé... et exécuté... :flushed:
 
 C'est bien l'exécution du <code>if exists</code> qui permet de s'affranchir de
 l'appariement des parenthèses... :smiling_imp:
@@ -568,8 +569,71 @@ La syntaxe de nommage de ces fichiers **impérativement être** <code><b>filetyp
 Il est donc important de savoir quels sont les *filetype* reconnus.
 
 Pour celà, une façon élégante est d'utiliser la commande interne <code>filetype</code>
-suivi de sa complétion à l'aide des touches <code>&lt;ctrl d&gt;</code> (abrégé en <code>&lt;c-d&gt;</code>) :
+suivi de sa complétion à l'aide des touches <code>&lt;ctrl d&gt;</code>
+(abrégé en <code>&lt;c-d&gt;</code>) dans les docs <code>vi</code>&nbsp;:
 
+<br>
+Lançons une session avec un fichier sans extension et demandons quel est son
+*filetype* détecté avec la commande suivante :
+
+><pre>
+> vi prout
+> <b>:set filetype?</b>
+></pre>
+
+Pour obtenir en réponse :
+
+><pre>
+> <b>filetype=?</b>
+></pre>
+
+Pour signifier que le *filetype* est inconnu.
+
+Avant de regarder quels sont les *filetypes* déclarés, testons avec l'extension
+<code>.md</code> et posons la question&nbsp;:
+
+><pre>
+> <b>vi prout.md</b>
+> <b>:set filetype?</b>
+></pre>
+
+Cette fois la réponse est :
+
+
+><pre>
+> <b>filetype=markdown</b>
+></pre>
+
+:bell::pencil:
+
+Si un fichier nommé <code>markdown.vim</code> existe dans
+<code>&#126;/.vim/ftplugin</code>, il sera lu et exécuté.
+
+
+### <a name="lsft">Lister les *filetypes* déclarés</a>
+
+Plusieurs façons d'afficher cette liste.  Sans trop pénétrer les arcanes de
+<code>vi</code>&nbsp;:
+
+- à l'aide de la commande <code>setfiletype</code>, en **un seul mot**
+  (différente de celle vu précédemment)
+
+- avec la commande <code>echo</code> et la fonction <code>getcompletion()</code>
+
+
+La liste s'obtient avec la complétion <code>&lt;space&gt;&lt;ctrl d&gt;</code>
+**immédiatement après** la commande &nbsp;:
+
+><pre>
+> <b>:setfiletype&lt;ctrl d&gt;</b>
+></pre>
+
+Pour obtenir&nbsp;:
+
+><pre>
+>
+
+></pre>
 <sub>[(**sommaire ^**)](#sommaire)</sub>
 
 ICI
