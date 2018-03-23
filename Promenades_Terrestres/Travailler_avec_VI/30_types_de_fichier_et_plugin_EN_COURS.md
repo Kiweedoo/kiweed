@@ -564,13 +564,9 @@ Ci-dessous, ce que contient le mien :
 
 :bell::pencil:
 
-La syntaxe de nommage de ces fichiers **impérativement être** <code><b>filetype.vim</b></code>
+La syntaxe de nommage de ces fichiers doit **impérativement être** <code><b>filetype.vim</b></code>
 
-Il est donc important de savoir quels sont les *filetype* reconnus.
-
-Pour celà, une façon élégante est d'utiliser la commande interne <code>filetype</code>
-suivi de sa complétion à l'aide des touches <code>&lt;ctrl d&gt;</code>
-(abrégé en <code>&lt;c-d&gt;</code>) dans les docs <code>vi</code>&nbsp;:
+Il est donc important de savoir quels sont les *filetypes* reconnus.
 
 <br>
 Lançons une session avec un fichier sans extension et demandons quel est son
@@ -587,10 +583,10 @@ Pour obtenir en réponse :
 > <b>filetype=?</b>
 ></pre>
 
-Pour signifier que le *filetype* est inconnu.
+Qui signifie que le *filetype* est inconnu.
 
 Avant de regarder quels sont les *filetypes* déclarés, testons avec l'extension
-<code>.md</code> et posons la question&nbsp;:
+<code>.md</code> et posons la même question&nbsp;:
 
 ><pre>
 > <b>vi prout.md</b>
@@ -599,7 +595,6 @@ Avant de regarder quels sont les *filetypes* déclarés, testons avec l'extensio
 
 Cette fois la réponse est :
 
-
 ><pre>
 > <b>filetype=markdown</b>
 ></pre>
@@ -607,7 +602,9 @@ Cette fois la réponse est :
 :bell::pencil:
 
 Si un fichier nommé <code>markdown.vim</code> existe dans
-<code>&#126;/.vim/ftplugin</code>, il sera lu et exécuté.
+<code>&#126;/.vim/ftplugin</code>, il sera lu et exécuté, dès lors
+que <code>vi</code> ouvrira un fichier d'extension <code>.md</code> ; et
+uniquement dans ce cas.
 
 
 ### <a name="lsft">Lister les *filetypes* déclarés</a>
