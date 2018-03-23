@@ -559,6 +559,16 @@ Ci-dessous, ce que contient le mien :
 > tex.vim
 ></pre>
 
+<br>
+
+:bell::pencil:
+
+La syntaxe de nommage de ces fichiers **impérativement être** <code><b>filetype.vim</b></code>
+
+Il est donc important de savoir quels sont les *filetype* reconnus.
+
+Pour celà, une façon élégante est d'utiliser la commande interne <code>filetype</code>
+suivi de sa complétion à l'aide des touches &lt;ctrl d&gt; (abrégé en &lt;c-d&gt;) :
 <sub>[(**sommaire ^**)](#sommaire)</sub>
 
 ICI
