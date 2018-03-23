@@ -541,11 +541,23 @@ Il est bien aller chercher ce qui concernait le markdown dans le
 
 <br>
 
-C'est-à-dire les scripts qui seront exécutés **en fonction de l'extension
-détectée au lancement**.
+Le répertoire <code>&#126;/.vim/ftplugin</code> contient les scripts qui seront exécutés 
+**en fonction de l'extension détectée au lancement** de <code>vi</code>.
 
 
 <br>
+
+Ci-dessous, ce que contient le mien :
+
+><pre>
+> ls &#126;/.vim/ftplugin
+> c.vim
+> java.vim
+> markdown.vim
+> sh.vim
+> text.vim
+> tex.vim
+></pre>
 
 <sub>[(**sommaire ^**)](#sommaire)</sub>
 
