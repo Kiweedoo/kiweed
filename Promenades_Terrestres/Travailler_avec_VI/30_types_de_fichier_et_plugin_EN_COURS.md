@@ -462,6 +462,10 @@ toujours** possible de vérifier l'appariement, à l'ancienne, mode commande :
 - en se plaçant sur une <code>&#40;</code>, une <code>&#123;</code>, 
 ou un <code>&#91;</code>, et en appuyant sur <code><b>%</b></code>
 
+:trident: Remarque : pour l'appariement, il existe une commande interne (<code>:set
+showmatch</code> et <code>:set noshowmatch</code>, dont les abréviations sont
+<code>:se sm</code> et <code>:se nosm</code>) mais l'objectif était de
+généraliser à l'ensemble des plugins.
 
 
 <sub>[(**sommaire ^**)](#sommaire)</sub>
