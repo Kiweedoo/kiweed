@@ -616,7 +616,7 @@ Plusieurs façons d'afficher cette liste.  Sans trop pénétrer les arcanes de
 <code>vi</code>&nbsp;:
 
 - à l'aide de la commande <code>setfiletype</code>, en **un seul mot**
-  (différente de celle vu précédemment)
+  (différente de celle vue précédemment)
 
 - avec la commande <code>echo</code> et la fonction <code>getcompletion()</code>
 
