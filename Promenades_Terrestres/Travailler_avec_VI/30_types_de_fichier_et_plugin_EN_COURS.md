@@ -33,6 +33,8 @@ Georges AKA Kiweed | Tested on Debian U</sub>
 
 ##### &nbsp;&nbsp;&nbsp;[*FileType* et plugins : <code>~/.vim/ftplugin</code>](#ftplugin)
 <sub> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Lister les *filetypes* déclarés](#lsft)</sub>
+
+<sub> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Créer son propre *filetype*](#mkft)</sub>
 ##### &nbsp;&nbsp;&nbsp;[La minute HHGTTG : plonger dans les *inky depths*](#hhgttg)
 
 ---
@@ -644,6 +646,17 @@ Pour obtenir&nbsp;:
 :trident: <code>prout.md</code> <b>est différent de</b> <code>prout.MD</code>
 
 <br>
+
+### <a name="mkft">Créer son propre *filetype*</a>
+
+<br>
+
+C'est intéressant pour associer une coloration syntaxique particulière sur un
+fichier structuré.
+
+Un exemple simple de carnet d'adresses&nbsp;:
+
+
 
 <sub>[(**sommaire ^**)](#sommaire)</sub>
 
