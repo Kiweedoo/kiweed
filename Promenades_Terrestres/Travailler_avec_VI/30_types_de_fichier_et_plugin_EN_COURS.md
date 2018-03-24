@@ -608,7 +608,11 @@ que <code>vi</code> ouvrira un fichier d'extension <code>.md</code> ; et
 uniquement dans ce cas.
 
 
+<br>
+
 ### <a name="lsft">Lister les *filetypes* déclarés</a>
+
+<br>
 
 Plusieurs façons de savoir quels sont les *filetypes* reconnus.  Sans trop pénétrer les arcanes de
 <code>vi</code>&nbsp;:
@@ -621,6 +625,8 @@ Plusieurs façons de savoir quels sont les *filetypes* reconnus.  Sans trop pén
 
 La liste s'obtient avec la complétion <code>&lt;space&gt;&lt;ctrl-d&gt;</code>
 **immédiatement après** la commande.
+
+<br>
 
 Pour obtenir la liste des *filetypes* débutant par <code>'m'</code> :
 
