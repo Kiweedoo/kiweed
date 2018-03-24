@@ -609,7 +609,7 @@ uniquement dans ce cas.
 
 ### <a name="lsft">Lister les *filetypes* déclarés</a>
 
-Plusieurs façons d'afficher cette liste.  Sans trop pénétrer les arcanes de
+Plusieurs façons de savoir quels sont les *filetypes* reconnus.  Sans trop pénétrer les arcanes de
 <code>vi</code>&nbsp;:
 
 - à l'aide de la commande <code>setfiletype</code>, en **un seul mot**
@@ -618,19 +618,26 @@ Plusieurs façons d'afficher cette liste.  Sans trop pénétrer les arcanes de
 - avec la commande <code>echo</code> et la fonction <code>getcompletion()</code>
 
 
-La liste s'obtient avec la complétion <code>&lt;space&gt;&lt;ctrl d&gt;</code>
-**immédiatement après** la commande &nbsp;:
+La liste s'obtient avec la complétion <code>&lt;space&gt;&lt;ctrl-d&gt;</code>
+**immédiatement après** la commande.
+
+Pour obtenir la liste des *filetypes* débutant par <code>'m'</code> :
 
 ><pre>
-> <b>:setfiletype&lt;ctrl d&gt;</b>
+> <b>:setfiletype&lt;space&gt;m&lt;ctrl-d&gt;</b>
 ></pre>
 
 Pour obtenir&nbsp;:
 
-><pre>
->
+![filetype_m](/a/raw/b/images/filetype_m.png)
 
-></pre>
+
+:bell::pencil:
+
+:trident: <code>prout.md</code> <b>est différent de</b> <code>prout.MD</code>
+
+<br>
+
 <sub>[(**sommaire ^**)](#sommaire)</sub>
 
 ICI
