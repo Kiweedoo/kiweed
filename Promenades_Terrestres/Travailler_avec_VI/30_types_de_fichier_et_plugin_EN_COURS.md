@@ -536,6 +536,7 @@ Il est bien aller chercher ce qui concernait le markdown dans le
 <br>
 
 <sub>[(**sommaire ^**)](#sommaire)</sub>
+
 <br>
 
 ## <a name="ftplugin">*FileType* et plugins : <code>~/.vim/ftplugin</code></a>
