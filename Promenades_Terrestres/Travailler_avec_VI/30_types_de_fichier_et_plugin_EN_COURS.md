@@ -629,7 +629,7 @@ Pour obtenir la liste des *filetypes* débutant par <code>'m'</code> :
 
 Pour obtenir&nbsp;:
 
-![filetype_m](/a/raw/b/images/filetype_m.png)
+![filetype_m](./images/filetype_m.png)
 
 
 :bell::pencil:
