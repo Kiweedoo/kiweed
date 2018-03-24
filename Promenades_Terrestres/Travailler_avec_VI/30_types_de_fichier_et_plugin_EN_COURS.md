@@ -454,7 +454,7 @@ Et c'est terminé... Examinons néanmoins la finesse... :
 > [...]
 ></pre>
 
-Il est quand même chargé... et exécuté... :flushed:
+Il est quand même chargé... et exécuté... :astonished:
 
 C'est bien l'exécution du <code>if exists</code> qui permet de s'affranchir de
 l'appariement des parenthèses... :smiling_imp:
@@ -569,7 +569,7 @@ Ci-dessous, ce que contient le mien :
 
 :bell::pencil:
 
-La syntaxe de nommage de ces fichiers doit **impérativement être** <code><b>filetype.vim</b></code>
+:trident: La syntaxe de nommage de ces fichiers doit **impérativement être** <code><b>filetype.vim</b></code>
 
 Il est donc important de savoir quels sont les *filetypes* reconnus.
 
@@ -606,7 +606,7 @@ Cette fois la réponse est :
 
 :bell::pencil:
 
-Si un fichier nommé <code>markdown.vim</code> existe dans
+:trident: Si un fichier nommé <code>markdown.vim</code> existe dans
 <code>&#126;/.vim/ftplugin</code>, il sera lu et exécuté, dès lors
 que <code>vi</code> ouvrira un fichier d'extension <code>.md</code> ; et
 uniquement dans ce cas.
@@ -670,9 +670,22 @@ Pour tous les lister avec cette méthode :
 C'est intéressant pour associer une coloration syntaxique particulière sur un
 fichier structuré.
 
-Un exemple simple de carnet d'adresses&nbsp;:
+Ou encore, pour un fichier structuré de type carnet d'adresses, les
+autocorrections qui vont bien sur les mots clés de description.
 
+<br>
 
+La méthode est simple :
+
+- vérifier que le type n'existe pas déjà
+
+- Créer dans <code>&#126;/.vim/ftdetect</code> le fichier correspondant.
+
+- Créer dans <code>&#126;/.vim/ftplugin</code> le <code>.vim</code> qui va bien
+
+- Créer éventuellement la coloration syntaxique dans <code>&#126;/.vim/syntax</code>
+
+C'est tout. :alien:
 
 <sub>[(**sommaire ^**)](#sommaire)</sub>
 
