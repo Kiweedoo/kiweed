@@ -357,7 +357,9 @@ lancement d'une session **pour un fichier <code>.md</code>**
 :bell::pencil:
 
 :trident: on se rappelera que le résultat diffère suivant l'extension
-puisque certains scripts sont exécutés par défaut.
+puisque certains scripts sont exécutés par défaut, notamment par la lecture de
+<code>filetype.vim</code> et l'exécution du contenu prévu par défaut dans
+<code>ftplugin</code> (dans l'arborescence système de <code>vi</code>).
 
 
 
