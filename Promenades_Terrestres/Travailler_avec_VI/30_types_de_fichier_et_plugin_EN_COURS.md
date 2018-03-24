@@ -188,6 +188,7 @@ scripts système lus avant).
 - <code><b>&#126;/.vim/ftdetect</b></code> : pour définir notre propre type de fichier, d'extension
   particulière... Exemple ci-dessous.
 
+<br>
 
 :bell::pencil:
 
@@ -354,6 +355,8 @@ Même idée avec un <code>prout.md</code>
 Voilà donc la liste de tous les scripts exécutés par défaut lors du
 lancement d'une session **pour un fichier <code>.md</code>**
 
+<br>
+
 :bell::pencil:
 
 :trident: on se rappelera que le résultat diffère suivant l'extension
@@ -458,6 +461,8 @@ Il est quand même chargé... et exécuté... :astonished:
 
 C'est bien l'exécution du <code>if exists</code> qui permet de s'affranchir de
 l'appariement des parenthèses... :smiling_imp:
+
+<br>
 
 :bell::pencil:
 
@@ -677,7 +682,7 @@ autocorrections qui vont bien sur les mots clés de description.
 
 La méthode est simple :
 
-- vérifier que le type n'existe pas déjà
+- Vérifier que le type n'existe pas déjà
 
 - Créer dans <code>&#126;/.vim/ftdetect</code> le fichier correspondant.
 
