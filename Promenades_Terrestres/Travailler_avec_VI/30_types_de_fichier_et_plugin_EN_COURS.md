@@ -647,6 +647,20 @@ Pour obtenir&nbsp;:
 
 <br>
 
+Nous aurions obtenu le même résultat avec&nbsp;:
+
+><pre>
+> <b>:echo getcompletion('m', 'filetype')</b>
+></pre>
+
+Pour tous les lister avec cette méthode :
+
+><pre>
+> <b>:echo getcompletion('', 'filetype')</b>
+></pre>
+
+<br>
+
 ### <a name="mkft">Créer son propre *filetype*</a>
 
 <br>
