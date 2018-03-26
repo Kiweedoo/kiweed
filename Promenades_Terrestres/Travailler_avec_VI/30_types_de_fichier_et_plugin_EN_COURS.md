@@ -36,7 +36,7 @@ Georges AKA Kiweed | Tested on Debian U</sub>
 
 <sub> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Créer son propre *filetype*](#mkft)</sub>
 
-<sub> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Créer sa coloration syntaxique](#mksyn])</sub>
+<sub> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Créer sa coloration syntaxique](#mksyn)</sub>
 
 ##### &nbsp;&nbsp;&nbsp;[La minute HHGTTG : plonger dans les *inky depths*](#hhgttg)
 
