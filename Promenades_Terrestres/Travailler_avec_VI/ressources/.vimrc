@@ -1,5 +1,7 @@
+" pour empêcher l'exécution du plugin d'appariement
 let loaded_matchparen = 1
 filetype plugin indent on
+set ai wm=4 ts=4 sw=4  tw=80 ignorecase complete+=k hlsearch incsearch
 " ai : autoindent
 " ts : tabstop, la largeur de la tabulation (par défaut 8 caractères)
 " sw : shift width, largeur du décalage avec >> ou <<
@@ -9,7 +11,6 @@ filetype plugin indent on
 " dédié
 " hlsearch : highlight search, tous les mots **après** la saisie
 " incsearch : idem **en cours de saisie**
-set ai wm=4 ts=4 sw=4  tw=80 ignorecase complete+=k hlsearch incsearch
 au BufRead,BufEnter,BufNewFile *.txt setlocal spell spelllang=fr
 au BufRead,BufEnter,BufNewFile *.md setlocal spell spelllang=fr
 au BufRead,BufEnter,BufNewFile *.c setlocal spell spelllang=fr
