@@ -26,8 +26,9 @@ au BufRead,BufEnter,BufNewFile *.c syntax match noms_propres +\<\u\k*\>+ contain
 "vim ne reconnaît pas les alias bash à moins de les rendre interactifs
 "reconnaître les alias et obtenir **dans** le fichier "avec !!commande :
 " ************************
-" ATTENTION : avec !! ou :! vi est stoppé, et on se retrouver dans
-" l'interpréteur... "est stoppé"... fg<return> pour revenir (foreground)
+" ATTENTION : avec !! ou :! vi est stoppé et mis en arrière plan (pas terminé), 
+" on se retrouve dans l'interpréteur... 
+" "est stoppé"... fg<return> pour revenir (foreground)
 " ************************
 set shellcmdflag=-ic
 
