@@ -9,7 +9,7 @@ au BufRead,BufEnter,BufNewFile *.txt syntax match noms_propres +\<[A-ZÉÈÀÔ]\
 au BufRead,BufEnter,BufNewFile *.tex syntax match noms_propres +\<[A-ZÉÈÀÔ]\k*\>+ contains=@NoSpell
 " les syntaxes de langages priment !
 " applicable uniquement dans les portions **commentaires** des langages.
-" au BufRead,BufEnter,BufNewFile *.md syntax match noms_propres +\<[A-ZÉÈÀÔ]\k*\>+ contains=@NoSpell
+" En outre, parfois, seules les formes atomiques de description sont valides
 au BufRead,BufEnter,BufNewFile *.md syntax match noms_propres +\<\u\k*\>+ contains=@NoSpell
 au BufRead,BufEnter,BufNewFile *.c syntax match noms_propres +\<\u\k*\>+ contains=@NoSpell
 
