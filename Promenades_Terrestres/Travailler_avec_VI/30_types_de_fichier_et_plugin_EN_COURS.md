@@ -35,6 +35,9 @@ Georges AKA Kiweed | Tested on Debian U</sub>
 <sub> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Lister les *filetypes* déclarés](#lsft)</sub>
 
 <sub> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Créer son propre *filetype*](#mkft)</sub>
+
+<sub> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Créer sa coloration syntaxique](#mksyn])</sub>
+
 ##### &nbsp;&nbsp;&nbsp;[La minute HHGTTG : plonger dans les *inky depths*](#hhgttg)
 
 ---
@@ -609,6 +612,8 @@ Cette fois la réponse est :
 > <b>filetype=markdown</b>
 ></pre>
 
+<br>
+
 :bell::pencil:
 
 :trident: Si un fichier nommé <code>markdown.vim</code> existe dans
@@ -678,6 +683,9 @@ fichier structuré.
 Ou encore, pour un fichier structuré de type carnet d'adresses, les
 autocorrections qui vont bien sur les mots clés de description.
 
+Ou même pour rendre active la correction orthographique sur un type de fichier
+particulier.
+
 <br>
 
 La méthode est simple :
@@ -692,12 +700,29 @@ La méthode est simple :
 
 C'est tout. :alien:
 
+<br>
+
+### <a name="mksyn">Créer sa coloration syntaxique</a>
+
+Une fois le nouveau *filetype* créé, il est possible de créer sa propre
+coloration syntaxique.
+
+Le fichier <code>filetype.vim</code> devra alors présent dans
+<code>&#126;/.vim/syntax</code>.
+
+Cette page [sur le wiki officiel
+<code>vi</code>](http://vim.wikia.com/wiki/Creating_your_own_syntax_files)
+conduit un excellent tp.
+
+
+<br>
+
+
 <sub>[(**sommaire ^**)](#sommaire)</sub>
 
-ICI
----
+<br>
 
-### [La minute HHGTTG : ](#hhgttg)
+## [La minute HHGTTG : ](#hhgttg)
 
 
 :metal::alien::+1:
