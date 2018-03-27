@@ -218,7 +218,9 @@ Rapidement, et pour faire simple, un <code>package</code>&nbsp;:
 	méthode <code>seconde_partie()</code>
 
 <br>
+
 #### <a name="javac">Vérifier l'environnement pour <code>javac</code></a>
+
 <br>
 
 Pour compiler...&nbsp;:
