@@ -29,6 +29,8 @@ Georges AKA Kiweed | Tested on Debian U</sub>
 
 - [x] Construire proprement en C ou en Java
 
+- [x] Prendre contact avec tout ce que cache <code>eclipse</code>... :alien:
+
 
 <br>
 
@@ -191,6 +193,32 @@ Ou encore, pour revenir <b>sans sauvegarder</b> les modifications :
 
 ### <a name="ctags_java"><code>ctags</code> et Java : Hello World !</code> en Java</a>
 
+
+Pour utiliser pleinement les tags avec Java, il nous faut construire un
+<code>package</code>.
+
+Rapidement, et pour faire simple, un package :
+
+- crée un espace de nommage : détermine la visibilité entre les classes ou les
+  interfaces obtenues après compilation (<code>public</code>, <code>private</code>, etc.)
+
+- concrètement, c'est un répertoire. Ce concept est le même que lorsque tu as un
+  dossier pour les photos, musiques, etc.
+
+- dans notre cas, ce sera un dossier qui comprendra 3 sources, pour rester sur
+  le même modèle qu'avec l'exemple en C&nbsp;:
+
+  - <code>Saluer.java</code> : le fichier qui contient la classe principe
+	(obligatoirement <code>public</code>, et donc <b>obligatoirement</b> du même
+	nom que celui du fichier), et sa méthode <code>main</code>.
+  - <code>Debut.java</code> : définissant la classe <code>Debut</code> et sa
+	méthode <code>premiere_partie()</code>
+  - <code>Fin.java</code> : définissant la classe <code>Fin</code> et sa
+	méthode <code>seconde_partie()</code>
+
+Sauf que...&nsp; :
+
+- 
 
 
 
