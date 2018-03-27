@@ -14,6 +14,8 @@ Georges AKA Kiweed | Tested on Debian U</sub>
 
 <sub> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[<code>ctags</code> et Java : Hello World !](#ctags_java)</sub>
 
+<sub> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Vérifier l'environnement](#javac)</sub>
+
 ##### &nbsp;&nbsp;&nbsp;[La minute HHGTTG : plonger dans les *inky depths*](#hhgttg)
 
 
@@ -194,10 +196,10 @@ Ou encore, pour revenir <b>sans sauvegarder</b> les modifications :
 ### <a name="ctags_java"><code>ctags</code> et Java : Hello World !</code> en Java</a>
 
 
-Pour utiliser pleinement les tags avec Java, il nous faut construire un
-<code>package</code>.
+Pour utiliser pleinement les tags avec Java, et rester proche de l'exemple en C, 
+il nous faut construire un <code>package</code>.
 
-Rapidement, et pour faire simple, un package :
+Rapidement, et pour faire simple, un <code>package</code>&nbsp;:
 
 - crée un espace de nommage : détermine la visibilité entre les classes ou les
   interfaces obtenues après compilation (<code>public</code>, <code>private</code>, etc.)
@@ -205,8 +207,7 @@ Rapidement, et pour faire simple, un package :
 - concrètement, c'est un répertoire. Ce concept est le même que lorsque tu as un
   dossier pour les photos, musiques, etc.
 
-- dans notre cas, ce sera un dossier qui comprendra 3 sources, pour rester sur
-  le même modèle qu'avec l'exemple en C&nbsp;:
+- dans notre cas, ce sera un dossier qui comprendra 3 sources&nbsp;:
 
   - <code>Saluer.java</code> : le fichier qui contient la classe principe
 	(obligatoirement <code>public</code>, et donc <b>obligatoirement</b> du même
@@ -216,9 +217,40 @@ Rapidement, et pour faire simple, un package :
   - <code>Fin.java</code> : définissant la classe <code>Fin</code> et sa
 	méthode <code>seconde_partie()</code>
 
-Sauf que...&nsp; :
+<br>
+#### <a name="javac">Vérifier l'environnement pour <code>javac</code></a>
+<br>
 
-- 
+Pour compiler...&nbsp;:
+
+D'abord vérifier que tu as bien <code>javac</code> en ligne de commande.
+
+Le cas échéant, c'est que ta variable <code>PATH</code> ne contient pas le
+chemin du répertoire <code>bin</code> de la <code>jvm</code> (*java virtual
+machine*). 
+
+Ici tout est ok, mais je ne me souviens plus si on a installé
+uniquement <code>eclipse</code> ou le <code>Java 9</code> avant... 
+Trace... Il faut trouver où est <code>javac</code> dans <code>eclipse</code>.
+
+tu dois trouver un truc du genre...&nbsp;:
+
+><pre>
+> type javac
+> .../usr/bin/javac
+> ls -l /usr/bin/javac
+> .../etc/alternatives/javac
+> ls -l /etc/alternatives/javac
+> ...<b>/usr/lib/jvm/java-9-oracle/bin/javac</b>
+></pre>
+
+Et dans mon <code>PATH</code>, il figure bien :
+
+><pre>
+> echo $PATH
+> ...:/usr/bin:/sbin:/bin:<b>/usr/lib/jvm/java-9-oracle/bin:/usr/lib/jvm/java-9-oracle/db/bin</b>
+></pre>
+
 
 
 
