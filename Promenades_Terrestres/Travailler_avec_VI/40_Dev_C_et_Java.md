@@ -16,6 +16,10 @@ Georges AKA Kiweed | Tested on Debian U</sub>
 
 <sub> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Vérifier l'environnement pour <code>javac</code>](#javac)</sub>
 
+<sub> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Compiler et exécuter](#javarun)</sub>
+
+<sub> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Créer le fichier <code>tags</code>](#javatag)</sub>
+
 ##### &nbsp;&nbsp;&nbsp;[La minute HHGTTG : plonger dans les *inky depths*](#hhgttg)
 
 
@@ -253,9 +257,65 @@ Et dans mon <code>PATH</code>, il figure bien :
 > ...:/usr/bin:/sbin:/bin:<b>/usr/lib/jvm/java-9-oracle/bin:/usr/lib/jvm/java-9-oracle/db/bin</b>
 ></pre>
 
+Si tu ne parviens pas à lancer <code>javac</code> en ligne de commande, c'est
+que son répertoire ne figure pas dans ta variable <code>PATH</code>.
+
+Pour éviter trop de manipulation, et d'explications, nous allons utiliser un
+répertoire qui, par défaut, figure dans ton *path*, <code>&#126;/bin</code>, et
+créer un lien dedans qui pointe sur le <code>javac</code>
+d'<code>eclipse</code>.
+
+Pour cela, on utilise la commande <code>ln</code> (pour *link*) dont la syntaxe
+générale est :
+
+><pre>
+> ln SOURCE DESTINATION (L <b>en minuscule</b>, pas 1...)
+></pre>
+
+- <code>SOURCE</code> vaut pour l'entrée qui sera créée dans ton <code>bin</code>
+
+- <code>DESTINATION</code>, le chemin complet vers le <code>javac</code>
+  d'<code>eclipse</code>
+C'est parti, si le répertoire <code>bin</code> n'exist  pas, on le crée :
+
+><pre>
+> cd &#126;
+> mkdir bin
+> cd bin
+> ln javac <b>/chemin/complet/vers/javac_d_eclipse/javac</b>
+> ls -l
+> ...
+></pre>
+
+Tu viens de créer un lien nommé <code>javac</code> dans ton répertoire
+<code>bin</code> qui pointe <code>javac</code> du répertoire <code>eclipse</code>.
+
+Tant qu'à faire, même chose pour l'interpréteur, toujours en restant sous
+<code>bin</code> :
+
+><pre>
+> ln java <b>/chemin/complet/vers/java_d_eclipse/java</b> 
+></pre>
+
+:bell::pencil:
+
+:trident: Un lien est un fichier  qui <b>pointe</b> un autre ; ce n'est <b>pas
+une copie</b> : si la destination disparait, le lien pointe dans le vide... Si
+le lien disparait, la destination n'est pas affectée (enfin si, son compteur de
+lien est décrémenté de 1, c'est tout).
+
+<br>
+
+#### <a name="javarun">Compiler et exécuter</a>
+
+<br>
 
 
+<br>
 
+#### <a name="javatags">Créer le fichier <code>tags</code></a>
+
+<br>
 
 <br>
 
