@@ -52,7 +52,7 @@ Georges AKA Kiweed | Tested on Debian U</sub>
 Développer proprement impose de découper son projet principal en plusieurs
 modules source.
 
-Chaque modules contenant les fonctions et/ou les classes et les méthodes qui lui
+Chaque module contenant les fonctions et/ou les classes et les méthodes qui lui
 sont propres.
 
 Ainsi, lorsqu'on est dans un source sur l'appel d'une fonction ou d'une méthode,
@@ -313,7 +313,7 @@ lien est décrémenté de 1, c'est tout).
 
 <br>
 
-#### <a name="javatags">Créer le fichier <code>tags</code></a>
+#### <a name="javatag">Créer le fichier <code>tags</code></a>
 
 <br>
 
