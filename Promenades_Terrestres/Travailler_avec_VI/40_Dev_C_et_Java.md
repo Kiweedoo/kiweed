@@ -310,7 +310,54 @@ lien est décrémenté de 1, c'est tout).
 
 <br>
 
+La directive <code>package nom_package</code> indique que les classes de ces
+trois fichiers forment un <code>package</code>, c'est-à-dire sont dans le
+<b>même répertoire</b>.
 
+Le nom du <code>package</code> doit être le même que celui du dossier.
+
+<br>
+
+Il faut indiquer à <code>javac</code> l'ensemble des fichiers qui définissent
+les classes.
+
+En se plaçant dans le dossier des sources <code>.java</code>
+
+><pre>
+> javac &ast;.java
+></pre>
+
+Sans préciser de destination, les fichiers <code>.class</code> seront dans le
+même répertoire.
+
+On pouvait également demander à <code>javac</code> de créer un dossier du nom du
+<code>package</code> et déposer les fichiers classes compilées.
+
+><pre>
+> javac &ast;.java -d .
+></pre>
+
+<br>
+
+Pour exécuter :
+
+- soit on se place au dessus du dossier contenant les classes
+
+- soit on indique avec l'option <code>-cp</code> la <code>CLASSPATH</code> en
+  restant dans le répertoire.
+
+Dans le même répertoire :
+
+><pre>
+> java -cp .. Java_Pkg_Saluer.Saluer
+></pre>
+
+Ou en remontant d'un cran :
+
+><pre>
+> cd ..
+> java Java_Pkg_Saluer.Saluer
+></pre>
 <br>
 
 #### <a name="javatag">Créer le fichier <code>tags</code></a>
