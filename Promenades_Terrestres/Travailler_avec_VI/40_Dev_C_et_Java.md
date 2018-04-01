@@ -310,6 +310,11 @@ lien est décrémenté de 1, c'est tout).
 
 <br>
 
+Il s'agit donc de jouer avec les fichiers de <code>Java_Pkg_Saluer</code>
+présent dans <code>./ressources</code>.
+
+<br>
+
 La directive <code>package nom_package</code> indique que les classes de ces
 trois fichiers forment un <code>package</code>, c'est-à-dire sont dans le
 <b>même répertoire</b>.
