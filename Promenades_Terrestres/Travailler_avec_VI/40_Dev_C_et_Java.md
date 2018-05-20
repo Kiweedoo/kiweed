@@ -128,10 +128,12 @@ Le dossier présente donc :
 Pour compiler et obtenir l'exécutable du même nom que le projet :
 
 ><pre>
-> cc debut.c saluer.c fin.c -o saluer
+> cc -Wall -ansi debut.c saluer.c fin.c -o saluer
 ></pre>
 
 Il n'y a pas d'ordre dans la ligne de commande.
+
+<code>-Wall</code>, pour dire <i>Warning, All</i> et <code>-ansi</code> pour un strict C-ANSI (1989).
 
 L'option <code>-o</code> (*object*) permet de nommer l'exécutable obtenu ;
 sinon, par défaut, tous les exécutables produits sont nommés <code>a.out</code>.
